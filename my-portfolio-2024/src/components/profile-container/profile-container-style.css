@@ -1,0 +1,9 @@
+.profile-container {
+  top: 110px;
+  width: 25%;
+  height: 75vh;
+  position: sticky;
+  padding: 10px;
+  align-self: flex-start;
+  background-color: rgb(9, 78, 9);
+}

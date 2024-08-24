@@ -1,0 +1,9 @@
+.right-container {
+    width: 5%;
+    height: 75vh;
+    background-color: green;
+    position: sticky;
+    top: 110px;
+    align-self: flex-start;
+  }
+  
