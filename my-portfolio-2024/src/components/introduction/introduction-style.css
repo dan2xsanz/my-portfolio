@@ -1,0 +1,93 @@
+.introduction-container-style {
+  gap: 10px;
+  margin: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction-detail-style {
+  width: 70%;
+  text-align: justify;
+}
+
+.greetings-container-style {
+  font-size: 25px;
+}
+
+.greetings-name-container-style {
+  margin-top: -20px;
+  font-size: 65px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  animation: typing 4s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+.name-container-style {
+  font-weight: bold;
+}
+
+.self-description-style {
+  margin-top: 10px;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.software-engineer-style {
+  font-weight: bold;
+}
+
+.see-more-about-me-style {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.beating-arrow-style {
+  font-size: 30px;
+  margin-left: 10px;
+
+  animation: wobble 0.6s infinite;
+}
+
+/* Animations for arrow wobble effect */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Animation for typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Animation for blinking cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    /* border-color: black; */
+  }
+}

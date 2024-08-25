@@ -1,24 +1,25 @@
 :root {
-  --background-color: #eeeeee; /* Default background color */
+  --background-color: black;
+  --color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--background-color); /* Use the custom property here */
-  /* FOR CHANGING OF THEME SOON: document.documentElement.style.setProperty('--background-color', color) */
-
+  color: var(--color);
+  background-color: var(--background-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  padding: 100px;
+  transition: background-color 0.9s ease, color 0.9s ease;
 }
 
-
-html, body {
-  height: 100%;
-  margin: 5px;
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(134, 134, 138, 0.685);
+  border-width: 1px;
 }
