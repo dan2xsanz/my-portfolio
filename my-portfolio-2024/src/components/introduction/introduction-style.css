@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   font-size: 18px;
+  width: 20%;
   cursor: pointer;
 }
 

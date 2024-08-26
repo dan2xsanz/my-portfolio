@@ -1,0 +1,12 @@
+.about-container-style {
+  margin: 160px;
+  align-self: center;
+  position: relative;
+}
+
+.about-text-container {
+  margin-left: 18%;
+  font-size: 80px;
+  font-weight: bold;
+  justify-self: start;
+}

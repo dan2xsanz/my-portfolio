@@ -1,36 +1,15 @@
+import { currentTimeGreetings, myRealtimeAge } from "../../functions";
+import { SocialMediaIcons } from "../../common";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./introduction-style.css";
+import gsap from "gsap";
+
 // import dlPhoto from "../../assets/snz-v2.jpg";
 
-import moment from "moment";
-import gsap from "gsap";
-import { SocialMediaIcons } from "../../common";
 export const Introduction = () => {
-  // Calculate my real time age based on the current date
-  const myRealtimeAge = (): string => {
-    let today = moment().year() - 2000;
-    if (moment().month() <= 3 && moment().date() < 31) {
-      today = today - 1;
-    }
-    return today.toString();
-  };
-
-  // Calculate greetings reatime based on the current time
-  const currentTimeGreetings = (): string => {
-    const currentHour = moment().hour();
-
-    let greeting: string;
-
-    if (currentHour >= 0 && currentHour < 12) {
-      greeting = "Good Morning";
-    } else if (currentHour >= 12 && currentHour <= 17) {
-      greeting = "Good Afternoon";
-    } else {
-      greeting = "Good Evening";
-    }
-
-    return greeting;
-  };
+  // Use navigate to handle routing
+  const navigate = useNavigate();
 
   useEffect(() => {
     currentTimeGreetings();
@@ -69,7 +48,10 @@ export const Introduction = () => {
           impactful solutions, and continuously learning new technologies to
           improve my craft. Let's create something impactful together!
         </div>
-        <div className="see-more-about-me-style">
+        <div
+          className="see-more-about-me-style"
+          onClick={() => navigate("/about")}
+        >
           See More About Me
           <div className="beating-arrow-style">{`${"➜"}`}</div>
         </div>

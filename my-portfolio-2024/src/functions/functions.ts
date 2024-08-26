@@ -1,10 +1,13 @@
 import { frame, useMotionValue, useSpring } from "framer-motion";
 import { RefObject, useEffect } from "react";
 
+import moment from "moment";
+
+// Follow cursor pointer
 export const useFollowPointer = (
   ref: RefObject<HTMLElement>,
   damping: number,
-  stiffness:number
+  stiffness: number
 ) => {
   const spring = { damping: damping, stiffness: stiffness, restDelta: 0.001 };
   const xPoint = useMotionValue(0);
@@ -29,4 +32,30 @@ export const useFollowPointer = (
   }, [ref, xPoint, yPoint]);
 
   return { x, y };
+};
+
+// Calculate my real time age based on the current date
+export const myRealtimeAge = (): string => {
+  let today = moment().year() - 2000;
+  if (moment().month() <= 3 && moment().date() < 31) {
+    today = today - 1;
+  }
+  return today.toString();
+};
+
+// Calculate greetings reatime based on the current time
+export const currentTimeGreetings = (): string => {
+  const currentHour = moment().hour();
+
+  let greeting: string;
+
+  if (currentHour >= 0 && currentHour < 12) {
+    greeting = "Good Morning";
+  } else if (currentHour >= 12 && currentHour <= 17) {
+    greeting = "Good Afternoon";
+  } else {
+    greeting = "Good Evening";
+  }
+
+  return greeting;
 };
