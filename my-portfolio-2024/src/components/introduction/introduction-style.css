@@ -50,7 +50,6 @@
 .beating-arrow-style {
   font-size: 30px;
   margin-left: 10px;
-
   animation: wobble 0.6s infinite;
 }
 

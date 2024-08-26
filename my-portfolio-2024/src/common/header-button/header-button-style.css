@@ -1,0 +1,8 @@
+.header-button-style {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.header-button-style:hover {
+  transform: scale(1.15);
+}

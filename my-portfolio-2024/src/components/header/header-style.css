@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: relative; /* Ensure positioning context */
-  z-index: 1000; /* Higher than other elements */
+  position: relative;
+  z-index: 1000;
 }
 
 .logo-container {
@@ -13,7 +13,6 @@
 }
 
 .menu-options-container {
-  cursor: pointer;
   display: flex;
   gap: 30px;
 }

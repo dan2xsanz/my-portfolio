@@ -4,14 +4,7 @@ import "./introduction-style.css";
 
 import moment from "moment";
 import gsap from "gsap";
-import {
-  FacebookIcon,
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwiterIcon,
-} from "../../common";
-
+import { SocialMediaIcons } from "../../common";
 export const Introduction = () => {
   // Calculate my real time age based on the current date
   const myRealtimeAge = (): string => {
@@ -56,7 +49,7 @@ export const Introduction = () => {
 
   return (
     <div className="introduction-container-style">
-      {/* <img
+      {/* TODO <img
         src={dlPhoto}
         alt="Dan Lester Photo"
         height={250}
@@ -78,41 +71,9 @@ export const Introduction = () => {
         </div>
         <div className="see-more-about-me-style">
           See More About Me
-          <div className="beating-arrow-style">→</div>
+          <div className="beating-arrow-style">{`${"➜"}`}</div>
         </div>
-        <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
-          <TwiterIcon
-            onClick={() => {
-              window.open("https://x.com/DanlesSanz", "_blank");
-            }}
-          />
-          <FacebookIcon
-            onClick={() => {
-              window.open(
-                "https://www.facebook.com/danlester.sanz.9/",
-                "_blank"
-              );
-            }}
-          />
-          <LinkedInIcon
-            onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/danlestersanz/",
-                "_blank"
-              );
-            }}
-          />
-          <GitHubIcon
-            onClick={() => {
-              window.open("https://github.com/dan2xsanz", "_blank");
-            }}
-          />
-          <InstagramIcon
-            onClick={() => {
-              window.open("https://www.instagram.com/danlestersanz/", "_blank");
-            }}
-          />
-        </div>
+        <SocialMediaIcons />
       </div>
     </div>
     // https://www.codewonders.dev/

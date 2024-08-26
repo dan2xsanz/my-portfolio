@@ -10,6 +10,6 @@ type ModeStore = {
 };
 
 export const useStore = create<ModeStore>()((set) => ({
-  mode: currentBackgroundColor === "black" ? "white" : "black",
+  mode: currentBackgroundColor !== "black" ? "white" : "black",
   setMode: (currentMode: string) => set({ mode: currentMode }),
 }));

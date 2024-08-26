@@ -1,47 +1,38 @@
-import { RefObject, StrictMode, useEffect, useRef } from "react";
+import { Header, Introduction, SvgBackground } from "./components";
+import { useFollowPointer } from "./functions";
 import { createRoot } from "react-dom/client";
+import { StrictMode, useRef } from "react";
+import { motion } from "framer-motion";
+
 import "./main.css";
-import { Header } from "./components/header";
-import { Introduction } from "./components/introduction/introduction";
-import { frame, motion, useMotionValue, useSpring } from "framer-motion";
-
-const useFollowPointer = (ref: RefObject<HTMLElement>, damping: number) => {
-  const spring = { damping: damping, stiffness: 100, restDelta: 0.001 };
-  const xPoint = useMotionValue(0);
-  const yPoint = useMotionValue(0);
-  const x = useSpring(xPoint, spring);
-  const y = useSpring(yPoint, spring);
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-      const element = ref.current!;
-      frame.read(() => {
-        xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);
-        yPoint.set(clientY - element.offsetTop - element.offsetHeight / 2);
-      });
-    };
-
-    window.addEventListener("pointermove", handlePointerMove);
-
-    return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, [ref, xPoint, yPoint]);
-
-  return { x, y };
-};
 
 const App = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { x: pointer2A, y: pointer2B } = useFollowPointer(ref, 20);
+  const { x: pointer1A, y: pointer1B } = useFollowPointer(ref, 100, 2000);
+  const { x: pointer2A, y: pointer2B } = useFollowPointer(ref, 100, 800);
 
   return (
     <StrictMode>
+      <div style={{ position: "relative", width: "80px", height: "80px" }}>
         <motion.div
           ref={ref}
-          className="circle"
+          className="circle b"
           style={{ x: pointer2A, y: pointer2B }}
         />
+        <motion.div
+          ref={ref}
+          className="circle a"
+          style={{
+            x: pointer1A,
+            y: pointer1B,
+            position: "absolute",
+            top: "45%",
+            left: "45%",
+          }}
+        />
+      </div>
+
+      <SvgBackground />
       <Header />
       <Introduction />
     </StrictMode>
