@@ -1,0 +1,61 @@
+.education-details-container-style {
+  padding: 10px;
+  height: 200px;
+  width: 900px;
+  display: grid;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.title-style-container {
+  font-size: 22px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.secondary-title-container {
+  font-size: 15px;
+}
+
+.education-container {
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.school-details-style {
+  font-size: 13px;
+  font-weight: 100;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.image-style {
+  border-radius: 100%;
+  z-index: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+.image-style.custom{
+  border-radius: 100%;
+  z-index: 0;
+  background-color: white;
+  margin-right: 30px;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+
+.education-details-container-style:hover {
+  transform: scale(1.01);
+  .image-style {
+    transform: scale(1.05);
+  }
+}

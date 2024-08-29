@@ -1,0 +1,64 @@
+.button-style {
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  font-weight:400;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.3s ease;
+
+}
+
+.button-style.white {
+  color: black;
+  background-color: white;
+}
+
+.button-style.dark {
+  color: white;
+  background-color: black;
+}
+
+.button-style.white.large {
+  font-weight: 520;
+  font-size: 15px;
+  width: 150px;
+}
+
+.button-style.dark.large {
+  font-weight: 520;
+  font-size: 15px;
+  width: 150px;
+}
+
+.button-style.white.medium {
+  font-size: 12px;
+  width: 120px;
+}
+
+.button-style.dark.medium {
+  font-size: 12px;
+  width: 120px;
+}
+
+.button-style.white.small {
+  font-size: 10px;
+  width: 100px;
+}
+
+.button-style.dark.small {
+  font-size: 10px;
+  width: 100px;
+}
+
+
+.button-style.white:hover {
+  color: white;
+  transform: scale(1.08);
+  background-color: rgba(255, 255, 255, 0.192);
+}
+
+.button-style.dark:hover {
+  color: black;
+  transform: scale(1.08);
+  background-color: rgba(29, 28, 28, 0.24);
+}

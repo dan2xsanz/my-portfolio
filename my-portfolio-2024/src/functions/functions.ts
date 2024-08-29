@@ -20,9 +20,25 @@ export const useFollowPointer = (
 
     const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
       const element = ref.current!;
+
       frame.read(() => {
-        xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);
-        yPoint.set(clientY - element.offsetTop - element.offsetHeight / 2);
+        // Adjust position calculations to consider scrolling
+        const scrollX =
+          window.scrollX ||
+          window.pageXOffset ||
+          document.documentElement.scrollLeft;
+        const scrollY =
+          window.scrollY ||
+          window.pageYOffset ||
+          document.documentElement.scrollTop;
+
+        // Calculate the new position for the element based on cursor and scroll position
+        xPoint.set(
+          clientX + scrollX - element.offsetLeft - element.offsetWidth / 2
+        );
+        yPoint.set(
+          clientY + scrollY - element.offsetTop - element.offsetHeight / 2
+        );
       });
     };
 
@@ -58,4 +74,15 @@ export const currentTimeGreetings = (): string => {
   }
 
   return greeting;
+};
+
+export const getCardBackground = (
+  mode: string,
+  setCardBackground: (data: string) => void
+) => {
+  if (mode !== "white") {
+    setCardBackground("rgba(123, 124, 123, 0.123)");
+  } else {
+    setCardBackground("rgba(252, 255, 252, 0.151)");
+  }
 };
