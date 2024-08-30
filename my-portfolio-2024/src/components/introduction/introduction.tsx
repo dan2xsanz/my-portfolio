@@ -1,8 +1,14 @@
 import { currentTimeGreetings, myRealtimeAge } from "../../functions";
-import { Button, ButtonSize, SocialMediaIcons } from "../../common";
+import {
+  Button,
+  ButtonSize,
+  SecondaryButton,
+  SocialMediaIcons,
+} from "../../common";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./introduction-style.css";
+import { CALENDLY_URL } from "../../config";
 // import gsap from "gsap";
 
 // import dlPhoto from "../../assets/snz-v2.jpg";
@@ -60,11 +66,9 @@ export const Introduction = () => {
             <Button
               size={ButtonSize.large}
               label={"Book a Meeting"}
-              onClick={() =>
-                window.open("https://calendly.com/danles-sanz", "_blank")
-              }
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
             />
-            <Button
+            <SecondaryButton
               size={ButtonSize.large}
               label={"Download CV"}
               onClick={() => {}}

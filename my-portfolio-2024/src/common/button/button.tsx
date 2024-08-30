@@ -1,17 +1,6 @@
 import "./button-style.css";
 import { useStore } from "../../store";
-
-export enum ButtonSize {
-  large,
-  medium,
-  small
-}
-
-interface ButtonInterface {
-  size: ButtonSize;
-  label: string;
-  onClick: () => void;
-}
+import { ButtonInterface, ButtonSize } from "./button-interface";
 
 export const Button = (props: ButtonInterface) => {
   const { size, label, onClick } = props;
@@ -32,7 +21,6 @@ export const Button = (props: ButtonInterface) => {
           {label}
         </button>
       );
-
     case ButtonSize.medium:
       return (
         <button
@@ -59,5 +47,29 @@ export const Button = (props: ButtonInterface) => {
       );
     default:
       return <button className="button-style"> {label}</button>;
+  }
+};
+
+export const SecondaryButton = (props: ButtonInterface) => {
+  const { size, label, onClick } = props;
+
+  const { mode } = useStore();
+
+  switch (size) {
+    case ButtonSize.large:
+      return (
+        <button
+          className={
+            mode === "white"
+              ? "button-style secondary white large"
+              : "button-style secondary dark large"
+          }
+          onClick={onClick}
+        >
+          {label}
+        </button>
+      );
+    default:
+      <></>;
   }
 };
