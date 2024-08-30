@@ -3,7 +3,7 @@ import { Button, ButtonSize, SocialMediaIcons } from "../../common";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./introduction-style.css";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 // import dlPhoto from "../../assets/snz-v2.jpg";
 
@@ -57,8 +57,18 @@ export const Introduction = () => {
             <div className="beating-arrow-style">{`${"➜"}`}</div>
           </div>
           <div style={{ display: "flex", gap: "10px" }}>
-            <Button size={ButtonSize.large} label={"Book a Meeting"} />
-            <Button size={ButtonSize.large} label={"Download CV"} />
+            <Button
+              size={ButtonSize.large}
+              label={"Book a Meeting"}
+              onClick={() =>
+                window.open("https://calendly.com/danles-sanz", "_blank")
+              }
+            />
+            <Button
+              size={ButtonSize.large}
+              label={"Download CV"}
+              onClick={() => {}}
+            />
           </div>
         </div>
         <SocialMediaIcons />

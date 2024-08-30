@@ -4,16 +4,17 @@ import { useStore } from "../../store";
 export enum ButtonSize {
   large,
   medium,
-  small,
+  small
 }
 
 interface ButtonInterface {
   size: ButtonSize;
   label: string;
+  onClick: () => void;
 }
 
 export const Button = (props: ButtonInterface) => {
-  const { size, label } = props;
+  const { size, label, onClick } = props;
 
   const { mode } = useStore();
 
@@ -26,6 +27,7 @@ export const Button = (props: ButtonInterface) => {
               ? "button-style white large"
               : "button-style dark large"
           }
+          onClick={onClick}
         >
           {label}
         </button>
