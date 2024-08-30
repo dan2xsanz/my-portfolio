@@ -74,7 +74,9 @@ export const About = () => {
           imgHght={140}
           imgWdth={155}
           onClick={() => {}}
-          educationClass={"Secondary Education- Senior High School (K-12 Pioneer)"}
+          educationClass={
+            "Secondary Education- Senior High School (K-12 Pioneer)"
+          }
           titleLabel={"Information Communication Technology (ICT - CSS & CHS)"}
           secondaryTitleLabel={"Sta. Cruz National High School"}
           details={`At Sta. Cruz National High School(Senior High), I specialized in Information and Communication Technology, 
@@ -116,6 +118,8 @@ export const About = () => {
             and preparing me for the academic and social challenges of higher education.`}
         />
       </div>
+      <div className="title-header-style">Tech Stacks</div>
+      <div className="title-header-style">Hobbies</div>
     </div>
   );
 };

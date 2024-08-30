@@ -63,6 +63,16 @@ export const Introduction = () => {
         </div>
         <SocialMediaIcons />
       </div>
+      {/* <div>
+        Dan Lester Sanz 24-year-old Software Engineer based in Cebu, Philippines
+        As a dedicated software engineer, I am driven by a passion for crafting
+        high-performance, scalable applications that address real-world
+        challenges. With a keen eye for detail and a commitment to excellence, I
+        thrive on solving intricate problems and developing solutions that leave
+        a lasting impact. I am constantly expanding my expertise and staying
+        ahead of the curve in emerging technologies to refine my skills. Let’s
+        collaborate to build innovative solutions that make a difference!
+      </div> */}
     </div>
     // https://www.codewonders.dev/
   );
