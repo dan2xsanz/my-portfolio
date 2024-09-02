@@ -37,9 +37,9 @@
 
 .tech-stacks-container-style {
   display: flex;
+  width: 900px;
   align-items: center;
   gap: 30px;
-  width: 90%;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -63,4 +63,22 @@
 .stack-img-style:hover {
   opacity: 1;
   transform: scale(1.09);
+}
+
+.badge {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: rgb(148, 36, 36);
+  animation: blink 3s infinite;
+  box-shadow: 2 4 8px rgba(245, 15, 15, 0.8); 
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

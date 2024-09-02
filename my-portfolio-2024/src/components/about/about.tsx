@@ -20,10 +20,14 @@ import css from "../../assets/css.png";
 import { useState } from "react";
 
 import "./about-style.css";
+import { blinkingStore } from "../../store";
 
 export const About = () => {
   // SELECTED STACK STATE
   const [stackSelected, setStackSelected] = useState<number>(1);
+
+  // Dark mode state
+  const { isBlinking, setBlinking } = blinkingStore();
 
   return (
     <div className="about-container-style">
@@ -70,7 +74,10 @@ export const About = () => {
         />
       </div>
       <div className="tech-stack-main-container-style">
-        <div className="tech-stacks-container-style">
+        <div
+          className="tech-stacks-container-style"
+          onScroll={() => setBlinking(false)}
+        >
           <img
             src={java}
             width={75}
@@ -228,6 +235,7 @@ export const About = () => {
             }
           />
         </div>
+        {isBlinking && <div className="badge" />}
       </div>
       <div className="div-details-style">
         <StackDetails stackSelected={stackSelected} />
@@ -304,7 +312,7 @@ export const About = () => {
         />
       </div>
       <div className="title-header-style">
-        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Hobbies"} />
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Interest"} />
       </div>
     </div>
   );

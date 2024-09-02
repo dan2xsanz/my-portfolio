@@ -62,15 +62,7 @@
 }
 
 
-
-
-
-
-
-
-
-
-
+/* SECONDARY BUTTONS */
 .button-style.secondary.white {
   color: white;
   background-color: rgba(109, 107, 107, 0.521);
@@ -119,7 +111,7 @@
   width: 100px;
 }
 
-.button-style.dark:hover {
+.button-style.secondary.dark:hover {
   color: white;
   transform: scale(1.08);
   background-color: black;

@@ -462,13 +462,13 @@ export const StackDetails = (props: StackDetailsInterface) => {
               labelText={stackProperties?.name}
             />
             <div
-            // style={{
-            //   marginTop: "5px",
-            //   paddingTop: "5px",
-            //   borderTopWidth: "0.3px",
-            //   borderTopStyle: "solid",
-            //   borderColor: stackProperties.color
-            // }}
+              style={{
+                marginTop: "5px",
+                paddingTop: "5px",
+                borderTopWidth: "0.3px",
+                borderTopStyle: "solid",
+                borderColor: stackProperties.color
+              }}
             >
               <Label labelSize={LabelSize.LARGE_BOLD} labelText={"Experties"} />
               <div className="stack-experties-container-style">
