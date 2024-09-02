@@ -1,3 +1,10 @@
+.stack-details-main-container-style{
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
 .stack-details-container-style {
   padding: 10px;
   height: 200px;

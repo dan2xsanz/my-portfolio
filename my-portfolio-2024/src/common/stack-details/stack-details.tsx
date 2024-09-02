@@ -60,25 +60,26 @@ export const StackDetails = (props: StackDetailsInterface) => {
           color: "rgb(110, 155, 240)",
           description: (
             <div className="stack-description-style">
-              I learned Java in my second year of college and have a solid
-              foundation in it. My experience includes a strong understanding of
+              learned Java in my second year of college and have built a solid
+              foundation in it. My expertise includes a strong grasp of
               Object-Oriented Programming (OOP), Data Structures, Algorithms,
-              and basic problem-solving with real-life scenarios. My first
-              project was a{" "}
+              and problem-solving within real-life scenarios. My practical
+              experience includes developing a{" "}
               {
                 <span
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(110, 155, 240)",
+                    color: "rgb(110, 155, 240)"
                   }}
                   onClick={() => {}}
                 >{`Laundry Shop Application`}</span>
-              }
-              , which I developed using NetBeans as the Integrated Development
-              Environment (IDE).
+              }{" "}
+              as my first project, using NetBeans as the Integrated Development
+              Environment (IDE). This project honed my skills in Java and
+              provided valuable insights into application development. .
             </div>
-          ),
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -102,7 +103,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(177, 71, 226)",
+                    color: "rgb(177, 71, 226)"
                   }}
                   onClick={() => {}}
                 >{`Boarding House System `}</span>
@@ -111,7 +112,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               experience in building user interfaces and managing application
               logic.
             </div>
-          ),
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -137,7 +138,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgba(179, 179, 54, 0.856)",
+                    color: "rgba(179, 179, 54, 0.856)"
                   }}
                   onClick={() => {}}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Desktop)`}</span>
@@ -146,7 +147,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               using both mobile and desktop platforms and show the possible
               locations inside Southern Leyte using QGIS..
             </div>
-          ),
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -172,7 +173,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(28, 153, 28)",
+                    color: "rgb(28, 153, 28)"
                   }}
                   onClick={() => {}}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Mobile)`}</span>
@@ -181,7 +182,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               using both mobile and desktop platforms and show the possible
               locations inside Southern Leyte using QGIS.
             </div>
-          ),
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -210,14 +211,14 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(28, 153, 28)",
+                    color: "rgb(28, 153, 28)"
                   }}
                   onClick={() => {}}
                 >{`SNZ Market Place`}</span>
               }{" "}
               an E-Commerse inpired application.
             </div>
-          ),
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -229,6 +230,28 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "React",
           percentage: "90%",
           color: "rgb(93, 203, 247)",
+          description: (
+            <div className="stack-description-style">
+              React is a powerful library for building dynamic and interactive
+              user interfaces. With my advanced expertise in React, I excel at
+              creating scalable and efficient single-page applications using
+              component-based architecture. I leverage React’s features, such as
+              the Virtual DOM, hooks, and context, to manage state and optimize
+              performance. My deep understanding of React enables me to deliver
+              high-quality, responsive, and maintainable web applications. This{" "}
+              {
+                <span
+                  style={{
+                    cursor: "pointer",
+                    fontStyle: "italic",
+                    color: "rgb(93, 203, 247)"
+                  }}
+                  onClick={() => {}}
+                >{`Portfolio`}</span>
+              }{" "}
+              is actually made using React.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -240,6 +263,19 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "HTML",
           percentage: "90%",
           color: "orangered",
+          description: (
+            <div className="stack-description-style">
+              HTML (HyperText Markup Language) is the fundamental building block
+              of web development, and with my advanced expertise, I leverage
+              HTML to create well-structured, semantic web content. HTML
+              provides the essential framework for organizing and displaying
+              content on the web, using a variety of elements and tags to define
+              headings, paragraphs, links, images, and multimedia. My deep
+              understanding of HTML allows me to craft clean, accessible, and
+              optimized code that ensures cross-browser compatibility and
+              enhances the user experience.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -251,6 +287,18 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "CSS",
           percentage: "85%",
           color: "rgb(6, 149, 206)",
+          description: (
+            <div className="stack-description-style">
+              CSS (Cascading Style Sheets) is essential for designing visually
+              appealing and responsive web pages. With my strong expertise in
+              CSS, I skillfully apply styles to enhance layout, typography, and
+              overall aesthetics. I utilize advanced CSS techniques and
+              frameworks to ensure designs are both modern and adaptive across
+              various devices. My proficiency includes working with CSS Grid,
+              Flexbox, and animations to create dynamic and user-friendly
+              interfaces.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -262,6 +310,30 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "Javascript",
           percentage: "80%",
           color: "rgb(247, 247, 89)",
+          description: (
+            <div className="stack-description-style">
+              JavaScript is the cornerstone of modern web development, and with
+              my advanced proficiency, I effectively use it to create dynamic
+              and interactive web applications. My expertise includes mastering
+              core JavaScript concepts, as well as modern ES6+ features, to
+              write efficient and maintainable code. I am skilled in leveraging
+              JavaScript for both client-side and server-side development, and I
+              excel at integrating it with frameworks and libraries to enhance
+              functionality and user experience. My first project using
+              javascript is{" "}
+              {
+                <span
+                  style={{
+                    cursor: "pointer",
+                    fontStyle: "italic",
+                    color: "rgb(247, 247, 89)"
+                  }}
+                  onClick={() => {}}
+                >{`Portfolio Version-1`}</span>
+              }{" "}
+              is actually made using React.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -273,6 +345,19 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "Typescript",
           percentage: "95%",
           color: "rgb(59, 132, 241)",
+          description: (
+            <div className="stack-description-style">
+              TypeScript is a powerful superset of JavaScript that adds static
+              types to enhance development efficiency and code quality. With my
+              advanced expertise in TypeScript, I effectively leverage its
+              strong typing system and advanced features to build robust and
+              scalable applications. I utilize TypeScript to catch errors early,
+              improve code readability, and facilitate better collaboration
+              through clear type definitions. My proficiency includes
+              integrating TypeScript with modern frameworks and tools to ensure
+              high-quality, maintainable code.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -284,6 +369,18 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "My SQL",
           percentage: "85%",
           color: "rgb(34, 87, 148)",
+          description: (
+            <div className="stack-description-style">
+              MySQL is a leading relational database management system, and with
+              my strong expertise in MySQL, I efficiently design, implement, and
+              manage robust database solutions. I excel at writing complex
+              queries, optimizing performance, and ensuring data integrity
+              through advanced indexing and normalization techniques. My
+              proficiency includes creating and maintaining schemas, performing
+              backups, and integrating MySQL with various applications to
+              support reliable and scalable data management.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -295,6 +392,18 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "SQL Lite",
           percentage: "80%",
           color: "rgb(17, 104, 202)",
+          description: (
+            <div className="stack-description-style">
+              SQLite is a lightweight, serverless database engine that is ideal
+              for embedded and local applications. With my expertise in SQLite,
+              I efficiently design and manage compact and high-performance
+              databases. I am skilled at writing and optimizing SQL queries,
+              handling database migrations, and integrating SQLite with various
+              platforms and applications. My proficiency ensures reliable data
+              management and seamless performance in environments where a
+              full-scale database server is not required.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -306,6 +415,18 @@ export const StackDetails = (props: StackDetailsInterface) => {
           name: "Monggo DB",
           percentage: "70%",
           color: "rgb(63, 156, 83)",
+          description: (
+            <div className="stack-description-style">
+              MongoDB is a leading NoSQL database that excels in handling
+              flexible, schema-less data models. With my expertise in MongoDB, I
+              adeptly design and manage scalable and high-performance databases
+              using its document-oriented structure. I am proficient in writing
+              and optimizing queries, managing indexes, and leveraging MongoDB’s
+              aggregation framework to extract and analyze data efficiently. My
+              skills include integrating MongoDB with various applications to
+              support dynamic and data-driven solutions.
+            </div>
+          )
         };
         setStackProperties(newStackProperties);
         break;
@@ -314,21 +435,14 @@ export const StackDetails = (props: StackDetailsInterface) => {
           image: java,
           height: 200,
           width: 200,
-          name: "Java",
+          name: "Java"
         };
         setStackProperties(newStackProperties);
     }
   }, [stackSelected]);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        marginTop: "20px",
-        justifyContent: "center",
-      }}
-    >
+    <div className="stack-details-main-container-style">
       {stackProperties && (
         <div
           className="stack-details-container-style"
@@ -347,7 +461,15 @@ export const StackDetails = (props: StackDetailsInterface) => {
               labelSize={LabelSize.DIV_TITLE_BOLD}
               labelText={stackProperties?.name}
             />
-            <div>
+            <div
+            // style={{
+            //   marginTop: "5px",
+            //   paddingTop: "5px",
+            //   borderTopWidth: "0.3px",
+            //   borderTopStyle: "solid",
+            //   borderColor: stackProperties.color
+            // }}
+            >
               <Label labelSize={LabelSize.LARGE_BOLD} labelText={"Experties"} />
               <div className="stack-experties-container-style">
                 <div className="progress-bar-style">
@@ -355,7 +477,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                     style={{
                       height: "10px",
                       width: stackProperties.percentage,
-                      backgroundColor: stackProperties.color,
+                      backgroundColor: stackProperties.color
                     }}
                   />
                 </div>
@@ -372,3 +494,5 @@ export const StackDetails = (props: StackDetailsInterface) => {
     </div>
   );
 };
+
+// MAGIC UI
