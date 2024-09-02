@@ -1,0 +1,40 @@
+.label-page-title-bold-style {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.label-default-style {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.label-default-style.italic {
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.label-div-title-bold-style {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.label-large-bold-style {
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.label-large-style {
+  font-size: 22px;
+}
+
+.label-medium-style {
+  font-size: 15px;
+}
+
+.label-small-style {
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 10px;
+    text-align: justify;
+}

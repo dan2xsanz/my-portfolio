@@ -7,15 +7,11 @@
 
 .about-text-container {
   margin-top: 50px;
-  font-size: 100px;
-  font-weight: bold;
 }
 
 .title-header-style {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 30px;
-  font-weight: bold;
   justify-self: start;
 }
 
@@ -23,23 +19,48 @@
   text-align: justify;
 }
 
-.more-details-style {
-  font-size: 18px;
-  font-weight: 400;
-}
-
 .more-details-2-style {
-  font-size: 18px;
-  font-weight: 400;
   margin-top: 10px;
 }
 
-.quotes-style {
-  font-style: italic;
-}
-
-.educations-details-style {
+.div-details-style {
   display: grid;
   gap: 10px;
   justify-content: center;
+}
+
+.tech-stack-main-container-style {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tech-stacks-container-style {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 90%;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tech-stacks-container-style::-webkit-scrollbar {
+  display: none;
+}
+
+.stack-img-style {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: transform 0.3s ease;
+}
+
+.stack-img-style.selected {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.stack-img-style:hover {
+  opacity: 1;
+  transform: scale(1.09);
 }

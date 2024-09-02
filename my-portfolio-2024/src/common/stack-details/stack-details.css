@@ -1,0 +1,53 @@
+.stack-details-container-style {
+  padding: 10px;
+  height: 200px;
+  width: 900px;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.stack-image-container-style {
+  width: 35%;
+}
+
+.stack-details-style {
+  width: 100%;
+  height: 100%;
+}
+
+.stack-experties-container-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar-style {
+  height: 10px;
+  width: 100%;
+  background-color: grey;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 5px;
+}
+
+.stack-description-style {
+  font-size: 13px;
+  font-weight: 100;
+  text-align: justify;
+  overflow: auto;
+  max-height: 100px;
+}
+
+.stack-description-style::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit-based browsers (Chrome, Safari) */
+}
+
+.stack-description-style {
+  -ms-overflow-style: none; /* Hides the scrollbar in Internet Explorer and Edge */
+  scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}

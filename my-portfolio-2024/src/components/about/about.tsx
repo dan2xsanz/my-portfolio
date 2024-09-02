@@ -1,56 +1,241 @@
-import { EducationDetails } from "../../common";
+import { EducationDetails, Label, LabelSize, StackDetails } from "../../common";
 
-import slsu from "../../assets/SLSU.png";
+import typeScript from "../../assets/typescript.png";
+import javaScript from "../../assets/javascript.png";
+import sqlLite from "../../assets/sqlite.png";
+import android from "../../assets/android.png";
+import cSharp from "../../assets/csharp.png";
+import python from "../../assets/python.png";
+import spring from "../../assets/spring.png";
 import scnhs from "../../assets/scnhs.png";
+import monggo from "../../assets/mongo.png";
+import react from "../../assets/react.png";
+import slsu from "../../assets/SLSU.png";
 import sces from "../../assets/sces.png";
+import html from "../../assets/html.png";
+import java from "../../assets/java.png";
+import sql from "../../assets/sql.png";
+import css from "../../assets/css.png";
+
+import { useState } from "react";
 
 import "./about-style.css";
 
 export const About = () => {
-  // useEffect(() => {
-  //   gsap.to(".about-container-style", {
-  //     y: -30,
-  //     duration: 8,
-  //     ease: "elastic",
-  //     scrollTrigger: {
-  //       trigger: ".about-container-style",
-  //     },
-  //   });
-  // }, []);
+  // SELECTED STACK STATE
+  const [stackSelected, setStackSelected] = useState<number>(1);
 
   return (
     <div className="about-container-style">
-      <div className="about-text-container">About Me.</div>
-      <div className="title-header-style">Who I am</div>
+      <div className="about-text-container">
+        <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"About Me."} />
+      </div>
+      <div className="title-header-style">
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Who I am"} />
+      </div>
       <div className="details-style">
-        <div className="more-details-style">
-          I'm a passionate Software Engineer with a strong background in
+        <Label
+          labelSize={LabelSize.DEFAULT}
+          labelText={`I'm a passionate Software Engineer with a strong background in
           developing robust and scalable software applications. With a deep
           understanding of both frontend and backend technologies, I specialize
           in creating seamless user experiences and efficient systems that solve
           complex problems. My journey in tech began with a fascination for how
           things work, which quickly grew into a love for coding and
-          problem-solving.
-        </div>
+          problem-solving.`}
+        />
         <div className="more-details-2-style">
-          I possess persistent problem-solving skills and have a knack for
+          <Label
+            labelSize={LabelSize.DEFAULT}
+            labelText={`I possess persistent problem-solving skills and have a knack for
           writing clean, reusable code that is easy to read and test. I
           understand how code drives overall business goals and love designing
           user interfaces and creating purposeful systems that contribute to
           industry innovation. I pride myself on my ability to "listen more than
           I speak," staying disciplined and focused on the right things. I am
           always open to new ideas and constantly think outside the box, as I
-          believe in the saying,
-          {
-            <span className="quotes-style">
-              "Those who do not think outside the box are easily contained." -
-              Nicolas Manetta
-            </span>
-          }
+          believe in the saying,`}
+          />
+          <Label
+            labelSize={LabelSize.DEFAULT_ITALIC}
+            labelText={`"Those who do not think outside the box are easily contained." -
+            Nicolas Manetta`}
+          />
         </div>
       </div>
-      <div className="title-header-style">Educations</div>
-      <div className="educations-details-style">
+      <div className="title-header-style">
+        <Label
+          labelSize={LabelSize.DIV_TITLE_BOLD}
+          labelText={"Technology Stack"}
+        />
+      </div>
+      <div className="tech-stack-main-container-style">
+        <div className="tech-stacks-container-style">
+          <img
+            src={java}
+            width={75}
+            height={75}
+            alt="Java Logo"
+            onClick={() => setStackSelected(1)}
+            className={
+              stackSelected === 1
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={90}
+            height={80}
+            src={cSharp}
+            alt="C# Logo"
+            onClick={() => setStackSelected(2)}
+            className={
+              stackSelected === 2
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={70}
+            height={70}
+            src={python}
+            alt="Python Logo"
+            onClick={() => setStackSelected(3)}
+            className={
+              stackSelected === 3
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={80}
+            height={80}
+            src={android}
+            alt="Android Logo"
+            onClick={() => setStackSelected(4)}
+            className={
+              stackSelected === 4
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={60}
+            height={60}
+            src={spring}
+            alt="Spring Logo"
+            onClick={() => setStackSelected(5)}
+            className={
+              stackSelected === 5
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={75}
+            src={react}
+            height={75}
+            alt="React Logo"
+            onClick={() => setStackSelected(6)}
+            className={
+              stackSelected === 6
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            src={html}
+            width={85}
+            height={85}
+            alt="HTML Logo"
+            onClick={() => setStackSelected(7)}
+            className={
+              stackSelected === 7
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            src={css}
+            width={70}
+            height={70}
+            alt="CSS Logo"
+            onClick={() => setStackSelected(8)}
+            className={
+              stackSelected === 8
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={63}
+            height={63}
+            src={javaScript}
+            alt="Javascript Logo"
+            onClick={() => setStackSelected(9)}
+            className={
+              stackSelected === 9
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={65}
+            height={65}
+            src={typeScript}
+            alt="Typescript Logo"
+            onClick={() => setStackSelected(10)}
+            className={
+              stackSelected === 10
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            src={sql}
+            height={60}
+            width={100}
+            alt="MySql Logo"
+            onClick={() => setStackSelected(11)}
+            className={
+              stackSelected === 11
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={75}
+            height={75}
+            src={sqlLite}
+            alt="SqlLite Logo"
+            onClick={() => setStackSelected(12)}
+            className={
+              stackSelected === 12
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+          <img
+            width={70}
+            height={70}
+            src={monggo}
+            alt="Monggo Logo"
+            onClick={() => setStackSelected(13)}
+            className={
+              stackSelected === 13
+                ? "stack-img-style.selected"
+                : "stack-img-style"
+            }
+          />
+        </div>
+      </div>
+      <div className="div-details-style">
+        <StackDetails stackSelected={stackSelected} />
+      </div>
+      <div className="title-header-style">
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Educations"} />
+      </div>
+      <div className="div-details-style">
         <EducationDetails
           key={1}
           image={slsu}
@@ -118,8 +303,9 @@ export const About = () => {
             and preparing me for the academic and social challenges of higher education.`}
         />
       </div>
-      <div className="title-header-style">Tech Stacks</div>
-      <div className="title-header-style">Hobbies</div>
+      <div className="title-header-style">
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Hobbies"} />
+      </div>
     </div>
   );
 };

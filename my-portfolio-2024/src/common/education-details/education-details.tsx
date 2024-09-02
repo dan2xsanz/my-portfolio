@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useStore } from "../../store";
 import "./education-details.css";
 import { getCardBackground } from "../../functions";
+import { Label, LabelSize } from "../label";
 
 interface EducationDetailsInterface {
   image: string;
@@ -42,16 +43,17 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
       onClick={onClick}
     >
       <div className="title-style-container">
-        <span className="education-container">{educationClass}</span>
-        {titleLabel}
-        <span className="secondary-title-container">{secondaryTitleLabel}</span>
-        <div className="school-details-style">{details}</div>
+        <Label labelSize={LabelSize.SMALL} labelText={educationClass} />
+        <Label labelSize={LabelSize.LARGE_BOLD} labelText={titleLabel} />
+        {secondaryTitleLabel && (
+          <Label labelSize={LabelSize.MEDIUM} labelText={secondaryTitleLabel} />
+        )}
+        <Label labelSize={LabelSize.SMALL} labelText={details} />
       </div>
       <img
         src={image}
         height={imgHght}
         width={imgWdth}
-        // style={{ backgroundColor: isCustomBg ? "white" : "none" }}
         className={isCustomBg ? "image-style custom" : "image-style"}
       />
     </div>
