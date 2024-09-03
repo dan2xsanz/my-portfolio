@@ -1,5 +1,11 @@
-import { EducationDetails, Label, LabelSize, StackDetails } from "../../common";
 import { blinkingStore, selectedStackStore } from "../../store";
+import {
+  RecommendationDetails,
+  EducationDetails,
+  StackDetails,
+  LabelSize,
+  Label,
+} from "../../common";
 
 import typeScript from "../../assets/typescript.png";
 import javaScript from "../../assets/javascript.png";
@@ -282,7 +288,7 @@ export const About = () => {
           imgHght={140}
           imgWdth={155}
           onClick={() => {}}
-          educationClass={"Secondary Educaation- Junior High School"}
+          educationClass={"Secondary Education- Junior High School"}
           titleLabel={"Sta. Cruz National High School"}
           details={`During my time at Sta. Cruz National High School (Junior High), I achieved academic excellence and developed a 
             strong foundation across a range of subjects. My education was enriched by diverse learning experiences 
@@ -310,7 +316,36 @@ export const About = () => {
         />
       </div>
       <div className="title-header-style">
-        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Interest"} />
+        <Label
+          labelSize={LabelSize.DIV_TITLE_BOLD}
+          labelText={"Recommendations"}
+        />
+      </div>
+      <div className="div-details-style">
+        <RecommendationDetails
+          name={"Gene Paul Mar Javier"}
+          profession={"Senior Software Engineer"}
+          description={`I had the pleasure of working with Dan Lester Sanz on several projects, where he consistently exceeded expectations. 
+            Dan meets deadlines with high-quality work and demonstrates a strong ability to learn new technologies quickly. 
+            His proactive approach and positive attitude make him a valuable asset to any team. Dan's dedication to excellence 
+            and collaborative spirit would make him a great addition to any organization.`}
+        />
+        <RecommendationDetails
+          name={"Celmar John Ortiz"}
+          profession={"Senior Software Engineer"}
+          description={`Dan Lester Sanz has been an invaluable team member on our projects, consistently delivering exceptional results. 
+            His ability to meet deadlines without compromising quality, combined with his enthusiasm for learning new technologies, 
+            sets him apart. Dan’s proactive mindset and collaborative nature make him a strong asset to any team. He approaches every 
+            task with dedication and a drive for continuous improvement.`}
+        />
+        <RecommendationDetails
+          name={"Mark Le John Casalta"}
+          profession={"Senior Software Engineer"}
+          description={`I have had the pleasure of working with Dan Lester Sanz on multiple projects, and his performance has been 
+            outstanding. Dan excels at meeting deadlines while producing high-quality work and is quick to adapt to new technologies. 
+            His commitment to his craft and eagerness to contribute make him a highly valuable team member. Dan’s positive attitude and 
+            problem-solving skills ensure he will be a great addition to any team.`}
+        />
       </div>
     </div>
   );

@@ -3,7 +3,6 @@
   height: 200px;
   width: 900px;
   display: grid;
-  cursor: pointer;
   border-radius: 5px;
   display: flex;
   position: relative;
@@ -15,6 +14,7 @@
 .title-style-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .image-style {

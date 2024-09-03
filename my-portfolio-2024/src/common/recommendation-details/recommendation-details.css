@@ -1,0 +1,45 @@
+.recommendation-details-container-style {
+  padding: 10px;
+  height: 200px;
+  width: 900px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.recommendation-profile-name-style {
+  display: flex;
+  align-items: center;
+}
+
+.recommendation-name-position-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendation-position-style {
+  margin-top: -8px;
+}
+
+.recommendation-description-style {
+  font-weight: 100;
+  text-align: justify;
+  overflow: auto;
+  max-height: 100px;
+  margin: 15px;
+  margin-top: -10px;
+}
+
+.recommendation-description-style::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation-description-style {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.recommendation-details-container-style:hover {
+  transform: scale(1.01);
+}
