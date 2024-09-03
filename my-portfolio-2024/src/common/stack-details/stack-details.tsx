@@ -1,6 +1,6 @@
 import { getCardBackground } from "../../functions";
+import { darkModeStore } from "../../store";
 import { useEffect, useState } from "react";
-import { useStore } from "../../store";
 
 import typeScript from "../../assets/typescript.png";
 import javaScript from "../../assets/javascript.png";
@@ -36,7 +36,7 @@ interface StackDetailsInterface {
 export const StackDetails = (props: StackDetailsInterface) => {
   const { stackSelected } = props;
 
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
 
   const [cardBackground, setCardBackground] = useState<string>();
 
@@ -70,7 +70,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(110, 155, 240)"
+                    color: "rgb(110, 155, 240)",
                   }}
                   onClick={() => {}}
                 >{`Laundry Shop Application`}</span>
@@ -79,7 +79,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               Environment (IDE). This project honed my skills in Java and
               provided valuable insights into application development. .
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -103,7 +103,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(177, 71, 226)"
+                    color: "rgb(177, 71, 226)",
                   }}
                   onClick={() => {}}
                 >{`Boarding House System `}</span>
@@ -112,7 +112,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               experience in building user interfaces and managing application
               logic.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -138,7 +138,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgba(179, 179, 54, 0.856)"
+                    color: "rgba(179, 179, 54, 0.856)",
                   }}
                   onClick={() => {}}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Desktop)`}</span>
@@ -147,7 +147,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               using both mobile and desktop platforms and show the possible
               locations inside Southern Leyte using QGIS..
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -173,7 +173,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(28, 153, 28)"
+                    color: "rgb(28, 153, 28)",
                   }}
                   onClick={() => {}}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Mobile)`}</span>
@@ -182,7 +182,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               using both mobile and desktop platforms and show the possible
               locations inside Southern Leyte using QGIS.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -211,14 +211,14 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(28, 153, 28)"
+                    color: "rgb(28, 153, 28)",
                   }}
                   onClick={() => {}}
                 >{`SNZ Market Place`}</span>
               }{" "}
               an E-Commerse inpired application.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -244,14 +244,14 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(93, 203, 247)"
+                    color: "rgb(93, 203, 247)",
                   }}
                   onClick={() => {}}
                 >{`Portfolio`}</span>
               }{" "}
               is actually made using React.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -275,7 +275,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               optimized code that ensures cross-browser compatibility and
               enhances the user experience.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -298,7 +298,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               Flexbox, and animations to create dynamic and user-friendly
               interfaces.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -326,14 +326,14 @@ export const StackDetails = (props: StackDetailsInterface) => {
                   style={{
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(247, 247, 89)"
+                    color: "rgb(247, 247, 89)",
                   }}
                   onClick={() => {}}
                 >{`Portfolio Version-1`}</span>
               }{" "}
               is actually made using React.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -357,7 +357,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               integrating TypeScript with modern frameworks and tools to ensure
               high-quality, maintainable code.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -380,7 +380,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               backups, and integrating MySQL with various applications to
               support reliable and scalable data management.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -403,7 +403,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               management and seamless performance in environments where a
               full-scale database server is not required.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -426,7 +426,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               skills include integrating MongoDB with various applications to
               support dynamic and data-driven solutions.
             </div>
-          )
+          ),
         };
         setStackProperties(newStackProperties);
         break;
@@ -435,7 +435,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
           image: java,
           height: 200,
           width: 200,
-          name: "Java"
+          name: "Java",
         };
         setStackProperties(newStackProperties);
     }
@@ -467,7 +467,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                 paddingTop: "5px",
                 borderTopWidth: "0.3px",
                 borderTopStyle: "solid",
-                borderColor: stackProperties.color
+                borderColor: stackProperties.color,
               }}
             >
               <Label labelSize={LabelSize.LARGE_BOLD} labelText={"Experties"} />
@@ -477,7 +477,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
                     style={{
                       height: "10px",
                       width: stackProperties.percentage,
-                      backgroundColor: stackProperties.color
+                      backgroundColor: stackProperties.color,
                     }}
                   />
                 </div>

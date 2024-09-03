@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useStore } from "../../store";
-import "./education-details.css";
 import { getCardBackground } from "../../functions";
+import { useEffect, useState } from "react";
 import { Label, LabelSize } from "../label";
+import { darkModeStore } from "../../store";
+import "./education-details.css";
 
 interface EducationDetailsInterface {
   image: string;
@@ -28,7 +28,7 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
     secondaryTitleLabel,
   } = props;
 
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
 
   const [cardBackground, setCardBackground] = useState<string>();
 

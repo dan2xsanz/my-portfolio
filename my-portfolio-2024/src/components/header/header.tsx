@@ -1,14 +1,14 @@
 import { DarkModeIcon, HeaderButton } from "../../common";
 import "./header-style.css";
-import { useStore } from "../../store";
 import { useNavigate } from "react-router-dom";
 import logoBlack from "../../assets/logo-black.png";
 import logoWhite from "../../assets/logo-white.png";
 import { useState } from "react";
+import { darkModeStore } from "../../store";
 
 export const Header = () => {
   // Dark mode state
-  const { setMode, mode } = useStore();
+  const { setMode, mode } = darkModeStore();
 
   // Use navigate to handle routing
   const navigate = useNavigate();

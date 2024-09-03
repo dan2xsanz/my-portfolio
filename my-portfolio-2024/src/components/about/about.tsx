@@ -1,4 +1,5 @@
 import { EducationDetails, Label, LabelSize, StackDetails } from "../../common";
+import { blinkingStore, selectedStackStore } from "../../store";
 
 import typeScript from "../../assets/typescript.png";
 import javaScript from "../../assets/javascript.png";
@@ -17,16 +18,13 @@ import java from "../../assets/java.png";
 import sql from "../../assets/sql.png";
 import css from "../../assets/css.png";
 
-import { useState } from "react";
-
 import "./about-style.css";
-import { blinkingStore } from "../../store";
 
 export const About = () => {
-  // SELECTED STACK STATE
-  const [stackSelected, setStackSelected] = useState<number>(1);
+  // STACK SELECTED STORE
+  const { stackSelected, setStackSelected } = selectedStackStore();
 
-  // Dark mode state
+  // BLINKING INDICATOR
   const { isBlinking, setBlinking } = blinkingStore();
 
   return (

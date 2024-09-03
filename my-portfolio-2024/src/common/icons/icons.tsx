@@ -1,4 +1,4 @@
-import { useStore } from "../../store";
+import { darkModeStore } from "../../store";
 import "./icons-style.css";
 
 interface IconProps {
@@ -6,7 +6,7 @@ interface IconProps {
 }
 
 export const TwiterIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>
@@ -18,7 +18,7 @@ export const TwiterIcon = (props: IconProps) => {
 };
 
 export const FacebookIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>
@@ -30,7 +30,7 @@ export const FacebookIcon = (props: IconProps) => {
 };
 
 export const LinkedInIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>
@@ -42,7 +42,7 @@ export const LinkedInIcon = (props: IconProps) => {
 };
 
 export const GitHubIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>
@@ -54,7 +54,7 @@ export const GitHubIcon = (props: IconProps) => {
 };
 
 export const InstagramIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>
@@ -66,7 +66,7 @@ export const InstagramIcon = (props: IconProps) => {
 };
 
 export const DarkModeIcon = (props: IconProps) => {
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
   const { onClick } = props;
   return (
     <div className="icons-style" onClick={onClick}>

@@ -1,11 +1,11 @@
 import "./button-style.css";
-import { useStore } from "../../store";
 import { ButtonInterface, ButtonSize } from "./button-interface";
+import { darkModeStore } from "../../store";
 
 export const Button = (props: ButtonInterface) => {
   const { size, label, onClick } = props;
 
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
 
   switch (size) {
     case ButtonSize.large:
@@ -53,7 +53,7 @@ export const Button = (props: ButtonInterface) => {
 export const SecondaryButton = (props: ButtonInterface) => {
   const { size, label, onClick } = props;
 
-  const { mode } = useStore();
+  const { mode } = darkModeStore();
 
   switch (size) {
     case ButtonSize.large:
