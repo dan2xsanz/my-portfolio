@@ -1,46 +1,27 @@
 import { currentTimeGreetings, myRealtimeAge } from "../../functions";
-import {
-  Button,
-  ButtonSize,
-  SecondaryButton,
-  SocialMediaIcons,
-} from "../../common";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import "./introduction-style.css";
 import { CALENDLY_URL } from "../../config";
-// import gsap from "gsap";
+import {
+  SocialMediaIcons,
+  SecondaryButton,
+  ButtonSize,
+  Button,
+} from "../../common";
+import { useEffect } from "react";
 
-// import dlPhoto from "../../assets/snz-v2.jpg";
+import "./introduction-style.css";
 
 export const Introduction = () => {
-  // Use navigate to handle routing
+  // NAVIGATION ROUTING
   const navigate = useNavigate();
 
+  // CURRENT TIME EVENT LISTENER
   useEffect(() => {
     currentTimeGreetings();
   }, []);
 
-  // useEffect(() => {
-  //   gsap.to(".introduction-detail-style", {
-  //     y: -50,
-  //     duration: 8,
-  //     ease: "elastic",
-  //     scrollTrigger: {
-  //       trigger: ".introduction-detail-style",
-  //     },
-  //   });
-  // }, []);
-
   return (
     <div className="introduction-container-style">
-      {/* TODO <img
-        src={dlPhoto}
-        alt="Dan Lester Photo"
-        height={250}
-        width={250}
-        style={{ borderRadius: "100%" }}
-      /> */}
       <div className="introduction-detail-style">
         <div className="greetings-container-style">{`${currentTimeGreetings()}!`}</div>
         <div className="greetings-name-container-style">
@@ -77,16 +58,6 @@ export const Introduction = () => {
         </div>
         <SocialMediaIcons />
       </div>
-      {/* <div>
-        Dan Lester Sanz 24-year-old Software Engineer based in Cebu, Philippines
-        As a dedicated software engineer, I am driven by a passion for crafting
-        high-performance, scalable applications that address real-world
-        challenges. With a keen eye for detail and a commitment to excellence, I
-        thrive on solving intricate problems and developing solutions that leave
-        a lasting impact. I am constantly expanding my expertise and staying
-        ahead of the curve in emerging technologies to refine my skills. Let’s
-        collaborate to build innovative solutions that make a difference!
-      </div> */}
     </div>
     // https://www.codewonders.dev/
   );

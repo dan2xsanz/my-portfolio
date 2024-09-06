@@ -494,5 +494,3 @@ export const StackDetails = (props: StackDetailsInterface) => {
     </div>
   );
 };
-
-// MAGIC UI

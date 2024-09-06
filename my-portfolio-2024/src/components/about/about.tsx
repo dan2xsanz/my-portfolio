@@ -1,4 +1,9 @@
 import { blinkingStore, selectedStackStore } from "../../store";
+import { useEffect, useState } from "react";
+
+import { Footer } from "../footer";
+import "./about-style.css";
+
 import {
   RecommendationDetails,
   EducationDetails,
@@ -7,24 +12,11 @@ import {
   Label,
 } from "../../common";
 
-import typeScript from "../../assets/typescript.png";
-import javaScript from "../../assets/javascript.png";
-import sqlLite from "../../assets/sqlite.png";
-import android from "../../assets/android.png";
-import cSharp from "../../assets/csharp.png";
-import python from "../../assets/python.png";
-import spring from "../../assets/spring.png";
-import scnhs from "../../assets/scnhs.png";
-import monggo from "../../assets/mongo.png";
-import react from "../../assets/react.png";
-import slsu from "../../assets/SLSU.png";
-import sces from "../../assets/sces.png";
-import html from "../../assets/html.png";
-import java from "../../assets/java.png";
-import sql from "../../assets/sql.png";
-import css from "../../assets/css.png";
-
-import "./about-style.css";
+import {
+  EducationInfoDetails,
+  Recommendations,
+  TechStacks,
+} from "./about-constants";
 
 export const About = () => {
   // STACK SELECTED STORE
@@ -33,11 +25,25 @@ export const About = () => {
   // BLINKING INDICATOR
   const { isBlinking, setBlinking } = blinkingStore();
 
+  // RECOMMENDATIONS ACTIVE KEY
+  const [activeIndex, setActiveIndex] = useState<number | undefined>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(
+        (prevIndex: number | undefined) =>
+          ((prevIndex ?? 0) + 1) % Recommendations.length
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [Recommendations.length]);
+
   return (
     <div className="about-container-style">
       <div className="about-text-container">
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"About Me."} />
       </div>
+      {/* WHO I AM AREA */}
       <div className="title-header-style">
         <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Who I am"} />
       </div>
@@ -71,6 +77,7 @@ export const About = () => {
           />
         </div>
       </div>
+      {/* TECH STACK AREA */}
       <div className="title-header-style">
         <Label
           labelSize={LabelSize.DIV_TITLE_BOLD}
@@ -82,271 +89,75 @@ export const About = () => {
           className="tech-stacks-container-style"
           onScroll={() => setBlinking(false)}
         >
-          <img
-            src={java}
-            width={75}
-            height={75}
-            alt="Java Logo"
-            onClick={() => setStackSelected(1)}
-            className={
-              stackSelected === 1
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={90}
-            height={80}
-            src={cSharp}
-            alt="C# Logo"
-            onClick={() => setStackSelected(2)}
-            className={
-              stackSelected === 2
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={70}
-            height={70}
-            src={python}
-            alt="Python Logo"
-            onClick={() => setStackSelected(3)}
-            className={
-              stackSelected === 3
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={80}
-            height={80}
-            src={android}
-            alt="Android Logo"
-            onClick={() => setStackSelected(4)}
-            className={
-              stackSelected === 4
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={60}
-            height={60}
-            src={spring}
-            alt="Spring Logo"
-            onClick={() => setStackSelected(5)}
-            className={
-              stackSelected === 5
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={75}
-            src={react}
-            height={75}
-            alt="React Logo"
-            onClick={() => setStackSelected(6)}
-            className={
-              stackSelected === 6
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            src={html}
-            width={85}
-            height={85}
-            alt="HTML Logo"
-            onClick={() => setStackSelected(7)}
-            className={
-              stackSelected === 7
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            src={css}
-            width={70}
-            height={70}
-            alt="CSS Logo"
-            onClick={() => setStackSelected(8)}
-            className={
-              stackSelected === 8
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={63}
-            height={63}
-            src={javaScript}
-            alt="Javascript Logo"
-            onClick={() => setStackSelected(9)}
-            className={
-              stackSelected === 9
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={65}
-            height={65}
-            src={typeScript}
-            alt="Typescript Logo"
-            onClick={() => setStackSelected(10)}
-            className={
-              stackSelected === 10
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            src={sql}
-            height={60}
-            width={100}
-            alt="MySql Logo"
-            onClick={() => setStackSelected(11)}
-            className={
-              stackSelected === 11
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={75}
-            height={75}
-            src={sqlLite}
-            alt="SqlLite Logo"
-            onClick={() => setStackSelected(12)}
-            className={
-              stackSelected === 12
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
-          <img
-            width={70}
-            height={70}
-            src={monggo}
-            alt="Monggo Logo"
-            onClick={() => setStackSelected(13)}
-            className={
-              stackSelected === 13
-                ? "stack-img-style.selected"
-                : "stack-img-style"
-            }
-          />
+          {TechStacks.map(({ src, width, height, alt, stackId }) => (
+            <img
+              key={stackId}
+              src={src}
+              width={width}
+              height={height}
+              alt={alt}
+              onClick={() => setStackSelected(stackId)}
+              className={
+                stackSelected === stackId
+                  ? "stack-img-style.selected"
+                  : "stack-img-style"
+              }
+            />
+          ))}
         </div>
         {isBlinking && <div className="badge" />}
       </div>
       <div className="div-details-style">
         <StackDetails stackSelected={stackSelected} />
       </div>
+      {/* EDUCATION  AREA */}
       <div className="title-header-style">
         <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Educations"} />
       </div>
       <div className="div-details-style">
-        <EducationDetails
-          key={1}
-          image={slsu}
-          imgWdth={150}
-          imgHght={150}
-          titleLabel={
-            "Bachelor of Science in Information Technology (BSIT- Programming)"
-          }
-          onClick={() => {}}
-          educationClass={"Tertiary Education - College"}
-          secondaryTitleLabel={"Southern Leyte State University (Main Campus)"}
-          details={`Southern Leyte State University allowed me to build a strong foundation in software development principles, problem-solving, and 
-            algorithm design. The comprehensive curriculum and hands-on experience equipped me with essential skills needed for a 
-            successful career in technology and software engineering. Additionally, the university's emphasis on practical and 
-            theoretical knowledge fostered a deep understanding of industry practices and prepared me for the challenges of a 
-            rapidly evolving technological landscape`}
-        />
-        <EducationDetails
-          key={2}
-          image={scnhs}
-          imgHght={140}
-          imgWdth={155}
-          onClick={() => {}}
-          educationClass={
-            "Secondary Education- Senior High School (K-12 Pioneer)"
-          }
-          titleLabel={"Information Communication Technology (ICT - CSS & CHS)"}
-          secondaryTitleLabel={"Sta. Cruz National High School"}
-          details={`At Sta. Cruz National High School(Senior High), I specialized in Information and Communication Technology, 
-            focusing on both Computer System Servicing (CSS) and Computer Hardware Servicing (CHS). During my time here, 
-            I gained practical skills in computer assembly, maintenance, and troubleshooting, as well as network configuration 
-            and software installation. This foundational training provided me with a comprehensive understanding of computer 
-            systems and their components, enabling me to diagnose and repair hardware and software issues effectively.`}
-        />
-        <EducationDetails
-          key={3}
-          image={scnhs}
-          imgHght={140}
-          imgWdth={155}
-          onClick={() => {}}
-          educationClass={"Secondary Education- Junior High School"}
-          titleLabel={"Sta. Cruz National High School"}
-          details={`During my time at Sta. Cruz National High School (Junior High), I achieved academic excellence and developed a 
-            strong foundation across a range of subjects. My education was enriched by diverse learning experiences 
-            from different subjects fostering critical thinking, creativity, 
-            and effective communication skills. I also learned the importance of good ethics, discipline, 
-            and perseverance, which were instilled through both classroom instruction and extracurricular activities. 
-            This holistic education helped shape my character and prepared me for the challenges of higher education and future endeavors.`}
-        />
-        <EducationDetails
-          key={4}
-          image={sces}
-          imgHght={140}
-          imgWdth={140}
-          isCustomBg={true}
-          onClick={() => {}}
-          educationClass={"Primary Education- Elamentary School"}
-          titleLabel={"Sta. Cruz Elemantry School"}
-          details={`At Sta. Cruz Elementary School, 
-            I developed a strong academic foundation and cultivated a love for learning across various subjects. 
-            My education at this level emphasized essential skills in reading, writing, mathematics, and science, 
-            fostering curiosity, creativity, and a positive attitude toward learning. I also learned important 
-            values such as respect, responsibility, and teamwork through both classroom activities and participation 
-            in school events. These early experiences were crucial in shaping my personal growth, building my confidence, 
-            and preparing me for the academic and social challenges of higher education.`}
-        />
+        {EducationInfoDetails.map((education) => (
+          <EducationDetails
+            key={education.key}
+            image={education.image}
+            imgWdth={education.imgWdth}
+            imgHght={education.imgHght}
+            onClick={education.onClick}
+            details={education.details}
+            isCustomBg={education.isCustomBg}
+            titleLabel={education.titleLabel}
+            educationClass={education.educationClass}
+            secondaryTitleLabel={education.secondaryTitleLabel}
+          />
+        ))}
       </div>
+      {/* RECOMMENDATIONS AREA */}
       <div className="title-header-style">
         <Label
           labelSize={LabelSize.DIV_TITLE_BOLD}
-          labelText={"Recommendations"}
+          labelText={"Testimonials"}
         />
       </div>
       <div className="div-details-style">
-        <RecommendationDetails
-          name={"Gene Paul Mar Javier"}
-          profession={"Senior Software Engineer"}
-          description={`I had the pleasure of working with Dan Lester Sanz on several projects, where he consistently exceeded expectations. 
-            Dan meets deadlines with high-quality work and demonstrates a strong ability to learn new technologies quickly. 
-            His proactive approach and positive attitude make him a valuable asset to any team. Dan's dedication to excellence 
-            and collaborative spirit would make him a great addition to any organization.`}
-        />
-        <RecommendationDetails
-          name={"Celmar John Ortiz"}
-          profession={"Senior Software Engineer"}
-          description={`Dan Lester Sanz has been an invaluable team member on our projects, consistently delivering exceptional results. 
-            His ability to meet deadlines without compromising quality, combined with his enthusiasm for learning new technologies, 
-            sets him apart. Dan’s proactive mindset and collaborative nature make him a strong asset to any team. He approaches every 
-            task with dedication and a drive for continuous improvement.`}
-        />
-        <RecommendationDetails
-          name={"Mark Le John Casalta"}
-          profession={"Senior Software Engineer"}
-          description={`I have had the pleasure of working with Dan Lester Sanz on multiple projects, and his performance has been 
-            outstanding. Dan excels at meeting deadlines while producing high-quality work and is quick to adapt to new technologies. 
-            His commitment to his craft and eagerness to contribute make him a highly valuable team member. Dan’s positive attitude and 
-            problem-solving skills ensure he will be a great addition to any team.`}
-        />
+        {Recommendations.map((data, index) => {
+          if (index === activeIndex) {
+            return (
+              <RecommendationDetails
+                key={index}
+                name={data.name}
+                currentIndex={activeIndex}
+                profession={data.profession}
+                description={data.description}
+                setCurrentIndex={setActiveIndex}
+                numberOfRecommendations={Recommendations.length}
+              />
+            );
+          }
+        })}
       </div>
+      <Footer
+        navigationMessage={"Let's Continue to Projects"}
+        onClickNavigation={() => {}}
+      />
     </div>
   );
 };
