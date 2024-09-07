@@ -6,14 +6,24 @@ import {
   SecondaryButton,
   ButtonSize,
   Button,
+  HeaderEnums,
 } from "../../common";
 import { useEffect } from "react";
 
 import "./introduction-style.css";
+import { selectedScreenStore } from "../../store";
 
 export const Introduction = () => {
   // NAVIGATION ROUTING
   const navigate = useNavigate();
+
+  // SELECTED SCREEN STORE
+  const { setSelectedScreen } = selectedScreenStore();
+
+  const onClicksSeeMoreAboutMe = () => {
+    setSelectedScreen(HeaderEnums.ABOUT_ME);
+    navigate("/about");
+  };
 
   // CURRENT TIME EVENT LISTENER
   useEffect(() => {
@@ -38,7 +48,7 @@ export const Introduction = () => {
         <div className="see-more-container-style">
           <div
             className="see-more-about-me-style"
-            onClick={() => navigate("/about")}
+            onClick={onClicksSeeMoreAboutMe}
           >
             See more about me
             <div className="beating-arrow-style">{`${"➜"}`}</div>

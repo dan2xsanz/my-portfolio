@@ -1,4 +1,8 @@
-import { blinkingStore, selectedStackStore } from "../../store";
+import {
+  blinkingStore,
+  selectedScreenStore,
+  selectedStackStore,
+} from "../../store";
 import { useEffect, useState } from "react";
 
 import { Footer } from "../footer";
@@ -10,6 +14,7 @@ import {
   StackDetails,
   LabelSize,
   Label,
+  HeaderEnums,
 } from "../../common";
 
 import {
@@ -17,16 +22,23 @@ import {
   Recommendations,
   TechStacks,
 } from "./about-constants";
+import { useNavigate } from "react-router-dom";
 
 export const About = () => {
+  // RECOMMENDATIONS ACTIVE KEY
+  const [activeIndex, setActiveIndex] = useState<number | undefined>(0);
+
   // STACK SELECTED STORE
   const { stackSelected, setStackSelected } = selectedStackStore();
+
+  // SELECTED SCREEN STORE
+  const { setSelectedScreen } = selectedScreenStore();
 
   // BLINKING INDICATOR
   const { isBlinking, setBlinking } = blinkingStore();
 
-  // RECOMMENDATIONS ACTIVE KEY
-  const [activeIndex, setActiveIndex] = useState<number | undefined>(0);
+  // ROUTING NAVIGATION
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -156,7 +168,10 @@ export const About = () => {
       </div>
       <Footer
         navigationMessage={"Let's Continue to Projects"}
-        onClickNavigation={() => {}}
+        onClickNavigation={() => {
+          setSelectedScreen(HeaderEnums.PROJECTS);
+          navigate("/projects");
+        }}
       />
     </div>
   );

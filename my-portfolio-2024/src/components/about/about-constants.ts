@@ -137,4 +137,12 @@ export const Recommendations = [
               His commitment to his craft and eagerness to contribute make him a highly valuable team member. Dan’s positive attitude and 
               problem-solving skills ensure he will be a great addition to any team.`,
   },
+  {
+    name: "John Dennis  Burgos",
+    profession: "Senior Software Engineer",
+    description: `It has been a privilege to work with Dan Lester Sanz on various projects. Dan consistently brings a strong technical skillset 
+      and a proactive attitude to the table. His ability to tackle complex challenges with innovative solutions is impressive, 
+      and he always strives for excellence in every task he undertakes. Dan's collaborative nature and passion for coding make him an 
+      invaluable asset to any team he is part of.`,
+  },
 ];

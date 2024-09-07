@@ -45,3 +45,23 @@ export const selectedStackStore = create<SelectedStackStore>()(
     }
   )
 );
+
+/*--------------------------------SELECTED SEECTED SCREEN------------------------------------- */
+type SelectedScreenStore = {
+  selectedScreenScreen: number;
+  setSelectedScreen: (data: number) => void;
+};
+
+export const selectedScreenStore = create<SelectedScreenStore>()(
+  persist(
+    (set) => ({
+      selectedScreenScreen: 1, // INTRODUCTION BY DEFAULT
+      setSelectedScreen: (screen: number) =>
+        set({ selectedScreenScreen: screen }),
+    }),
+    {
+      name: "selected-screen-storage", // unique name for storage
+      getStorage: () => localStorage, // (optional) specify the storage type, localStorage is default
+    }
+  )
+);

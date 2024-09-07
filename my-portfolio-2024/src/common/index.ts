@@ -7,3 +7,4 @@ export * from "./header-button/header-button";
 export * from "./label/label";
 export * from "./icons/icons";
 export * from "./button";
+export * from "./constant";
