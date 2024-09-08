@@ -1,5 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { About, Header, Introduction, SvgBackground } from "./components";
+import {
+  SvgBackground,
+  Introduction,
+  Projects,
+  Header,
+  About,
+} from "./components";
 import { createRoot } from "react-dom/client";
 import { MainBackground } from "./common";
 import { StrictMode } from "react";
@@ -16,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path="" element={<Introduction />} />
           <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
           {/*TODO: Catch all invalid paths and show the Unauthorized screen */}
           {/* <Route path="*" element={<Unauthorized />} /> */}
         </Routes>

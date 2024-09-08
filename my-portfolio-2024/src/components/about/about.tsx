@@ -1,12 +1,10 @@
+import { useEffect, useState } from "react";
+import { Footer } from "../footer";
 import {
-  blinkingStore,
   selectedScreenStore,
   selectedStackStore,
+  blinkingStore,
 } from "../../store";
-import { useEffect, useState } from "react";
-
-import { Footer } from "../footer";
-import "./about-style.css";
 
 import {
   RecommendationDetails,
@@ -23,6 +21,8 @@ import {
   TechStacks,
 } from "./about-constants";
 import { useNavigate } from "react-router-dom";
+
+import "./about-style.css";
 
 export const About = () => {
   // RECOMMENDATIONS ACTIVE KEY

@@ -60,7 +60,7 @@ export const EducationInfoDetails = [
         algorithm design. The comprehensive curriculum and hands-on experience equipped me with essential skills needed for a 
         successful career in technology and software engineering. Additionally, the university's emphasis on practical and 
         theoretical knowledge fostered a deep understanding of industry practices and prepared me for the challenges of a 
-        rapidly evolving technological landscape`,
+        rapidly evolving technological landscape.`,
   },
   {
     key: 2,

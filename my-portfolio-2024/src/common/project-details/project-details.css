@@ -1,0 +1,28 @@
+.project-details-container-style {
+  padding: 10px;
+  height: 350px;
+  width: 900px;
+  display: grid;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-image-style-container {
+  gap: 5px;
+  justify-content: center;
+  display: flex;
+  margin-right: 2px;
+}
+
+.project-image-style {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-image-style:hover {
+  transform: scale(1.09);
+}

@@ -2,6 +2,7 @@ export * from "./recommendation-details/recommendation-details";
 export * from "./social-media-icons/social-media-icons";
 export * from "./education-details/education-details";
 export * from "./main-background/main-background";
+export * from "./project-details/project-details";
 export * from "./stack-details/stack-details";
 export * from "./header-button/header-button";
 export * from "./label/label";
