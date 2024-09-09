@@ -11,7 +11,7 @@ import "./project-details.css";
 interface ProjectDetailsInterface {
   images: string[];
   projectType: string;
-  isNotAllowed?: boolean;
+  isPersonal?: boolean;
   projectTitle: string;
   projectDescription: string;
 }
@@ -23,8 +23,8 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
   // PROJECT DETAILS PROPS
   const {
     images,
+    isPersonal,
     projectType,
-    isNotAllowed,
     projectTitle,
     projectDescription,
   } = props;
@@ -56,8 +56,8 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
       <div className="project-image-container">
         <Image
           width={280}
-          preview={!isNotAllowed}
-          style={{ cursor: isNotAllowed ? "not-allowed" : "" }}
+          preview={isPersonal}
+          style={{ cursor: isPersonal ?  "":"not-allowed" }}
           src={currentImage}
         />
         <div className="slider-buttons-container-style">
@@ -81,7 +81,14 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
         <div>
           <Label labelSize={LabelSize.LARGE_BOLD} labelText={projectTitle} />
         </div>
-        <Label labelSize={LabelSize.MEDIUM} labelText={projectType} />
+        <div style={{ display: "flex", gap: "5px" }}>
+          {isPersonal ? (
+            <div style={{ color: "green", fontWeight: "bold" }}>Personal</div>
+          ) : (
+            <div style={{ color: "red", fontWeight: "bold" }}>Protected</div>
+          )}
+          <Label labelSize={LabelSize.MEDIUM} labelText={`| ${projectType}`} />
+        </div>
         <div className="project-description-scrollable-style">
           <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
         </div>

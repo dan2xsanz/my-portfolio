@@ -38,3 +38,8 @@
 .project-description-scrollable-style::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Edge */
 }
+
+
+.project-details-container-style:hover {
+  transform: scale(1.01);
+}

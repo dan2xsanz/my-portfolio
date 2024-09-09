@@ -47,8 +47,8 @@ export const Projects = () => {
       </div>
       <div className="div-details-style">
         <ProjectDetails
+        isPersonal={false}
           images={[image17, image18, image19, image20]}
-          isNotAllowed
           projectTitle={"Sirius WebPOS - Headquarter"}
           projectType={"Web Application"}
           projectDescription={`Sirius WebPOS is a comprehensive full-stack Point of Sale (POS) system complete with headquarters management capabilities. This robust solution caters to businesses of all sizes, offering a seamless and efficient way to manage transactions, inventory, and customer data. With its headquarters functionality, users can oversee multiple locations or branches, streamlining operations and enhancing productivity.
@@ -58,6 +58,7 @@ export const Projects = () => {
       {/* SNZ MARKET PLACE WEB APPLICATION */}
       <div className="div-details-style">
         <ProjectDetails
+          isPersonal
           images={[image9, image10, image11, image12]}
           projectType={"Web Application"}
           projectTitle={"SNZ Market Place"}
@@ -68,6 +69,7 @@ export const Projects = () => {
       {/* HERBS MOBILE APPLICATION */}
       <div className="div-details-style">
         <ProjectDetails
+          isPersonal
           images={[image1, image2, image3, image4]}
           projectType="Mobile Application"
           projectTitle="Southern Leyte Endemic Herbal Plants Identification"
@@ -78,6 +80,7 @@ export const Projects = () => {
       {/* HERBS DESKTOP APPLICATION */}
       <div className="div-details-style">
         <ProjectDetails
+          isPersonal
           images={[image5, image6, image7, image8]}
           projectType={"Desktop Application"}
           projectTitle={"Southern Leyte Endemic Herbal Plants Identification"}
@@ -88,6 +91,7 @@ export const Projects = () => {
       {/* PORTFOLIO APPLICATION */}
       <div className="div-details-style">
         <ProjectDetails
+          isPersonal
           images={[image13, image14, image15, image16]}
           projectTitle={"My Portfolio Version 1.1"}
           projectType={"Web Site"}
