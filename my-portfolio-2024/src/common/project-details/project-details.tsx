@@ -1,83 +1,89 @@
 import { getCardBackground } from "../../functions";
 
-import { Image } from "antd";
 import { useEffect, useState } from "react";
 import { darkModeStore } from "../../store";
+import { Label, LabelSize } from "../label";
 
-import image1 from "../../assets/herbs-mobile/1.png";
-import image2 from "../../assets/herbs-mobile/2.png";
-import image3 from "../../assets/herbs-mobile/3.png";
-import image4 from "../../assets/herbs-mobile/4.png";
+import { Image } from "antd";
 
 import "./project-details.css";
 
-export const ProjectDetails = () => {
+interface ProjectDetailsInterface {
+  images: string[];
+  projectType: string;
+  isNotAllowed?: boolean;
+  projectTitle: string;
+  projectDescription: string;
+}
+
+export const ProjectDetails = (props: ProjectDetailsInterface) => {
+  // DARK MODE STORE
   const { mode } = darkModeStore();
+
+  // PROJECT DETAILS PROPS
+  const {
+    images,
+    projectType,
+    isNotAllowed,
+    projectTitle,
+    projectDescription,
+  } = props;
+
+  // RECOMMENDATIONS ACTIVE KEY
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  // CURRENT IMAGE BACKGROUND
+  const [currentImage, setCurrentImage] = useState<string>(images[9]);
 
   // CARD BACK GROUND
   const [cardBackground, setCardBackground] = useState<string>();
 
-  // CURRENT IMAGE BACKGROUND
-  const [currentImage, setCurrentImage] = useState<string | undefined>(image1);
+  // GET CURRENT IMAGE DISPLAY
+  useEffect(() => {
+    setCurrentImage(images[activeIndex]);
+  }, [activeIndex]);
 
   // GET CARD BACLGROUND STYLE
   useEffect(() => {
     getCardBackground(mode, setCardBackground);
   }, [mode]);
 
-  const onClickHoverImage = (image: string | undefined) => {
-    setCurrentImage(image);
-  };
-
   return (
     <div
       className="project-details-container-style"
       style={{ backgroundColor: cardBackground }}
-      onClick={() => {}}
     >
-      <div style={{ display: "grid", gap: "5px" }}>
-        <Image width={300} src={currentImage} />
-        <div className="project-image-style-container ">
-          <Image
-            width={50}
-            src={image1}
-            preview={false}
-            className="project-image-style"
-            onClick={() => onClickHoverImage(image1)}
-            onMouseEnter={() => onClickHoverImage(image1)}
-          />
-          <Image
-            preview={false}
-            width={50}
-            src={image2}
-            className="project-image-style"
-            onClick={() => onClickHoverImage(image2)}
-            onMouseEnter={() => onClickHoverImage(image2)}
-          />
-          <Image
-            width={50}
-            src={image3}
-            preview={false}
-            className="project-image-style"
-            onClick={() => onClickHoverImage(image3)}
-            onMouseEnter={() => onClickHoverImage(image3)}
-          />
-          <Image
-            width={50}
-            src={image4}
-            preview={false}
-            className="project-image-style"
-            onClick={() => onClickHoverImage(image4)}
-            onMouseEnter={() => onClickHoverImage(image4)}
-          />
-          <Image
-            width={50}
-            src={image4}
-            preview={false}
-            className="project-image-style"
-            onClick={() => onClickHoverImage(image4)}
-            onMouseEnter={() => onClickHoverImage(image4)}
-          />
+      <div className="project-image-container">
+        <Image
+          width={280}
+          preview={!isNotAllowed}
+          style={{ cursor: isNotAllowed ? "not-allowed" : "" }}
+          src={currentImage}
+        />
+        <div className="slider-buttons-container-style">
+          {Array.from({ length: images.length ?? 0 }, (_, i) => (
+            <div
+              key={i}
+              className={
+                activeIndex === i
+                  ? "slider-button-style current"
+                  : "slider-button-style"
+              }
+              onClick={() => {
+                setCurrentImage(images[i]);
+                setActiveIndex(i);
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        <div>
+          <Label labelSize={LabelSize.LARGE_BOLD} labelText={projectTitle} />
+        </div>
+        <Label labelSize={LabelSize.MEDIUM} labelText={projectType} />
+        <div className="project-description-scrollable-style">
+          <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
         </div>
       </div>
     </div>

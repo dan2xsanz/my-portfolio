@@ -46,7 +46,7 @@ export const About = () => {
         (prevIndex: number | undefined) =>
           ((prevIndex ?? 0) + 1) % Recommendations.length
       );
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [Recommendations.length]);
 

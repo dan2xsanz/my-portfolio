@@ -1,14 +1,23 @@
 .project-details-container-style {
   padding: 10px;
-  height: 350px;
+  height: 300px;
   width: 900px;
   display: grid;
   border-radius: 5px;
   display: flex;
   position: relative;
-  align-items: center;
   overflow: hidden;
+  gap: 5px;
   transition: transform 0.3s ease;
+}
+
+.div-details-style {
+  margin-top: 5px;
+}
+
+.project-image-container {
+  display: grid;
+  gap: 10px;
 }
 
 .project-image-style-container {
@@ -18,11 +27,14 @@
   margin-right: 2px;
 }
 
-.project-image-style {
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.project-description-scrollable-style {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: scroll;
+  text-align: justify;
+  scrollbar-width: none; /* For Firefox */
 }
 
-.project-image-style:hover {
-  transform: scale(1.09);
+.project-description-scrollable-style::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
 }

@@ -7,6 +7,16 @@
   overflow: hidden;
 }
 
+.recommendation-details-content {
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.recommendation-details-content.show {
+  opacity: 1;
+  transform: translate();
+}
+
 .recommendation-profile-name-style {
   display: flex;
   align-items: center;
@@ -62,5 +72,5 @@
 }
 
 .slider-button-style:hover {
-  transform: scale(1.5); 
+  transform: scale(1.5);
 }
