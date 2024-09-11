@@ -9,3 +9,16 @@
 .icons-style:hover {
   transform: scale(1.15); /* Scale the icon to 115% of its original size */
 }
+
+.up-custom-icons-style {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.up-custom-icons-style:hover {
+  transform: scale(1.15); /* Scale the icon to 115% of its original size */
+}
+

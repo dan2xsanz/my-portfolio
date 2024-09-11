@@ -47,7 +47,7 @@ export const Projects = () => {
       </div>
       <div className="div-details-style">
         <ProjectDetails
-        isPersonal={false}
+          isPersonal={false}
           images={[image17, image18, image19, image20]}
           projectTitle={"Sirius WebPOS - Headquarter"}
           projectType={"Web Application"}
@@ -66,28 +66,6 @@ export const Projects = () => {
           This feature not only encourages real-time competition but also enhances user engagement by offering an auction-like experience. The marketplace is designed to mimic the premium feel of Nike, ensuring an intuitive and modern user interface, while the bidding system makes it more dynamic and exciting for users to participate.`}
         />
       </div>
-      {/* HERBS MOBILE APPLICATION */}
-      <div className="div-details-style">
-        <ProjectDetails
-          isPersonal
-          images={[image1, image2, image3, image4]}
-          projectType="Mobile Application"
-          projectTitle="Southern Leyte Endemic Herbal Plants Identification"
-          projectDescription={`Southern Leyte Endemic Herbal Plants Identification is a mobile application designed to classify endemic herbal plants native to Southern Leyte, Philippines. By leveraging Convolutional Neural Networks (CNNs), the app can accurately identify plant species from images uploaded by users. After classification, it provides detailed information about each plant's medicinal properties, traditional uses, and health benefits, offering valuable insights into the role of these plants in local herbal medicine.
-            A unique feature of the app is its geolocation functionality, which helps users locate areas within Southern Leyte where specific herbal plants are most likely to be found. By integrating GPS technology with regional plant data, the app offers an interactive map, making it easier for users to discover and gather these plants responsibly. This feature also promotes awareness of local biodiversity and supports conservation efforts.`}
-        />
-      </div>
-      {/* HERBS DESKTOP APPLICATION */}
-      <div className="div-details-style">
-        <ProjectDetails
-          isPersonal
-          images={[image5, image6, image7, image8]}
-          projectType={"Desktop Application"}
-          projectTitle={"Southern Leyte Endemic Herbal Plants Identification"}
-          projectDescription={`Southern Leyte Endemic Herbal Plants Identification is developed also as a desktop application designed to classify endemic herbal plants native to Southern Leyte, Philippines. Utilizing Convolutional Neural Networks (CNNs), the application enables users to identify plant species from images uploaded through the desktop interface. After classification, the application provides comprehensive details about each plant, including medicinal properties, traditional uses, and health benefits, offering users valuable insights into the significance of these plants in local herbal medicine.
-          One of the key features of the desktop application is its geolocation capability, which helps users discover areas within Southern Leyte where specific herbal plants are commonly found. By integrating GPS technology with a detailed regional plant database, the application displays an interactive map that allows users to explore and locate the habitats of these plants, supporting responsible collection and conservation. This feature also fosters greater awareness of local biodiversity, while promoting sustainable practices for preserving Southern Leyte’s rich plant heritage.`}
-        />
-      </div>
       {/* PORTFOLIO APPLICATION */}
       <div className="div-details-style">
         <ProjectDetails
@@ -98,6 +76,29 @@ export const Projects = () => {
           projectDescription={`My Portfolio Version 1 was a simple yet personal project, showcasing my skills, experience, and goals at the time. It includes sections like a about me, educational background, and a few sample projects you worked on during my early stages as a developer. While basic, it demonstrated my early interest in web development and was built using foundational technologies like HTML, CSS, and JavaScript. The project allowed me to explore essential concepts like responsive design, navigation menus, and the importance of clear content structure.`}
         />
       </div>
+      {/* HERBS DESKTOP APPLICATION */}
+      <div className="div-details-style">
+        <ProjectDetails
+          isPersonal
+          images={[image5, image6, image7, image8]}
+          projectType={"Desktop Application"}
+          projectTitle={"Southern Leyte Endemic Herbal Plants Identification"}
+          projectDescription={`Southern Leyte Endemic Herbal Plants Identification is developed also as a desktop application designed to classify endemic herbal plants native to Southern Leyte, Philippines. Utilizing Convolutional Neural Networks (CNNs), the application enables users to identify plant species from images uploaded through the desktop interface. After classification, the application provides comprehensive details about each plant, including medicinal properties, traditional uses, and health benefits, offering users valuable insights into the significance of these plants in local herbal medicine.
+            One of the key features of the desktop application is its geolocation capability, which helps users discover areas within Southern Leyte where specific herbal plants are commonly found. By integrating GPS technology with a detailed regional plant database, the application displays an interactive map that allows users to explore and locate the habitats of these plants, supporting responsible collection and conservation. This feature also fosters greater awareness of local biodiversity, while promoting sustainable practices for preserving Southern Leyte’s rich plant heritage.`}
+        />
+      </div>
+      {/* HERBS MOBILE APPLICATION */}
+      <div className="div-details-style">
+        <ProjectDetails
+          isPersonal
+          images={[image1, image2, image3, image4]}
+          projectType="Mobile Application"
+          projectTitle="Southern Leyte Endemic Herbal Plants Identification"
+          projectDescription={`Southern Leyte Endemic Herbal Plants Identification is a mobile application designed to classify endemic herbal plants native to Southern Leyte, Philippines. By leveraging Convolutional Neural Networks (CNNs), the app can accurately identify plant species from images uploaded by users. After classification, it provides detailed information about each plant's medicinal properties, traditional uses, and health benefits, offering valuable insights into the role of these plants in local herbal medicine.
+                  A unique feature of the app is its geolocation functionality, which helps users locate areas within Southern Leyte where specific herbal plants are most likely to be found. By integrating GPS technology with regional plant data, the app offers an interactive map, making it easier for users to discover and gather these plants responsibly. This feature also promotes awareness of local biodiversity and supports conservation efforts.`}
+        />
+      </div>
+      {/* FOOTER */}
       <Footer
         navigationMessage={"Let's Continue to my Experience"}
         onClickNavigation={() => {

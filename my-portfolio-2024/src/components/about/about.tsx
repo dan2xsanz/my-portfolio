@@ -40,6 +40,7 @@ export const About = () => {
   // ROUTING NAVIGATION
   const navigate = useNavigate();
 
+  // SET RECOMMENDATIONS ACTIVE INDEX
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex(
@@ -49,6 +50,11 @@ export const About = () => {
     }, 10000);
     return () => clearInterval(interval);
   }, [Recommendations.length]);
+
+  // AUTO SCROLL ON TOP
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="about-container-style">

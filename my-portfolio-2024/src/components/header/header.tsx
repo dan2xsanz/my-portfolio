@@ -1,20 +1,23 @@
-import { DarkModeIcon, HeaderButton, HeaderEnums } from "../../common";
-import "./header-style.css";
-import { useNavigate } from "react-router-dom";
+import { darkModeStore, selectedScreenStore } from "../../store";
 import logoBlack from "../../assets/logo-black.png";
 import logoWhite from "../../assets/logo-white.png";
-import { useState } from "react";
-import { darkModeStore, selectedScreenStore } from "../../store";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import "./header-style.css";
+import {
+  DarkModeIcon,
+  HeaderButton,
+  HeaderEnums,
+  UpButtonIcon,
+} from "../../common";
 
 export const Header = () => {
-  // DARK MODE STORE
   const { setMode, mode } = darkModeStore();
-
-  // SELECTED SCREEN STORE
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
-
-  // ROUTING NAVIGATION
   const navigate = useNavigate();
+
+  // STATE TO MANAGE SCROLL UP BUTTON VISIBILITY
+  const [showScrollUp, setShowScrollUp] = useState(true);
 
   // DL LOGO
   const [logo, setLogo] = useState<string>(logoWhite);
@@ -60,11 +63,26 @@ export const Header = () => {
     }
   };
 
+  // EVENT LISTENER FOR NAV BAR STICKY
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setShowScrollUp(true);
+      } else {
+        setShowScrollUp(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="header-container">
+    <div className={`header-container`}>
       <div
         className="logo-container"
-        key={1}
         onClick={() => onClickHeaderButton(HeaderEnums.INTRODUCTION)}
       >
         <img src={logo} height={70} width={70} />
@@ -72,34 +90,39 @@ export const Header = () => {
       <div className="menu-options-container">
         {selectedScreenScreen !== HeaderEnums.ABOUT_ME && (
           <HeaderButton
-            key={2}
-            label={"About"}
+            label="About"
             onClick={() => onClickHeaderButton(HeaderEnums.ABOUT_ME)}
           />
         )}
         {selectedScreenScreen !== HeaderEnums.PROJECTS && (
           <HeaderButton
-            key={3}
-            label={"Projects"}
+            label="Projects"
             onClick={() => onClickHeaderButton(HeaderEnums.PROJECTS)}
           />
         )}
         {selectedScreenScreen !== HeaderEnums.EXPERIENCE && (
           <HeaderButton
-            key={4}
-            label={"Experience"}
+            label="Experience"
             onClick={() => onClickHeaderButton(HeaderEnums.EXPERIENCE)}
           />
         )}
         {selectedScreenScreen !== HeaderEnums.CONTACTS && (
           <HeaderButton
-            key={5}
-            label={"Contact"}
+            label="Contact"
             onClick={() => onClickHeaderButton(HeaderEnums.CONTACTS)}
           />
         )}
         <DarkModeIcon onClick={onChangeTheme} />
       </div>
+
+      {/* SCROLL UP BUTTON */}
+      {showScrollUp && (
+        <div className="scroll-up-btn">
+          <UpButtonIcon
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          />
+        </div>
+      )}
     </div>
   );
 };

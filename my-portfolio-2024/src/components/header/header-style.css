@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-around;
   position: relative;
-  z-index: 1000;
+  transition: transform 0.3s ease, background-color 1s ease;
 }
 
 .logo-container {
@@ -12,5 +12,19 @@
 
 .menu-options-container {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+}
+
+.scroll-up-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  display: block;
+  opacity: 1;
 }
