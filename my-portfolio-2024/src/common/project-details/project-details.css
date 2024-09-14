@@ -9,7 +9,6 @@
   overflow: hidden;
   gap: 5px;
   transition: transform 0.3s ease;
-
 }
 
 .div-details-style {
@@ -21,11 +20,35 @@
   gap: 10px;
 }
 
-.project-image-style-container {
-  gap: 5px;
-  justify-content: center;
+.project-title-container label {
+  cursor: pointer;
+}
+
+.project-title-container.disabled label {
+  cursor: not-allowed;
+}
+
+.project-status-container-style {
   display: flex;
-  margin-right: 2px;
+  gap: 5px;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.personal-project-status-style {
+  color: green;
+  font-weight: bolder;
+}
+
+.protected-project-status-style {
+  color: red;
+  font-weight: bolder;
+}
+
+.project-stacks-images-container {
+  align-items: center;
+  display: flex;
+  gap: 5px;
 }
 
 .project-description-scrollable-style {
@@ -33,13 +56,15 @@
   max-height: 200px;
   overflow-y: scroll;
   text-align: justify;
-  scrollbar-width: none; /* For Firefox */
+  flex-direction: column;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-description-scrollable-style::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  display: none;
 }
-
 
 .project-details-container-style:hover {
   transform: scale(1.01);

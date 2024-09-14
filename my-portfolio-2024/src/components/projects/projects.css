@@ -1,18 +1,25 @@
 .projects-container-style {
-    padding-left: 450px;
-    padding-right: 450px;
-    padding-bottom: 100px;
-    position: relative;
-  }
-  
+  padding-left: 450px;
+  padding-right: 450px;
+  padding-bottom: 100px;
+  position: relative;
+}
 
-  .projects-text-container {
-    margin-top: 50px;
-  }
-  
-  .div-details-style {
-    display: grid;
-    gap: 10px;
-    justify-content: center;
-  }
-  
+.projects-text-container {
+  margin-top: 50px;
+}
+
+.project-stack-style {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-stack-style:hover {
+  transform: scale(1.1);
+}
+
+.div-details-style {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+}

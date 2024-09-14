@@ -14,6 +14,7 @@ interface ProjectDetailsInterface {
   isPersonal?: boolean;
   projectTitle: string;
   projectDescription: string;
+  projectStacks?: React.ReactNode;
 }
 
 export const ProjectDetails = (props: ProjectDetailsInterface) => {
@@ -26,17 +27,18 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
     isPersonal,
     projectType,
     projectTitle,
+    projectStacks,
     projectDescription,
   } = props;
-
-  // RECOMMENDATIONS ACTIVE KEY
-  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   // CURRENT IMAGE BACKGROUND
   const [currentImage, setCurrentImage] = useState<string>(images[9]);
 
   // CARD BACK GROUND
   const [cardBackground, setCardBackground] = useState<string>();
+
+  // RECOMMENDATIONS ACTIVE KEY
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   // GET CURRENT IMAGE DISPLAY
   useEffect(() => {
@@ -57,7 +59,7 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
         <Image
           width={280}
           preview={isPersonal}
-          style={{ cursor: isPersonal ?  "":"not-allowed" }}
+          style={{ cursor: isPersonal ? "" : "not-allowed" }}
           src={currentImage}
         />
         <div className="slider-buttons-container-style">
@@ -78,17 +80,29 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
         </div>
       </div>
       <div>
-        <div>
+        <div
+          className={
+            isPersonal
+              ? "project-title-container"
+              : "project-title-container disabled"
+          }
+        >
           <Label labelSize={LabelSize.LARGE_BOLD} labelText={projectTitle} />
         </div>
-        <div style={{ display: "flex", gap: "5px" }}>
+        <div className="project-status-container-style">
           {isPersonal ? (
-            <div style={{ color: "green", fontWeight: "bold" }}>Personal</div>
+            <div className="personal-project-status-style">
+              <Label labelSize={LabelSize.MEDIUM} labelText={"Personal"} />
+            </div>
           ) : (
-            <div style={{ color: "red", fontWeight: "bold" }}>Protected</div>
+            <div className="protected-project-status-style">
+              <Label labelSize={LabelSize.MEDIUM} labelText={"Protected"} />
+            </div>
           )}
           <Label labelSize={LabelSize.MEDIUM} labelText={`| ${projectType}`} />
         </div>
+
+        <div className="project-stacks-images-container">{projectStacks}</div>
         <div className="project-description-scrollable-style">
           <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
         </div>

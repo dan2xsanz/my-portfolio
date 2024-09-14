@@ -17,7 +17,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   // STATE TO MANAGE SCROLL UP BUTTON VISIBILITY
-  const [showScrollUp, setShowScrollUp] = useState(true);
+  const [showScrollUp, setShowScrollUp] = useState(false);
 
   // DL LOGO
   const [logo, setLogo] = useState<string>(logoWhite);
