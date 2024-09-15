@@ -31,6 +31,7 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
     projectDescription,
   } = props;
 
+
   // CURRENT IMAGE BACKGROUND
   const [currentImage, setCurrentImage] = useState<string>(images[9]);
 

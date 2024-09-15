@@ -4,17 +4,23 @@ import { Label, LabelSize } from "../label";
 import { darkModeStore } from "../../store";
 import "./education-details.css";
 
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 interface EducationDetailsInterface {
   image: string;
+  index: number;
   details: string;
   imgHght: number;
   imgWdth: number;
-  isCustomBg?: boolean;
   titleLabel: string;
   onClick: () => void;
+  isCustomBg?: boolean;
   educationClass: string;
   secondaryTitleLabel?: string;
 }
+
 export const EducationDetails = (props: EducationDetailsInterface) => {
   const {
     image,
@@ -26,6 +32,7 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
     titleLabel,
     educationClass,
     secondaryTitleLabel,
+    index,
   } = props;
 
   const { mode } = darkModeStore();
@@ -36,9 +43,32 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
     getCardBackground(mode, setCardBackground);
   }, [mode]);
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const elementClass = `.education-details-container-style-${index}`; // Use a unique class for each component
+
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
+  }, [index]);
+
   return (
     <div
-      className="education-details-container-style"
+      className={`education-details-container-style education-details-container-style-${index}`} // Add the unique class here
       style={{ backgroundColor: cardBackground }}
       onClick={onClick}
     >
