@@ -46,7 +46,7 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const elementClass = `.education-details-container-style-${index}`; // Use a unique class for each component
+    const elementClass = `.education-details-main-container-style-${index}`; // Use a unique class for each component
 
     gsap.fromTo(
       elementClass,
@@ -67,25 +67,30 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
   }, [index]);
 
   return (
-    <div
-      className={`education-details-container-style education-details-container-style-${index}`} // Add the unique class here
-      style={{ backgroundColor: cardBackground }}
-      onClick={onClick}
-    >
-      <div className="title-style-container">
-        <Label labelSize={LabelSize.SMALL} labelText={educationClass} />
-        <Label labelSize={LabelSize.LARGE_BOLD} labelText={titleLabel} />
-        {secondaryTitleLabel && (
-          <Label labelSize={LabelSize.MEDIUM} labelText={secondaryTitleLabel} />
-        )}
-        <Label labelSize={LabelSize.SMALL} labelText={details} />
+    <div className={`${`education-details-main-container-style-${index}`}`}>
+      <div
+        className={`education-details-container-style`} // Add the unique class here
+        style={{ backgroundColor: cardBackground }}
+        onClick={onClick}
+      >
+        <div className="title-style-container">
+          <Label labelSize={LabelSize.SMALL} labelText={educationClass} />
+          <Label labelSize={LabelSize.LARGE_BOLD} labelText={titleLabel} />
+          {secondaryTitleLabel && (
+            <Label
+              labelSize={LabelSize.MEDIUM}
+              labelText={secondaryTitleLabel}
+            />
+          )}
+          <Label labelSize={LabelSize.SMALL} labelText={details} />
+        </div>
+        <img
+          src={image}
+          height={imgHght}
+          width={imgWdth}
+          className={isCustomBg ? "image-style custom" : "image-style"}
+        />
       </div>
-      <img
-        src={image}
-        height={imgHght}
-        width={imgWdth}
-        className={isCustomBg ? "image-style custom" : "image-style"}
-      />
     </div>
   );
 };

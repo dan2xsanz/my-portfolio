@@ -5,7 +5,9 @@ import {
   Projects,
   Header,
   About,
+  Experience,
 } from "./components";
+
 import { createRoot } from "react-dom/client";
 import { MainBackground } from "./common";
 import { StrictMode } from "react";
@@ -23,6 +25,7 @@ const App = () => {
           <Route path="" element={<Introduction />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
           {/*TODO: Catch all invalid paths and show the Unauthorized screen */}
           {/* <Route path="*" element={<Unauthorized />} /> */}
         </Routes>

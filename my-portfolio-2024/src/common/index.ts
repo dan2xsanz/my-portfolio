@@ -1,4 +1,5 @@
 export * from "./recommendation-details/recommendation-details";
+export * from "./experience-details/experience-details";
 export * from "./social-media-icons/social-media-icons";
 export * from "./education-details/education-details";
 export * from "./main-background/main-background";

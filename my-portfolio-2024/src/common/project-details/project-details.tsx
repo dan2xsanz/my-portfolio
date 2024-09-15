@@ -31,7 +31,6 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
     projectDescription,
   } = props;
 
-
   // CURRENT IMAGE BACKGROUND
   const [currentImage, setCurrentImage] = useState<string>(images[9]);
 
@@ -102,7 +101,6 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
           )}
           <Label labelSize={LabelSize.MEDIUM} labelText={`| ${projectType}`} />
         </div>
-
         <div className="project-stacks-images-container">{projectStacks}</div>
         <div className="project-description-scrollable-style">
           <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />

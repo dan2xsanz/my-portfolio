@@ -1,0 +1,48 @@
+.experience-details-main-container-style {
+  padding: 10px;
+  height: 190px;
+  width: 900px;
+  display: grid;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.experience-details-container-style {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience-img-style {
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 10px;
+}
+
+.experience-details-description-container-style {
+  display: grid;
+  flex-direction: row;
+}
+
+.experience-description-scrollable-style {
+  max-height: 100px;
+  overflow-y: scroll;
+  text-align: justify;
+  flex-direction: column;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-description-scrollable-style::-webkit-scrollbar {
+  display: none;
+}
+
+.experience-details-main-container-style:hover {
+  transform: scale(1.01);
+}

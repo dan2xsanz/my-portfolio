@@ -180,6 +180,9 @@ export const Projects = () => {
       <div className="projects-text-container">
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"Projects."} />
       </div>
+      <div className="title-header-style">
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Protected"} />
+      </div>
       <div className="sirius-main-container">
         <div className="div-details-style">
           <ProjectDetails
@@ -188,7 +191,7 @@ export const Projects = () => {
             projectTitle={"Sirius WebPOS - Headquarter"}
             projectType={"Web Application"}
             projectDescription={`Sirius WebPOS is a comprehensive full-stack Point of Sale (POS) system complete with headquarters management capabilities. This robust solution caters to businesses of all sizes, offering a seamless and efficient way to manage transactions, inventory, and customer data. With its headquarters functionality, users can oversee multiple locations or branches, streamlining operations and enhancing productivity.
-          The system integrates features such as real-time inventory tracking, sales analytics, and user management, allowing businesses to monitor performance metrics from a centralized dashboard. It also supports various payment methods, making transactions smoother for customers. Additionally, Sirius WebPOS is designed to be highly scalable, ensuring that businesses can expand their operations without needing major overhauls of their POS infrastructure.`}
+            The system integrates features such as real-time inventory tracking, sales analytics, and user management, allowing businesses to monitor performance metrics from a centralized dashboard. It also supports various payment methods, making transactions smoother for customers. Additionally, Sirius WebPOS is designed to be highly scalable, ensuring that businesses can expand their operations without needing major overhauls of their POS infrastructure.`}
             projectStacks={
               <Fragment>
                 <img
@@ -316,6 +319,9 @@ export const Projects = () => {
       </div>
       {/* SNZ MARKET PLACE WEB APPLICATION */}
       <div className="snz-main-container">
+      <div className="title-header-style">
+        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Personals"} />
+      </div>
         <div className="div-details-style">
           <ProjectDetails
             isPersonal
@@ -673,10 +679,10 @@ export const Projects = () => {
       </div>
       {/* FOOTER */}
       <Footer
-        navigationMessage={"Let's Continue to my Experience"}
+        navigationMessage={"Continue to my experience"}
         onClickNavigation={() => {
-          setSelectedScreen(HeaderEnums.PROJECTS);
-          navigate("/projects");
+          setSelectedScreen(HeaderEnums.EXPERIENCE);
+          navigate("/experience");
         }}
       />
     </div>
