@@ -52,12 +52,10 @@ import nxt from "../../assets/nxt.png";
 import css from "../../assets/css.png";
 import qt from "../../assets/qt.png";
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { selectedScreenStore } from "../../store";
 import { useNavigate } from "react-router-dom";
 import { Fragment, useEffect } from "react";
 import { Footer } from "../footer";
-import gsap from "gsap";
 
 import "./projects.css";
 
@@ -73,115 +71,10 @@ export const Projects = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    const elementClass = `.sirius-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.snz-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.portfolio-v1-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.herbs-desktop-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.herbs-mobile-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
   return (
     <div className="projects-container-style">
       <div className="projects-text-container">
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"Projects."} />
-      </div>
-      <div className="title-header-style">
-        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Protected"} />
       </div>
       <div className="sirius-main-container">
         <div className="div-details-style">
@@ -319,9 +212,6 @@ export const Projects = () => {
       </div>
       {/* SNZ MARKET PLACE WEB APPLICATION */}
       <div className="snz-main-container">
-      <div className="title-header-style">
-        <Label labelSize={LabelSize.DIV_TITLE_BOLD} labelText={"Personals"} />
-      </div>
         <div className="div-details-style">
           <ProjectDetails
             isPersonal

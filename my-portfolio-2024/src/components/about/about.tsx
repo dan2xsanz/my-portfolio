@@ -22,9 +22,6 @@ import {
   TechStacks,
 } from "./about-constants";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import "./about-style.css";
 
 export const About = () => {
@@ -57,90 +54,6 @@ export const About = () => {
   // AUTO SCROLL ON TOP
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    const elementClass = `.who-i-am-main-container`;
-
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.tech-stack-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.educations-main-container`;
-
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.recommendations-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
   }, []);
 
   return (

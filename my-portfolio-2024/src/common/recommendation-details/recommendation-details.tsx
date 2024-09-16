@@ -55,7 +55,12 @@ export const RecommendationDetails = (
         }`}
       >
         <div className="recommendation-profile-name-style">
-          <img src={profile} height={100} width={100} />
+          <img
+            style={{ marginRight: "5px" }}
+            src={profile}
+            height={90}
+            width={90}
+          />
           <div className="recommendation-name-position-style">
             <Label labelSize={LabelSize.LARGE_BOLD} labelText={name} />
             <div className="recommendation-position-style">

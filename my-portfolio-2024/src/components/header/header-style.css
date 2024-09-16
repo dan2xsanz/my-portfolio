@@ -28,3 +28,12 @@
   display: block;
   opacity: 1;
 }
+
+.icon-mode-display {
+  cursor: pointer;
+  transition: transform 0.3s ease,
+}
+
+.icon-mode-display:hover {
+  transform: scale(1.1);
+}

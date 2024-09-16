@@ -11,6 +11,9 @@ import {
   UpButtonIcon,
 } from "../../common";
 
+import sun from "../../assets/sun.png";
+import moon from "../../assets/moon.png";
+
 export const Header = () => {
   const { setMode, mode } = darkModeStore();
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
@@ -112,9 +115,24 @@ export const Header = () => {
             onClick={() => onClickHeaderButton(HeaderEnums.CONTACTS)}
           />
         )}
-        <DarkModeIcon onClick={onChangeTheme} />
+        {mode !== "black" ? (
+          <img
+            src={sun}
+            height={30}
+            width={30}
+            onClick={onChangeTheme}
+            className="icon-mode-display"
+          />
+        ) : (
+          <img
+            src={moon}
+            height={23}
+            width={23}
+            onClick={onChangeTheme}
+            className="icon-mode-display"
+          />
+        )}
       </div>
-
       {/* SCROLL UP BUTTON */}
       {showScrollUp && (
         <div className="scroll-up-btn">
