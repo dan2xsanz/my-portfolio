@@ -3,6 +3,7 @@ import "./label.css";
 export enum LabelSize {
   PAGE_TITLE_BOLD,
   DEFAULT_ITALIC,
+  DEFAULT_BOLD,
   DIV_TITLE_BOLD,
   LARGE_BOLD,
   LARGE,
@@ -28,6 +29,9 @@ export const Label = (props: LabelInterface) => {
     }
     case LabelSize.DEFAULT: {
       return <label className="label-default-style">{labelText}</label>;
+    }
+    case LabelSize.DEFAULT_BOLD: {
+      return <label className="label-default-style bold">{labelText}</label>;
     }
     case LabelSize.DEFAULT_ITALIC: {
       return <label className="label-default-style italic">{labelText}</label>;

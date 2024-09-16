@@ -6,6 +6,7 @@ import {
   Header,
   About,
   Experience,
+  Contact,
 } from "./components";
 
 import { createRoot } from "react-dom/client";
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/contact" element={<Contact />} />
           {/*TODO: Catch all invalid paths and show the Unauthorized screen */}
           {/* <Route path="*" element={<Unauthorized />} /> */}
         </Routes>

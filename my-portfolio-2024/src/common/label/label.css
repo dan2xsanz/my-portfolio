@@ -8,6 +8,11 @@
   font-weight: 400;
 }
 
+.label-default-style.bold {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
 .label-default-style.italic {
   font-style: italic;
   font-size: 18px;
@@ -33,8 +38,8 @@
 }
 
 .label-small-style {
-    font-size: 13px;
-    font-weight: 100;
-    margin-top: 10px;
-    text-align: justify;
+  font-size: 13px;
+  font-weight: 100;
+  margin-top: 10px;
+  text-align: justify;
 }

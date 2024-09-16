@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./header-style.css";
 import {
-  DarkModeIcon,
   HeaderButton,
   HeaderEnums,
   UpButtonIcon,
@@ -118,8 +117,8 @@ export const Header = () => {
         {mode !== "black" ? (
           <img
             src={sun}
-            height={30}
-            width={30}
+            height={23}
+            width={23}
             onClick={onChangeTheme}
             className="icon-mode-display"
           />

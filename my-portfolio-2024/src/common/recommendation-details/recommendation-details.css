@@ -1,6 +1,6 @@
 .recommendation-details-container-style {
   padding: 10px;
-  height: 200px;
+  height: 160px;
   width: 900px;
   border-radius: 5px;
   position: relative;
@@ -37,8 +37,7 @@
   text-align: justify;
   overflow: auto;
   max-height: 100px;
-  margin: 15px;
-  margin-top: -10px;
+  margin-bottom: 15px;
 }
 
 .recommendation-description-style::-webkit-scrollbar {

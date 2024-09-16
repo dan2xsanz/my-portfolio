@@ -1,5 +1,4 @@
 import { getCardBackground } from "../../functions";
-import profile from "../../assets/profile.png";
 import { useEffect, useState } from "react";
 import { darkModeStore } from "../../store";
 import { Label, LabelSize } from "../label";
@@ -48,19 +47,12 @@ export const RecommendationDetails = (
       className="recommendation-details-container-style"
       style={{ backgroundColor: cardBackground }}
     >
-      {/* The content wrapper to apply the transition */}
       <div
         className={`recommendation-details-content ${
           showContent ? "show" : ""
         }`}
       >
         <div className="recommendation-profile-name-style">
-          <img
-            style={{ marginRight: "5px" }}
-            src={profile}
-            height={90}
-            width={90}
-          />
           <div className="recommendation-name-position-style">
             <Label labelSize={LabelSize.LARGE_BOLD} labelText={name} />
             <div className="recommendation-position-style">
