@@ -41,25 +41,28 @@ export const ExperienceDetails = (props: ExperienceDetailsProps) => {
       className="experience-details-main-container-style"
       style={{ backgroundColor: cardBackground }}
     >
-      <div className="experience-details-container-style">
-        <img
-          src={companyLogo}
-          width={width ? width : 150}
-          height={height ? height : 150}
-          className="experience-img-style"
-        />
-        <div className="experience-details-description-container-style">
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <Label labelSize={LabelSize.LARGE_BOLD} labelText={position} />
-            <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="experience-details-container-style">
+          <img
+            src={companyLogo}
+            width={width ? width : 70}
+            height={height ? height : 70}
+            className="experience-img-style"
+          />
+          <div className="experience-details-description-container-style">
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ marginTop: "-5px" }}>
+                <Label labelSize={LabelSize.LARGE_BOLD} labelText={position} />
+              </div>
               <Label labelSize={LabelSize.MEDIUM} labelText={companyName} />
-              |
-              <Label labelSize={LabelSize.MEDIUM} labelText={yearsMonths} />
+              <div style={{ marginTop: "-5px" }}>
+                <Label labelSize={LabelSize.SMALL} labelText={yearsMonths} />
+              </div>
             </div>
           </div>
-          <div className="experience-description-scrollable-style">
-            <Label labelSize={LabelSize.SMALL} labelText={description} />
-          </div>
+        </div>
+        <div className="experience-description-scrollable-style">
+          <Label labelSize={LabelSize.SMALL} labelText={description} />
         </div>
       </div>
     </div>

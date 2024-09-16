@@ -51,7 +51,7 @@ export const Introduction = () => {
             onClick={onClicksSeeMoreAboutMe}
           >
             See more about me
-            <div className="beating-arrow-style">{`${"➜"}`}</div>
+            <div className="beating-arrow-style">{`${"➞"}`}</div>
           </div>
           <div style={{ display: "flex", gap: "10px" }}>
             <Button

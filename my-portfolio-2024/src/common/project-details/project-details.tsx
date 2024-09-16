@@ -62,14 +62,14 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
           style={{ cursor: isPersonal ? "" : "not-allowed" }}
           src={currentImage}
         />
-        <div className="slider-buttons-container-style">
+        <div className="project-slider-buttons-container-style">
           {Array.from({ length: images.length ?? 0 }, (_, i) => (
             <div
               key={i}
               className={
                 activeIndex === i
-                  ? "slider-button-style current"
-                  : "slider-button-style"
+                  ? "project-slider-button-style current"
+                  : "project-slider-button-style"
               }
               onClick={() => {
                 setCurrentImage(images[i]);

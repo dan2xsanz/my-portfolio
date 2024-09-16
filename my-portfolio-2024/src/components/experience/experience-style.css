@@ -37,7 +37,7 @@
 
 @keyframes beatingGlow {
   0% {
-    box-shadow: 0 0 5px 2px rgb(156, 151, 151);
+    box-shadow: 0 0 5px 2px rgb(216, 211, 211);
     transform: scale(1);
   }
   50% {

@@ -1,5 +1,8 @@
 import { SocialMediaIcons } from "../../common";
 
+
+import arrow from "../../assets/arrow.png";
+
 import "./footer.style.css";
 
 interface FooterInterface {
@@ -20,7 +23,7 @@ export const Footer = ({
           onClick={onClickNavigation}
         >
           {navigationMessage}
-          <div className="footer-beating-arrow-style">{`${"➜"}`}</div>
+          <div className="footer-beating-arrow-style">{`${"➞"}`}</div>
         </div>
       </div>
       <SocialMediaIcons />
