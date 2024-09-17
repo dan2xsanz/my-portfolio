@@ -330,7 +330,7 @@ export const Projects = () => {
             images={[image13, image14, image15, image16]}
             projectTitle={"My Portfolio Version 1.0"}
             projectType={"Web Site"}
-            projectDescription={`My Portfolio Version 1.0 was a simple yet personal project, showcasing my skills, experience, and goals at the time. It includes sections like a about me, educational background, and a few sample projects you worked on during my early stages as a developer. While basic, it demonstrated my early interest in web development and was built using foundational technologies like HTML, CSS, and JavaScript. The project allowed me to explore essential concepts like responsive design, navigation menus, and the importance of clear content structure.`}
+            projectDescription={`My Portfolio Version 1.0 was a simple yet personal project, showcasing my skills, experience, and goals at the time. It included key sections such as an About Me, Educational Background, and a few sample projects I worked on during my early stages as a developer. The primary goal was to establish an online presence and create a space to document my journey as a software engineer. While basic, it served as an essential stepping stone in my web development path. The project was built using foundational technologies like HTML, CSS, and JavaScript, giving me hands-on experience with core web concepts. I focused heavily on responsive design, ensuring that the portfolio was accessible across various devices. This helped me understand how to structure content for both desktop and mobile views, improving the overall user experience.`}
             projectStacks={
               <Fragment>
                 <img

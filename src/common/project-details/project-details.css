@@ -10,6 +10,14 @@
   gap: 5px;
   margin: 3px;
   transition: transform 0.3s ease;
+  .project-stacks-images-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and timing as needed */
+    align-items: flex-start; /* Initial align state */
+    display: flex;
+    gap: 5px;
+  }
+  
 }
 
 .div-details-style {
@@ -67,14 +75,7 @@
   font-weight: bolder;
 }
 
-.project-stacks-images-container {
-  align-items: center;
-  display: flex;
-  gap: 5px;
-}
-
 .project-description-scrollable-style {
-  margin-top: 5px;
   max-height: 200px;
   overflow-y: scroll;
   text-align: justify;
@@ -90,4 +91,9 @@
 
 .project-details-container-style:hover {
   transform: scale(1.01);
+
+  .project-stacks-images-container {
+    opacity: 1; /* This will make it visible when hovered */
+    align-items: center; /* Center the content when hovered */
+  }
 }
