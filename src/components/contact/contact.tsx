@@ -1,7 +1,7 @@
 import { darkModeStore, selectedScreenStore } from "../../store";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   HeaderEnums,
   ButtonSize,
@@ -12,11 +12,21 @@ import {
 
 import "./contact-style.css";
 
+interface ContactDetailsInterface {
+  message?: string;
+  name?: string;
+  email?: string;
+}
+
 export const Contact = () => {
+  // DARK MODE STORE
   const { mode } = darkModeStore();
 
   // SELECTED SCREEN STORE
   const { setSelectedScreen } = selectedScreenStore();
+
+  const [contactDetails, setContactDetails] =
+    useState<ContactDetailsInterface>();
 
   // ROUTING NAVIGATION
   const navigate = useNavigate();
@@ -51,6 +61,14 @@ export const Contact = () => {
                 : "input-name-style-light"
             }
             placeholder="Name"
+            onChange={(data) => {
+              if (data.target.value) {
+                setContactDetails({
+                  ...contactDetails,
+                  name: data.target.value.toString().trim(),
+                });
+              }
+            }}
           />
           <input
             type="text"
@@ -60,6 +78,14 @@ export const Contact = () => {
                 : "input-name-style-light"
             }
             placeholder="Email"
+            onChange={(data) => {
+              if (data.target.value) {
+                setContactDetails({
+                  ...contactDetails,
+                  email: data.target.value.toString().trim(),
+                });
+              }
+            }}
           />
           <textarea
             style={{ height: "100px", paddingTop: "10px" }}
@@ -71,6 +97,14 @@ export const Contact = () => {
             placeholder="Message"
             rows={5}
             cols={20}
+            onChange={(data) => {
+              if (data.target.value) {
+                setContactDetails({
+                  ...contactDetails,
+                  message: data.target.value.toString().trim(),
+                });
+              }
+            }}
           />
         </div>
       </div>
@@ -82,7 +116,7 @@ export const Contact = () => {
         <Button
           size={ButtonSize.large}
           label={"Send Message"}
-          onClick={() => {}}
+          onClick={() => console.log(contactDetails)}
         />
       </div>
       {/* FOOTER */}
