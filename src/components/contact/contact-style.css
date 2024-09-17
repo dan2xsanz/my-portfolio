@@ -9,6 +9,18 @@
   margin-top: 50px;
 }
 
+.contact-definition-container {
+  display: flex;
+  gap: 5px;
+}
+
+.contact-field-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .contact-link-container {
   position: relative;
   display: flex;

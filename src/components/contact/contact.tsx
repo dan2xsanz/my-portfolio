@@ -32,7 +32,7 @@ export const Contact = () => {
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"Contact."} />
       </div>
       <div className="details-style">
-        <div style={{ display: "flex", gap: "5px" }}>
+        <div className="contact-definition-container">
           <Label
             labelSize={LabelSize.DEFAULT}
             labelText={`Get in touch or shoot me an email directly on`}
@@ -42,14 +42,7 @@ export const Contact = () => {
             labelText={`danles.sanz@gmail.com`}
           />
         </div>
-        <div
-          style={{
-            marginTop: "30px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-          }}
-        >
+        <div className="contact-field-container">
           <input
             type="text"
             className={

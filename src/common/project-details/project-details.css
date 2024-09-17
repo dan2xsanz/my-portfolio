@@ -17,7 +17,6 @@
     display: flex;
     gap: 5px;
   }
-  
 }
 
 .div-details-style {
@@ -75,6 +74,12 @@
   font-weight: bolder;
 }
 
+.project-details-stacks-container-style{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .project-description-scrollable-style {
   max-height: 200px;
   overflow-y: scroll;
@@ -83,6 +88,7 @@
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
+  height: 200px;
 }
 
 .project-description-scrollable-style::-webkit-scrollbar {

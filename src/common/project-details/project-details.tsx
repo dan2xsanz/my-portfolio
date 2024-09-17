@@ -101,9 +101,11 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
           )}
           <Label labelSize={LabelSize.MEDIUM} labelText={`| ${projectType}`} />
         </div>
-        <div className="project-stacks-images-container">{projectStacks}</div>
-        <div className="project-description-scrollable-style">
-          <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
+        <div className="project-details-stacks-container-style">
+          <div className="project-description-scrollable-style">
+            <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
+          </div>
+          <div className="project-stacks-images-container">{projectStacks}</div>
         </div>
       </div>
     </div>

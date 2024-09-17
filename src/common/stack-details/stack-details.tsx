@@ -454,6 +454,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
               width={stackProperties?.width}
               height={stackProperties?.height}
               alt="Stack Logo"
+              className="flip-image"
             />
           </div>
           <div className="stack-details-style">
