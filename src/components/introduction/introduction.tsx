@@ -37,14 +37,14 @@ export const Introduction = () => {
         <div className="greetings-name-container-style">
           I'm <span className="name-container-style">Dan Lester Sanz</span>
         </div>
-        <div className="self-description-style">
+        {/* <div className="self-description-style">
           A {`${myRealtimeAge()}`}-year-old
           <span className="software-engineer-style"> Software Engineer </span>
           based on Cebu, Philippines who is passionate about building efficient
           and scalable applications. I enjoy solving complex problems, creating
           impactful solutions, and continuously learning new technologies to
           improve my craft. Let's create something impactful together!
-        </div>
+        </div> */}
         <div className="see-more-container-style">
           <div
             className="see-more-about-me-style"

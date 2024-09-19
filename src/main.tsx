@@ -18,7 +18,6 @@ const App = () => {
   return (
     <Router>
       <MainBackground />
-     
       <StrictMode>
         <SvgBackground />
         <Header />
