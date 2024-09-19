@@ -1,18 +1,18 @@
-import { darkModeStore, selectedScreenStore } from "../../store";
+import {
+  darkModeStore,
+  emailSendingStore,
+  selectedScreenStore,
+} from "../../store";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../footer";
 import emailjs from "emailjs-com";
 
 import { useEffect, useState } from "react";
-import {
-  HeaderEnums,
-  ButtonSize,
-  LabelSize,
-  Button,
-  Label,
-} from "../../common";
+import { HeaderEnums, LabelSize, Label } from "../../common";
 
 import "./contact-style.css";
+import { Button } from "antd";
+import { SERVICE_ID, TEMPLATE_ID, USER_ID } from "../../config";
 
 interface ContactDetailsInterface {
   message?: string;
@@ -24,48 +24,49 @@ export const Contact = () => {
   // DARK MODE STORE
   const { mode } = darkModeStore();
 
+  const { setEmailSendCouter, emailSendCounter } = emailSendingStore();
+
   // SELECTED SCREEN STORE
   const { setSelectedScreen } = selectedScreenStore();
 
-  const [contactDetails, setContactDetails] =
-    useState<ContactDetailsInterface>();
-
-  const [isStatusMessage, setStatusMessage] = useState<string | undefined>(
-    undefined
+  const [contactDetails, setContactDetails] = useState<ContactDetailsInterface>(
+    { name: "", email: "", message: "" }
   );
+
+  const [isButtonLoading, setButtonLoading] = useState<boolean>(false);
 
   // ROUTING NAVIGATION
   const navigate = useNavigate();
 
   const onSubmitEmail = () => {
-    const serviceID = "service_y6dzqrd";
-    const templateID = "template_kdc7kt2";
-    const userID = "YM7gmbALaFNByqWRS";
+    setButtonLoading(true);
+    const serviceID = SERVICE_ID;
+    const templateID = TEMPLATE_ID;
+    const userID = USER_ID;
     let email = contactDetails && contactDetails.email;
     let from_name = contactDetails && contactDetails.name;
+    let to_name = "Dan Lester Sanz";
     let message = contactDetails && contactDetails.message;
     emailjs
-      .send(serviceID, templateID, { email, message, from_name }, userID)
-      .then(
-        () => {
-          alert("Email sent successfully");
-        },
-        () => {
-          alert("Failed to send email");
-        }
-      );
-    // RESET THE FIELDS
-    setContactDetails({
-      name: "",
-      email: "",
-      message: "",
-    });
-    setStatusMessage(
-      "Note: Email is already sent, please wait a couple of minuites to send again. Thank you"
-    );
+      .send(
+        serviceID,
+        templateID,
+        { email, message, from_name, to_name },
+        userID
+      )
+      .then(() => {
+        setEmailSendCouter(60);
+      })
+      .finally(() => {
+        setContactDetails({
+          name: "",
+          email: "",
+          message: "",
+        });
+      });
   };
 
-  useEffect(() => {
+  const validateFieldsIsComplete = (): boolean => {
     if (
       contactDetails?.name === "" ||
       contactDetails?.email === "" ||
@@ -74,13 +75,23 @@ export const Contact = () => {
       contactDetails?.name === undefined ||
       contactDetails?.message === undefined
     ) {
-      setStatusMessage(
-        "Note: Please fill required fields first before sending email."
-      );
+      return true;
     } else {
-      setStatusMessage(undefined);
+      return false;
     }
-  }, [contactDetails]);
+  };
+
+  // COUNTER EFFECT
+  useEffect(() => {
+    if (emailSendCounter > 0) {
+      const interval = setInterval(() => {
+        setEmailSendCouter(emailSendCounter > 0 ? emailSendCounter - 1 : 0);
+      }, 1000);
+      return () => clearInterval(interval); // Clean up interval on component unmount
+    } else {
+      setButtonLoading(false);
+    }
+  }, [emailSendCounter, setEmailSendCouter]);
 
   // AUTO SCROLL ON TOP
   useEffect(() => {
@@ -180,22 +191,36 @@ export const Contact = () => {
           />
         </div>
       </div>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
-        {isStatusMessage ? (
-          <Label labelSize={LabelSize.MEDIUM} labelText={isStatusMessage} />
-        ) : (
-          <Button
-            size={ButtonSize.large}
-            label={"Send Message"}
-            onClick={onSubmitEmail}
+      <div className="field-submit-button-container">
+        {validateFieldsIsComplete() && emailSendCounter === 0 && (
+          <Label
+            labelSize={LabelSize.MEDIUM}
+            labelText={
+              "Note: Please fill required fields first before sending email."
+            }
           />
+        )}
+        {emailSendCounter > 0 && (
+          <Label
+            labelSize={LabelSize.MEDIUM}
+            labelText={`Note: Email is already sent. Please wait ${emailSendCounter} ${
+              emailSendCounter === 1 ? "second" : "seconds"
+            } to send again.`}
+          />
+        )}
+        {!validateFieldsIsComplete() && emailSendCounter === 0 && (
+          <Button
+            type="text"
+            className="submit-button-style"
+            style={{
+              backgroundColor: mode !== "white" ? "black" : "white",
+              color: mode !== "white" ? "white" : "black",
+            }}
+            loading={isButtonLoading}
+            onClick={onSubmitEmail}
+          >
+            Send Message
+          </Button>
         )}
       </div>
       {/* FOOTER */}

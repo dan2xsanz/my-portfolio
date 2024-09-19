@@ -65,3 +65,23 @@ export const selectedScreenStore = create<SelectedScreenStore>()(
     }
   )
 );
+
+/*--------------------------------COUNTER EMAIL SCREEN------------------------------------- */
+type EmailSendingStore = {
+  emailSendCounter: any;
+  setEmailSendCouter: (data: any) => void;
+};
+
+export const emailSendingStore = create<EmailSendingStore>()(
+  persist(
+    (set) => ({
+      emailSendCounter: 0,
+      setEmailSendCouter: (counter: number) =>
+        set({ emailSendCounter: counter }),
+    }),
+    {
+      name: "email-counter-storage",
+      getStorage: () => localStorage,
+    }
+  )
+);

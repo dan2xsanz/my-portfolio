@@ -60,3 +60,15 @@
 .input-name-style-light:focus {
   border-bottom: 2px solid black;
 }
+
+.field-submit-button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.submit-button-style {
+  width: 300px;
+  border-radius: 2px;
+}

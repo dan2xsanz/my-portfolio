@@ -1,3 +1,6 @@
+export const SERVICE_ID =import.meta.env.VITE_SERVICE_ID;
+export const TEMPLATE_ID =import.meta.env.VITE_TEMPLATE_ID;
+export const USER_ID =import.meta.env.VITE_USER_ID;
 export const TWITTER_URL = import.meta.env.VITE_TWITTER_URL;
 export const FACEBOOK_URL = import.meta.env.VITE_FACEBOOK_URL;
 export const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL;

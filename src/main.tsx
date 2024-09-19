@@ -14,11 +14,11 @@ import { MainBackground } from "./common";
 import { StrictMode } from "react";
 
 import "./main.css";
-
 const App = () => {
   return (
     <Router>
       <MainBackground />
+     
       <StrictMode>
         <SvgBackground />
         <Header />
