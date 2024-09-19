@@ -8,7 +8,7 @@ import spring from "../../assets/spring.png";
 import scnhs from "../../assets/scnhs.png";
 import monggo from "../../assets/mongo.png";
 import react from "../../assets/react.png";
-import slsu from "../../assets/SLSU.png";
+import slsu from "../../assets/slsu.png";
 import sces from "../../assets/sces.png";
 import html from "../../assets/html.png";
 import java from "../../assets/java.png";
