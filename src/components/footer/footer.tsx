@@ -1,8 +1,5 @@
 import { SocialMediaIcons } from "../../common";
 
-
-import arrow from "../../assets/arrow.png";
-
 import "./footer.style.css";
 
 interface FooterInterface {
