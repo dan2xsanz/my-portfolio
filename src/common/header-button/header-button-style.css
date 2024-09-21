@@ -6,3 +6,13 @@
 .header-button-style:hover {
   transform: scale(1.15);
 }
+
+.header-button-style-full {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 30px;
+}
+
+.header-button-style-full:hover {
+  transform: scale(1.15);
+}

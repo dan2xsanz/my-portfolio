@@ -1,7 +1,7 @@
-import "./button-style.css";
 import { ButtonInterface, ButtonSize } from "./button-interface";
 import { darkModeStore } from "../../store";
 
+import "./button-style.css";
 export const Button = (props: ButtonInterface) => {
   const { size, label, onClick } = props;
 

@@ -19,8 +19,8 @@ const App = () => {
     <Router>
       <MainBackground />
       <StrictMode>
-        <SvgBackground />
         <Header />
+        <SvgBackground />
         <Routes>
           <Route path="" element={<Introduction />} />
           <Route path="/about" element={<About />} />
@@ -30,6 +30,7 @@ const App = () => {
           {/*TODO: Catch all invalid paths and show the Unauthorized screen */}
           {/* <Route path="*" element={<Unauthorized />} /> */}
         </Routes>
+        
       </StrictMode>
     </Router>
   );

@@ -1,4 +1,5 @@
 .header-container {
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,6 +14,31 @@
 .menu-options-container {
   display: flex;
   gap: 20px;
+}
+
+.menu-hamburger-container {
+  display: none;
+}
+
+@media (max-width: 1800px) {
+  .header-container {
+    padding-top: 70px;
+    padding-right: 3px;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-options-container {
+    display: none;
+  }
+  .menu-hamburger-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 }
 
 .scroll-up-btn {
@@ -31,9 +57,81 @@
 
 .icon-mode-display {
   cursor: pointer;
-  transition: transform 0.3s ease,
+  transition: transform 0.3s ease;
 }
 
 .icon-mode-display:hover {
   transform: scale(1.1);
+}
+
+/* .full-page-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 10px;
+}
+
+.full-page-menu-header {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.full-page-menu .icon-mode-display {
+  margin-top: 20px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+} */
+
+.full-page-menu {
+  position: fixed;
+  top: -100vh; /* Start off-screen */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 10px;
+  margin-top: -30px;
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease, top 0.5s ease; /* Add transitions */
+}
+
+.full-page-menu.active {
+  top: 0; /* Slide down */
+  opacity: 1; /* Fade in */
+}
+
+.full-page-menu-header {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  top: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.full-page-menu .icon-mode-display {
+  margin-top: 20px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
 }

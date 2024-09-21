@@ -3,28 +3,26 @@ import logoBlack from "../../assets/logo-black.png";
 import logoWhite from "../../assets/logo-white.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import moon from "../../assets/moon.png";
+import sun from "../../assets/sun.png";
 import "./header-style.css";
 import {
+  UpButtonIcon,
   HeaderButton,
   HeaderEnums,
-  UpButtonIcon,
+  BarsIcon,
+  CloseIcon,
 } from "../../common";
-
-import sun from "../../assets/sun.png";
-import moon from "../../assets/moon.png";
 
 export const Header = () => {
   const { setMode, mode } = darkModeStore();
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
   const navigate = useNavigate();
 
-  // STATE TO MANAGE SCROLL UP BUTTON VISIBILITY
   const [showScrollUp, setShowScrollUp] = useState(false);
-
-  // DL LOGO
   const [logo, setLogo] = useState<string>(logoWhite);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // CHANGE COLOR THEME
   const onChangeTheme = () => {
     if (mode !== "black") {
       document.documentElement.style.setProperty("--background-color", "white");
@@ -39,7 +37,6 @@ export const Header = () => {
     }
   };
 
-  // ON CLICK HEADER BUTTON
   const onClickHeaderButton = (screen: number) => {
     switch (screen) {
       case 1:
@@ -65,7 +62,6 @@ export const Header = () => {
     }
   };
 
-  // EVENT LISTENER FOR NAV BAR STICKY
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) {
@@ -82,13 +78,14 @@ export const Header = () => {
   }, []);
 
   return (
-    <div className={`header-container`}>
+    <div className="header-container">
       <div
         className="logo-container"
         onClick={() => onClickHeaderButton(HeaderEnums.INTRODUCTION)}
       >
         <img src={logo} height={70} width={70} />
       </div>
+
       <div className="menu-options-container">
         {selectedScreenScreen !== HeaderEnums.ABOUT_ME && (
           <HeaderButton
@@ -114,25 +111,74 @@ export const Header = () => {
             onClick={() => onClickHeaderButton(HeaderEnums.CONTACTS)}
           />
         )}
-        {mode !== "black" ? (
-          <img
-            src={sun}
-            height={23}
-            width={23}
-            onClick={onChangeTheme}
-            className="icon-mode-display"
-          />
-        ) : (
-          <img
-            src={moon}
-            height={23}
-            width={23}
-            onClick={onChangeTheme}
-            className="icon-mode-display"
-          />
-        )}
+        <img
+          src={mode !== "black" ? sun : moon}
+          height={23}
+          width={23}
+          onClick={onChangeTheme}
+          className="icon-mode-display"
+        />
       </div>
-      {/* SCROLL UP BUTTON */}
+      <div className="menu-hamburger-container">
+        <BarsIcon onClick={() => setMenuOpen(!menuOpen)} />
+      </div>
+      {menuOpen && (
+        <div className={`full-page-menu ${menuOpen ? "active" : ""}`}>
+          <div className="full-page-menu-header">
+            <div
+              className="logo-container"
+              onClick={() => {
+                setMenuOpen(false);
+                onClickHeaderButton(HeaderEnums.INTRODUCTION);
+              }}
+            >
+              <img src={logo} height={70} width={70} alt="logo" />
+            </div>
+            <CloseIcon onClick={() => setMenuOpen(!menuOpen)} />
+          </div>
+          <HeaderButton
+            isFullScreen
+            label="About"
+            onClick={() => {
+              onClickHeaderButton(HeaderEnums.ABOUT_ME);
+              setMenuOpen(false);
+            }}
+          />
+          <HeaderButton
+            isFullScreen
+            label="Projects"
+            onClick={() => {
+              onClickHeaderButton(HeaderEnums.PROJECTS);
+              setMenuOpen(false);
+            }}
+          />
+          <HeaderButton
+            isFullScreen
+            label="Experience"
+            onClick={() => {
+              onClickHeaderButton(HeaderEnums.EXPERIENCE);
+              setMenuOpen(false);
+            }}
+          />
+          <HeaderButton
+            isFullScreen
+            label="Contact"
+            onClick={() => {
+              onClickHeaderButton(HeaderEnums.CONTACTS);
+              setMenuOpen(false);
+            }}
+          />
+          <img
+            src={mode !== "black" ? sun : moon}
+            height={23}
+            width={23}
+            onClick={onChangeTheme}
+            className="icon-mode-display"
+            alt="theme-icon"
+          />
+        </div>
+      )}
+
       {showScrollUp && (
         <div className="scroll-up-btn">
           <UpButtonIcon

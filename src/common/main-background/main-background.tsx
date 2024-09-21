@@ -7,7 +7,7 @@ export const MainBackground = () => {
   const { x: pointer1A, y: pointer1B } = useFollowPointer(ref, 100, 2000);
   const { x: pointer2A, y: pointer2B } = useFollowPointer(ref, 100, 800);
   return (
-    <div style={{ position: "relative", width: "80px", height: "80px" }}>
+    <div style={{ position: "fixed", width: "80px", height: "80px", zIndex: -1 }}>
       <motion.div
         ref={ref}
         className="circle b"

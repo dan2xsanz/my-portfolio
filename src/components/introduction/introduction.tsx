@@ -7,6 +7,8 @@ import {
   ButtonSize,
   Button,
   HeaderEnums,
+  CalendarIcon,
+  DownloadIcon,
 } from "../../common";
 import { useEffect } from "react";
 
@@ -53,7 +55,7 @@ export const Introduction = () => {
             See more about me
             <div className="beating-arrow-style">{`${"➞"}`}</div>
           </div>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="book-download-container">
             <Button
               size={ButtonSize.large}
               label={"Book a Meeting"}
@@ -64,6 +66,10 @@ export const Introduction = () => {
               label={"Download CV"}
               onClick={() => {}}
             />
+          </div>
+          <div className="calendar-download-container">
+            <CalendarIcon onClick={() => window.open(CALENDLY_URL, "_blank")} />
+            <DownloadIcon onClick={() => {}} />
           </div>
         </div>
         <SocialMediaIcons />

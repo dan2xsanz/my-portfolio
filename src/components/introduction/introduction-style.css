@@ -9,17 +9,77 @@
   position: relative;
 }
 
+@media (max-width: 1747px) {
+  .introduction-container-style {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
 .introduction-detail-style {
   width: 70%;
   text-align: justify;
+}
+
+@media (max-width: 1000px) {
+  .introduction-container-style {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .introduction-detail-style {
+    width: 90%;
+  }
 }
 
 .greetings-container-style {
   font-size: 25px;
 }
 
+@media (max-width: 1000px) {
+  .greetings-container-style {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .greetings-name-container-style {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .greetings-name-container-style {
+    font-size: 12px;
+  }
+}
+
 .greetings-name-container-style {
   font-size: 70px;
+  gap: 10px;
+}
+
+@media (max-width: 1010px) {
+  .greetings-name-container-style {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .greetings-name-container-style {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 530px) {
+  .greetings-name-container-style {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .greetings-name-container-style {
+    font-size: 25px;
+  }
 }
 
 .name-container-style {
@@ -30,6 +90,18 @@
   margin-top: 10px;
   font-size: 18px;
   margin-bottom: 50px;
+}
+
+@media (max-width: 800px) {
+  .self-description-style {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 530px) {
+  .self-description-style {
+    font-size: 12px;
+  }
 }
 
 .software-engineer-style {
@@ -49,10 +121,63 @@
   cursor: pointer;
 }
 
+@media (max-width: 1747px) {
+  .see-more-about-me-style {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .see-more-about-me-style {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .see-more-about-me-style {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 530px) {
+  .see-more-about-me-style {
+    font-size: 12px;
+  }
+}
+
 .beating-arrow-style {
   font-size: 20px;
   margin-left: 10px;
   animation: wobble 0.6s infinite;
+}
+
+@media (max-width: 530px) {
+  .beating-arrow-style {
+    font-size: 15px;
+  }
+}
+
+.book-download-container {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-download-container {
+  display: none;
+}
+
+@media (max-width: 530px) {
+  .see-more-container-style {
+    margin-top: -30px;
+  }
+  .book-download-container {
+    display: none;
+  }
+  .calendar-download-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
 }
 
 /* Animations for arrow wobble effect */
@@ -68,3 +193,4 @@
     transform: translateX(5px);
   }
 }
+
