@@ -157,7 +157,7 @@ export const About = () => {
         </div>
       </div>
       {/* RECOMMENDATIONS AREA */}
-      {/* <div className="recommendations-main-container">
+      <div className="recommendations-main-container">
         <div className="title-header-style">
           <Label
             labelSize={LabelSize.DIV_TITLE_BOLD}
@@ -181,7 +181,7 @@ export const About = () => {
             }
           })}
         </div>
-      </div> */}
+      </div>
       <Footer
         navigationMessage={"Let's Continue to Projects"}
         onClickNavigation={() => {
