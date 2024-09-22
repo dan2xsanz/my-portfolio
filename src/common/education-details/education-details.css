@@ -11,6 +11,13 @@
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 1800px) {
+  .education-details-container-style {
+    width: 97%;
+  }
+}
+
+
 .title-style-container {
   display: flex;
   flex-direction: column;

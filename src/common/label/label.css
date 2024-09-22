@@ -43,3 +43,28 @@
   margin-top: 10px;
   text-align: justify;
 }
+
+@media (max-width: 800px) {
+  .label-default-style {
+    font-size: 15px;
+  }
+  .label-default-style.italic {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .label-page-title-bold-style {
+    font-size: 50px;
+  }
+  .label-div-title-bold-style {
+    font-size: 25px;
+  }
+  .label-default-style {
+    font-size: 12px;
+  }
+  .label-default-style.italic {
+    font-size: 12px;
+  }
+  
+}

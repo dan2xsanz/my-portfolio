@@ -128,9 +128,7 @@ export const About = () => {
           </div>
           {isBlinking && <div className="badge" />}
         </div>
-        <div className="div-details-style">
-          <StackDetails stackSelected={stackSelected} />
-        </div>
+        <StackDetails stackSelected={stackSelected} />
       </div>
       {/* EDUCATION  AREA */}
       <div className="educations-main-container">
@@ -159,7 +157,7 @@ export const About = () => {
         </div>
       </div>
       {/* RECOMMENDATIONS AREA */}
-      <div className="recommendations-main-container">
+      {/* <div className="recommendations-main-container">
         <div className="title-header-style">
           <Label
             labelSize={LabelSize.DIV_TITLE_BOLD}
@@ -183,7 +181,7 @@ export const About = () => {
             }
           })}
         </div>
-      </div>
+      </div> */}
       <Footer
         navigationMessage={"Let's Continue to Projects"}
         onClickNavigation={() => {

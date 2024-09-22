@@ -83,3 +83,35 @@
 .stack-details-container-style:hover {
   transform: scale(1.01);
 }
+
+@media (max-width: 700px) {
+  .stack-details-container-style {
+    justify-content: center;
+    flex-direction: column;
+    height: 420px;
+  }
+  .stack-details-container-style img {
+    margin-left: -10px;
+  }
+  .stack-description-style {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .stack-details-container-style img {
+    margin-left: -30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stack-details-container-style img {
+    margin-left: -40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stack-details-container-style img {
+    margin-left: -60px;
+  }
+}
