@@ -81,7 +81,18 @@
   }
 }
 
+
 @media (max-width: 500px) {
+  .education-details-container-style {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 380px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 414px) {
   .education-details-container-style {
     display: flex;
     flex-direction: column;
