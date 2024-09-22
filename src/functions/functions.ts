@@ -83,6 +83,6 @@ export const getCardBackground = (
   if (mode !== "white") {
     setCardBackground("rgba(123, 124, 123, 0.123)");
   } else {
-    setCardBackground("rgba(252, 255, 252, 0.151)");
+    setCardBackground("rgba(123, 124, 123, 0.253");
   }
 };
