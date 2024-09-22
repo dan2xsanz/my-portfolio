@@ -35,6 +35,7 @@ export const Header = () => {
       setMode("white");
       setLogo(logoWhite);
     }
+    setMenuOpen(false);
   };
 
   const onClickHeaderButton = (screen: number) => {
@@ -76,6 +77,18 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      document.body.style.overflow = ""; // Restore scroll
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Clean up when component unmounts
+    };
+  }, [menuOpen]);
 
   return (
     <div className="header-container">

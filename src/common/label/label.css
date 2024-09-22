@@ -60,11 +60,25 @@
   .label-div-title-bold-style {
     font-size: 25px;
   }
+  .label-div-title-bold-style {
+    font-size: 25px;
+  }
+  .label-large-style {
+    font-size: 15px;
+  }
+  .label-medium-style{
+    font-size: 13px;
+  }
+  .label-large-bold-style {
+    font-size: 15px;
+  }
   .label-default-style {
     font-size: 12px;
   }
   .label-default-style.italic {
     font-size: 12px;
   }
-  
+  .label-small-style {
+    font-size: 12px;
+  }
 }

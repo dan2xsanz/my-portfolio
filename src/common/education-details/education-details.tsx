@@ -44,6 +44,14 @@ export const EducationDetails = (props: EducationDetailsInterface) => {
       style={{ backgroundColor: cardBackground }}
       onClick={onClick}
     >
+      <img
+        src={image}
+        height={imgHght}
+        width={imgWdth}
+        className={
+          isCustomBg ? "mobile-image-style custom" : "mobile-image-style"
+        }
+      />
       <div className="title-style-container">
         <Label labelSize={LabelSize.SMALL} labelText={educationClass} />
         <Label labelSize={LabelSize.LARGE_BOLD} labelText={titleLabel} />
