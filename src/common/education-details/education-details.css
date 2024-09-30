@@ -1,7 +1,6 @@
 .education-details-container-style {
   padding: 10px;
   padding-top: 20px;
-  height: 230px;
   display: grid;
   border-radius: 5px;
   display: flex;
@@ -53,12 +52,6 @@
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 1090px) {
-  .education-details-container-style {
-    height: 270px;
-  }
-}
-
 @media (max-width: 700px) {
   .image-style {
     display: none;
@@ -76,28 +69,6 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 320px;
-    align-items: center;
-  }
-}
-
-
-@media (max-width: 500px) {
-  .education-details-container-style {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    height: 380px;
-    align-items: center;
-  }
-}
-
-@media (max-width: 414px) {
-  .education-details-container-style {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    height: 440px;
     align-items: center;
   }
 }

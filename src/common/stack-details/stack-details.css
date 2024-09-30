@@ -7,7 +7,7 @@
 
 .stack-details-container-style {
   padding: 10px;
-  height: 210px;
+  height: auto;
   width: 900px;
   border-radius: 5px;
   display: flex;
@@ -68,7 +68,6 @@
   font-weight: 100;
   text-align: justify;
   overflow: auto;
-  max-height: 100px;
 }
 
 .stack-description-style::-webkit-scrollbar {
@@ -88,7 +87,6 @@
   .stack-details-container-style {
     justify-content: center;
     flex-direction: column;
-    height: 420px;
   }
   .stack-details-container-style img {
     margin-left: -10px;
