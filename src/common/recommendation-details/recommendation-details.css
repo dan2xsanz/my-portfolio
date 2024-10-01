@@ -1,6 +1,5 @@
 .recommendation-details-container-style {
   padding: 10px;
-  height: 160px;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -36,7 +35,6 @@
   font-weight: 100;
   text-align: justify;
   overflow: auto;
-  max-height: 100px;
   margin-bottom: 15px;
 }
 
@@ -76,7 +74,7 @@
   transform: scale(1.5);
 }
 
-@media (max-width: 1630px) {
+/* @media (max-width: 1630px) {
   .recommendation-details-container-style {
     height: 170px;
   }
@@ -86,4 +84,4 @@
   .recommendation-details-container-style {
     height: 180px;
   }
-}
+} */

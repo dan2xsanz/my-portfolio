@@ -38,7 +38,7 @@
 }
 
 .label-small-style {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 100;
   margin-top: 10px;
   text-align: justify;
@@ -66,19 +66,7 @@
   .label-large-style {
     font-size: 15px;
   }
-  .label-medium-style{
-    font-size: 13px;
-  }
   .label-large-bold-style {
     font-size: 15px;
-  }
-  .label-default-style {
-    font-size: 12px;
-  }
-  .label-default-style.italic {
-    font-size: 12px;
-  }
-  .label-small-style {
-    font-size: 12px;
   }
 }
