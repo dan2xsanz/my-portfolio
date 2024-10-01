@@ -76,12 +76,6 @@
   }
 }
 
-@media (max-width: 400px) {
-  .greetings-name-container-style {
-    font-size: 25px;
-  }
-}
-
 .name-container-style {
   font-weight: bold;
 }
@@ -95,12 +89,6 @@
 @media (max-width: 800px) {
   .self-description-style {
     font-size: 15px;
-  }
-}
-
-@media (max-width: 530px) {
-  .self-description-style {
-    font-size: 12px;
   }
 }
 
@@ -139,12 +127,6 @@
   }
 }
 
-@media (max-width: 530px) {
-  .see-more-about-me-style {
-    font-size: 12px;
-  }
-}
-
 .beating-arrow-style {
   font-size: 20px;
   margin-left: 10px;
@@ -153,7 +135,7 @@
 
 @media (max-width: 530px) {
   .beating-arrow-style {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -193,4 +175,3 @@
     transform: translateX(5px);
   }
 }
-
