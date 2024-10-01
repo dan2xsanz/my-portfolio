@@ -4,15 +4,25 @@
   gap: 22px;
 }
 
+
 @media (max-width: 700px) {
   .social-media-icons-container {
     position: fixed;
     bottom: 0;
-    width: 85%;
+    left: 0;
+    right: 0;
+    width: 100%;
     text-align: center;
     display: flex;
     justify-content: space-around;
     padding: 10px;
     height: 20px;
+    background-color: var(--background-color);
+    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
+    transform: translateY(0); /* Default position */
+  }
+
+  .hidden {
+    transform: translateY(100%); /* Move down to hide */
   }
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FACEBOOK_URL,
   GITHUB_URL,
@@ -16,8 +17,27 @@ import {
 import "./social-media-icons.css";
 
 export const SocialMediaIcons = () => {
+  const [visible, setVisible] = useState(true);
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    lastScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="social-media-icons-container">
+    <div className={`social-media-icons-container ${!visible ? "hidden" : ""}`}>
       <TwiterIcon onClick={() => window.open(TWITTER_URL, "_blank")} />
       <FacebookIcon onClick={() => window.open(FACEBOOK_URL, "_blank")} />
       <LinkedInIcon onClick={() => window.open(LINKEDIN_URL, "_blank")} />

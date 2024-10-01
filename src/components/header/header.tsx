@@ -1,3 +1,4 @@
+import { HeaderButton, HeaderEnums, BarsIcon, CloseIcon } from "../../common";
 import { darkModeStore, selectedScreenStore } from "../../store";
 import logoBlack from "../../assets/logo-black.png";
 import logoWhite from "../../assets/logo-white.png";
@@ -6,20 +7,13 @@ import { useEffect, useState } from "react";
 import moon from "../../assets/moon.png";
 import sun from "../../assets/sun.png";
 import "./header-style.css";
-import {
-  UpButtonIcon,
-  HeaderButton,
-  HeaderEnums,
-  BarsIcon,
-  CloseIcon,
-} from "../../common";
 
 export const Header = () => {
   const { setMode, mode } = darkModeStore();
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
   const navigate = useNavigate();
 
-  const [showScrollUp, setShowScrollUp] = useState(false);
+  // const [showScrollUp, setShowScrollUp] = useState(false);
   const [logo, setLogo] = useState<string>(logoWhite);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -63,20 +57,20 @@ export const Header = () => {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setShowScrollUp(true);
-      } else {
-        setShowScrollUp(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 500) {
+  //       setShowScrollUp(true);
+  //     } else {
+  //       setShowScrollUp(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -192,13 +186,14 @@ export const Header = () => {
         </div>
       )}
 
-      {showScrollUp && (
+      {/* HIDE FOR THE MOMENT
+       {showScrollUp && (
         <div className="scroll-up-btn">
           <UpButtonIcon
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
