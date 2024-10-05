@@ -11,10 +11,18 @@ import {
 
 import { createRoot } from "react-dom/client";
 import { MainBackground } from "./common";
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 
 import "./main.css";
+import { darkModeStore } from "./store";
 const App = () => {
+  // DARK MODE STORE
+  const { mode, setMode } = darkModeStore();
+
+  useEffect(() => {
+    setMode(mode);
+  }, []);
+
   return (
     <Router>
       <MainBackground />
@@ -30,7 +38,6 @@ const App = () => {
           {/*TODO: Catch all invalid paths and show the Unauthorized screen */}
           {/* <Route path="*" element={<Unauthorized />} /> */}
         </Routes>
-        
       </StrictMode>
     </Router>
   );
