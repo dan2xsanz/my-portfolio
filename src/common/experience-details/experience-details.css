@@ -1,10 +1,6 @@
 .experience-details-main-container-style {
   padding: 10px;
-  height: 190px;
-  width: 900px;
-  display: grid;
   border-radius: 5px;
-  display: flex;
   position: relative;
   overflow: hidden;
   gap: 5px;
@@ -26,9 +22,12 @@
   flex-direction: row;
 }
 
+.experience-mobile-screen {
+  display: flex;
+  flex-direction: column;
+}
+
 .experience-description-scrollable-style {
-  max-height: 120px;
-  overflow-y: scroll;
   text-align: justify;
   flex-direction: column;
   scrollbar-width: none;
@@ -42,4 +41,19 @@
 
 .experience-details-main-container-style:hover {
   transform: scale(1.01);
+}
+
+@media (max-width: 800px) {
+  .experience-details-container-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .experience-details-container-style img {
+    width: 140px; /* Add 'px' unit */
+    height: 140px; /* Add 'px' unit */
+  }
 }

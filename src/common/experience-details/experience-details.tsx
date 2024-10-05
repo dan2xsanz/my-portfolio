@@ -10,6 +10,7 @@ export interface ExperienceDetailsProps {
   yearsMonths: string;
   description: string;
   companyName: string;
+  role?: string;
   position: string;
   height?: number;
   width?: number;
@@ -17,12 +18,13 @@ export interface ExperienceDetailsProps {
 
 export const ExperienceDetails = (props: ExperienceDetailsProps) => {
   const {
-    companyLogo,
-    position,
-    yearsMonths,
-    description,
+    role,
     width,
     height,
+    position,
+    companyLogo,
+    yearsMonths,
+    description,
     companyName,
   } = props;
   // DARK MODE STORE
@@ -41,7 +43,7 @@ export const ExperienceDetails = (props: ExperienceDetailsProps) => {
       className="experience-details-main-container-style"
       style={{ backgroundColor: cardBackground }}
     >
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "grid" }}>
         <div className="experience-details-container-style">
           <img
             src={companyLogo}
@@ -52,7 +54,12 @@ export const ExperienceDetails = (props: ExperienceDetailsProps) => {
           <div className="experience-details-description-container-style">
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ marginTop: "-5px" }}>
-                <Label labelSize={LabelSize.LARGE_BOLD} labelText={position} />
+                <div className="experience-full-screen">
+                  <Label
+                    labelSize={LabelSize.LARGE_BOLD}
+                    labelText={`${position} - ${role}`}
+                  />
+                </div>
               </div>
               <Label labelSize={LabelSize.MEDIUM} labelText={companyName} />
               <div style={{ marginTop: "-5px" }}>

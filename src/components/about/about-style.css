@@ -86,13 +86,6 @@
 
 @media (max-width: 1600px) {
   .about-container-style {
-    padding-left: 400px;
-    padding-right: 400px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .about-container-style {
     padding-left: 250px;
     padding-right: 250px;
   }

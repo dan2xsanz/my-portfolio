@@ -73,15 +73,3 @@
 .slider-button-style:hover {
   transform: scale(1.5);
 }
-
-/* @media (max-width: 1630px) {
-  .recommendation-details-container-style {
-    height: 170px;
-  }
-}
-
-@media (max-width: 1090px) {
-  .recommendation-details-container-style {
-    height: 180px;
-  }
-} */

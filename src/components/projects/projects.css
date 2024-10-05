@@ -23,3 +23,24 @@
   gap: 10px;
   justify-content: center;
 }
+
+@media (max-width: 1600px) {
+  .projects-container-style {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .projects-container-style {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .projects-container-style {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

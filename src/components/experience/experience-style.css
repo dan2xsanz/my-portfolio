@@ -18,10 +18,20 @@
 
 .experience-line-style {
   position: absolute;
-  left: 5px;
-  top: 50%;
+  left: 3.5px;
+  top: 0;
   width: 2px;
-  height: calc(100% - 10px);
+  height: 100%;
+  background-color: rgb(156, 151, 151);
+  z-index: -1;
+}
+
+.experience-line-style-half {
+  position: absolute;
+  left: 3.5px;
+  top: 0;
+  width: 2px;
+  height: 50%; /* Only half the height */
   background-color: rgb(156, 151, 151);
   z-index: -1;
 }
@@ -31,8 +41,10 @@
   height: 10px;
   width: 10px;
   border-radius: 50%;
+  z-index: 1;
+  position: relative;
+  flex-shrink: 0;
   animation: beatingGlow 1.5s infinite ease-in-out;
-
 }
 
 @keyframes beatingGlow {
@@ -47,5 +59,26 @@
   100% {
     box-shadow: 0 0 5px 1px rgb(156, 151, 151);
     transform: scale(1);
+  }
+}
+
+@media (max-width: 1600px) {
+  .experience-container-style {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .experience-container-style {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .experience-container-style {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

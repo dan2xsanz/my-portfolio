@@ -36,3 +36,14 @@
       transform: translateX(5px);
     }
   }
+
+  @media (max-width: 800px) {
+    .footer-see-more-about-me-style {
+      font-size: 15px;
+    }
+
+    .footer-beating-arrow-style {
+      font-size: 15px;
+    }
+  }
+  

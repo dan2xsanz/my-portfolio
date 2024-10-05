@@ -30,11 +30,17 @@ export const Experience = () => {
       <div className="div-details-style">
         {ExperienceDetailsInfo.map((experience, index) => (
           <div key={index} className="experience-link-container">
-            {index < ExperienceDetailsInfo.length - 1 && (
-              <div className="experience-line-style" />
-            )}
+            {/* If it's the last item, apply the half-height line */}
+            <div
+              className={
+                index === ExperienceDetailsInfo.length - 1
+                  ? "experience-line-style-half"
+                  : "experience-line-style"
+              }
+            />
             <div className="experience-circle-style" />
             <ExperienceDetails
+              role={experience.role}
               width={experience.width}
               height={experience.height}
               position={experience.position}
