@@ -1,19 +1,16 @@
 import { currentTimeGreetings, myRealtimeAge } from "../../functions";
+import { selectedScreenStore } from "../../store";
 import { useNavigate } from "react-router-dom";
 import { CALENDLY_URL } from "../../config";
 import {
   SocialMediaIcons,
-  SecondaryButton,
   ButtonSize,
   Button,
   HeaderEnums,
-  CalendarIcon,
-  DownloadIcon,
 } from "../../common";
-import { useEffect } from "react";
 
+import { useEffect } from "react";
 import "./introduction-style.css";
-import { selectedScreenStore } from "../../store";
 
 export const Introduction = () => {
   // NAVIGATION ROUTING
@@ -67,10 +64,6 @@ export const Introduction = () => {
               onClick={() => window.open(CALENDLY_URL, "_blank")}
             />
           </div>
-          {/* <div className="calendar-download-container">
-            <CalendarIcon onClick={() => window.open(CALENDLY_URL, "_blank")} />
-            <DownloadIcon onClick={() => {}} />
-          </div> */}
         </div>
         <SocialMediaIcons />
       </div>
