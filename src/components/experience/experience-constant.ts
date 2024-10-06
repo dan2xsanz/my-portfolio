@@ -6,7 +6,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: asi,
     companyName: "Alliance Software Incorporated",
-    yearsMonths: "July 2024 ~ July 2025",
+    yearsMonths: "July 2024",
     position: "Software Engineer ",
     role: "Associate Technical Specialist I (ATS I)",
     description: `Developed and maintained scalable backend systems using Java and Spring Boot, ensuring efficient performance and reliability. 
@@ -18,7 +18,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: asi,
     companyName: "Alliance Software Incorporated",
-    yearsMonths: "January 2024 ~ July 2024",
+    yearsMonths: "January 2024",
     position: "Software Engineer",
     role: "Technical Specialist II (TS II)",
     description: `Optimized application performance, reducing load times by 90% through code refactoring and database query optimizations. 
@@ -32,7 +32,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: asi,
     companyName: "Alliance Software Incorporated",
-    yearsMonths: "September 2022 ~ Januay 2024",
+    yearsMonths: "September 2022",
     position: "Software Engineer",
     role: "Technical Specialist I (TS I)",
     description: `Collaborated with cross-functional teams to design and implement full-stack applications using React, TypeScript, and Ant Design. 
@@ -44,7 +44,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: bckbone,
     companyName: "Backbone Creatives",
-    yearsMonths: "January 2022 ~ March 2022",
+    yearsMonths: "January 2022",
     position: "Graphic Artist",
     role: "Intern Student",
     description: `The significant growth in understanding how to create cohesive visual identities that align with a brand's message and values. 

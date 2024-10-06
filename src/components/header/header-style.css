@@ -7,6 +7,18 @@
   transition: transform 0.3s ease, background-color 1s ease;
 }
 
+.header-container.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.header-container.visible {
+  height: 40px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+
 .logo-container {
   cursor: pointer;
 }
@@ -39,7 +51,11 @@
   }
   .header-container {
     justify-content: space-between;
-    margin-top: -90px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
   }
 }
 
@@ -98,7 +114,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 3px 20px;
   z-index: 1001; /* Slightly higher z-index for the header */
 }
 

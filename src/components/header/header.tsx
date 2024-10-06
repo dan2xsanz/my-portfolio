@@ -13,9 +13,10 @@ export const Header = () => {
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
   const navigate = useNavigate();
 
-  // const [showScrollUp, setShowScrollUp] = useState(false);
   const [logo, setLogo] = useState<string>(logoWhite);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
   const onChangeTheme = () => {
     if (mode !== "black") {
@@ -57,20 +58,18 @@ export const Header = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 500) {
-  //       setShowScrollUp(true);
-  //     } else {
-  //       setShowScrollUp(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      if (window.innerWidth <= 700) {
+        setShowHeader(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -85,7 +84,9 @@ export const Header = () => {
   }, [menuOpen]);
 
   return (
-    <div className="header-container">
+    <div
+      className={`header-container ${showHeader ? "visible" : "hidden"}`}
+    >
       <div
         className="logo-container"
         onClick={() => onClickHeaderButton(HeaderEnums.INTRODUCTION)}
@@ -185,15 +186,6 @@ export const Header = () => {
           />
         </div>
       )}
-
-      {/* HIDE FOR THE MOMENT
-       {showScrollUp && (
-        <div className="scroll-up-btn">
-          <UpButtonIcon
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          />
-        </div>
-      )} */}
     </div>
   );
 };
