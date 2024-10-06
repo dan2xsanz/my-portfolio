@@ -118,8 +118,7 @@ export const Recommendations = [
     profession: "Senior Software Engineer",
     description: `I had the pleasure of working with Dan Lester Sanz on several projects, where he consistently exceeded expectations. 
               Dan meets deadlines with high-quality work and demonstrates a strong ability to learn new technologies quickly. 
-              His proactive approach and positive attitude make him a valuable asset to any team. Dan's dedication to excellence 
-              and collaborative spirit would make him a great addition to any organization.`,
+              His proactive approach and positive attitude make him a valuable asset to any team.`,
   },
   {
     name: "Celmar John Ortiz",
