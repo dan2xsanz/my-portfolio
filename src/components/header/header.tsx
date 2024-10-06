@@ -1,7 +1,9 @@
-import { HeaderButton, HeaderEnums, BarsIcon, CloseIcon } from "../../common";
+import { HeaderButton, HeaderEnums, BarsIcon } from "../../common";
 import { darkModeStore, selectedScreenStore } from "../../store";
+import closeLight from "../../assets/closeLight.png";
 import logoBlack from "../../assets/logo-black.png";
 import logoWhite from "../../assets/logo-white.png";
+import closeDark from "../../assets/closeDark.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import moon from "../../assets/moon.png";
@@ -62,7 +64,9 @@ export const Header = () => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       if (window.innerWidth <= 700) {
-        setShowHeader(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+        setShowHeader(
+          prevScrollPos > currentScrollPos || currentScrollPos < 10
+        );
       }
       setPrevScrollPos(currentScrollPos);
     };
@@ -84,14 +88,12 @@ export const Header = () => {
   }, [menuOpen]);
 
   return (
-    <div
-      className={`header-container ${showHeader ? "visible" : "hidden"}`}
-    >
+    <div className={`header-container ${showHeader ? "visible" : "hidden"}`}>
       <div
         className="logo-container"
         onClick={() => onClickHeaderButton(HeaderEnums.INTRODUCTION)}
       >
-        <img src={logo} height={70} width={70} />
+        <img className="header-logo" src={logo} height={70} width={70} />
       </div>
 
       <div className="menu-options-container">
@@ -121,8 +123,8 @@ export const Header = () => {
         )}
         <img
           src={mode !== "black" ? sun : moon}
-          height={23}
-          width={23}
+          height={20}
+          width={20}
           onClick={onChangeTheme}
           className="icon-mode-display"
         />
@@ -140,9 +142,23 @@ export const Header = () => {
                 onClickHeaderButton(HeaderEnums.INTRODUCTION);
               }}
             >
-              <img src={logo} height={70} width={70} alt="logo" />
+              <img src={logo} className="header-logo" alt="logo" />
             </div>
-            <CloseIcon onClick={() => setMenuOpen(!menuOpen)} />
+            {mode !== "black" ? (
+              <img
+                src={closeLight}
+                className="header-close"
+                alt="closeLight"
+                onClick={() => setMenuOpen(!menuOpen)}
+              />
+            ) : (
+              <img
+                src={closeDark}
+                className="header-close"
+                alt="closeLight"
+                onClick={() => setMenuOpen(!menuOpen)}
+              />
+            )}
           </div>
           <HeaderButton
             isFullScreen
