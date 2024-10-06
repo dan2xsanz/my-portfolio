@@ -32,6 +32,11 @@ export const Introduction = () => {
     currentTimeGreetings();
   }, []);
 
+  // AUTO SCROLL ON TOP
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="introduction-container-style">
       <div className="introduction-detail-style">
