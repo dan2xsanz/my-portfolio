@@ -81,8 +81,8 @@ export const getCardBackground = (
   setCardBackground: (data: string) => void
 ) => {
   if (mode !== "white") {
-    setCardBackground("rgba(123, 124, 123, 0.123)");
+    setCardBackground("rgb(124 123 123 / 6%)");
   } else {
-    setCardBackground("rgba(123, 124, 123, 0.253");
+    setCardBackground("rgb(124 123 123 / 21%)");
   }
 };

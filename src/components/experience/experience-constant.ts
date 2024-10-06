@@ -32,7 +32,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: asi,
     companyName: "Alliance Software Incorporated",
-    yearsMonths: "September 2022",
+    yearsMonths: "April 2023",
     position: "Software Engineer",
     role: "Technical Specialist I (TS I)",
     description: `Collaborated with cross-functional teams to design and implement full-stack applications using React, TypeScript, and Ant Design. 
@@ -40,6 +40,17 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
       the overall user experience. Created unit and integration tests to ensure code quality and maintainability, leading to a more reliable and 
       scalable codebase. Additionally, worked closely with UI/UX designers to ensure seamless user interactions and delivered responsive, 
       high-performance applications.`,
+  },
+  {
+    companyLogo: asi,
+    companyName: "Alliance Software Incorporated",
+    yearsMonths: "September 2022",
+    position: "Software Engineer",
+    role: "Staff Level",
+    description: `Contributed to the creation of High Level Designs (HLD) for various projects and initiated simple base code structures that assisted
+     senior engineers in further development. My responsibilities included collaborating closely with cross-functional teams to ensure the software met 
+     design specifications and delivered optimal performance. Additionally, I supported code reviews, identified areas for improvement, and participated
+    in debugging and testing efforts to ensure software quality and reliability.`,
   },
   {
     companyLogo: bckbone,
