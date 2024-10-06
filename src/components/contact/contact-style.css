@@ -72,3 +72,33 @@
   width: 300px;
   border-radius: 2px;
 }
+
+@media (max-width: 1600px) {
+  .contact-container-style {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .contact-container-style {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact-container-style {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .input-name-style-dark {
+    width: 100%;
+  }
+  .input-name-style-light {
+    width: 100%;
+  }
+}

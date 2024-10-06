@@ -21,7 +21,6 @@
 .div-details-style {
   display: grid;
   gap: 10px;
-  justify-content: center;
 }
 
 @media (max-width: 1600px) {
