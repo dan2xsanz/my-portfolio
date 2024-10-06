@@ -126,23 +126,20 @@ export const Recommendations = [
     profession: "Senior Software Engineer",
     description: `Dan Lester Sanz has been an invaluable team member on our projects, consistently delivering exceptional results. 
               His ability to meet deadlines without compromising quality, combined with his enthusiasm for learning new technologies, 
-              sets him apart. Dan’s proactive mindset and collaborative nature make him a strong asset to any team. He approaches every 
-              task with dedication and a drive for continuous improvement.`,
+              sets him apart. Dan’s proactive mindset and collaborative nature make him a strong asset to any team.`,
   },
   {
     name: "Mark Le John Casalta",
     profession: "Senior Software Engineer",
     description: `I have had the pleasure of working with Dan Lester Sanz on multiple projects, and his performance has been 
               outstanding. Dan excels at meeting deadlines while producing high-quality work and is quick to adapt to new technologies. 
-              His commitment to his craft and eagerness to contribute make him a highly valuable team member. Dan’s positive attitude and 
-              problem-solving skills ensure he will be a great addition to any team.`,
+              His commitment to his craft and eagerness to contribute make him a highly valuable team member.`,
   },
   {
     name: "John Dennis  Burgos",
     profession: "Senior Software Engineer",
     description: `It has been a privilege to work with Dan Lester Sanz on various projects. Dan consistently brings a strong technical skillset 
       and a proactive attitude to the table. His ability to tackle complex challenges with innovative solutions is impressive, 
-      and he always strives for excellence in every task he undertakes. Dan's collaborative nature and passion for coding make him an 
-      invaluable asset to any team he is part of.`,
+      and he always strives for excellence in every task he undertakes.`,
   },
 ];

@@ -152,9 +152,6 @@
   .see-more-container-style {
     margin-top: -30px;
   }
-  .book-download-container {
-    display: none;
-  }
   .calendar-download-container {
     display: flex;
     align-items: center;

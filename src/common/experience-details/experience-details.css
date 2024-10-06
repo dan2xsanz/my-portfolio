@@ -51,9 +51,9 @@
     text-align: center;
     gap: 10px;
   }
-  
+
   .experience-details-container-style img {
-    width: 140px; /* Add 'px' unit */
-    height: 140px; /* Add 'px' unit */
+    width: 110px;
+    height: 110px;
   }
 }

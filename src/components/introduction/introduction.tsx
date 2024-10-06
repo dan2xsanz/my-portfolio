@@ -66,16 +66,11 @@ export const Introduction = () => {
               label={"Book a Meeting"}
               onClick={() => window.open(CALENDLY_URL, "_blank")}
             />
-            <SecondaryButton
-              size={ButtonSize.large}
-              label={"Download CV"}
-              onClick={() => {}}
-            />
           </div>
-          <div className="calendar-download-container">
+          {/* <div className="calendar-download-container">
             <CalendarIcon onClick={() => window.open(CALENDLY_URL, "_blank")} />
             <DownloadIcon onClick={() => {}} />
-          </div>
+          </div> */}
         </div>
         <SocialMediaIcons />
       </div>
