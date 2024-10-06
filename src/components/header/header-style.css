@@ -59,6 +59,7 @@
   .header-logo {
     height: 60px;
     width: 60px;
+    margin-left: -5px;
   }
   .header-close {
     height: 25px;

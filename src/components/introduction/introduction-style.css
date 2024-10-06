@@ -23,11 +23,11 @@
 
 @media (max-width: 1000px) {
   .introduction-container-style {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .introduction-detail-style {
-    width: 90%;
+    width: 100%;
   }
 }
 
