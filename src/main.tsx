@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import logoBlack from "./assets/logo-black.png";
+import logoWhite from "./assets/logo-white.png";
 import {
   SvgBackground,
   Introduction,
@@ -11,7 +13,7 @@ import {
 
 import { createRoot } from "react-dom/client";
 import { MainBackground } from "./common";
-import { StrictMode, useEffect } from "react";
+import { StrictMode, useEffect, useState } from "react";
 
 import "./main.css";
 import { darkModeStore } from "./store";
@@ -19,15 +21,39 @@ const App = () => {
   // DARK MODE STORE
   const { mode, setMode } = darkModeStore();
 
+  const [logo, setLogo] = useState<string>(logoWhite);
+
+  const currentBackgroundColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--background-color")
+    .trim();
+
   useEffect(() => {
-    setMode(mode);
+    if (mode === currentBackgroundColor) {
+      if (mode !== "black") {
+        document.documentElement.style.setProperty(
+          "--background-color",
+          "white"
+        );
+        document.documentElement.style.setProperty("--color", "black");
+        setMode("black");
+        setLogo(logoBlack);
+      } else {
+        document.documentElement.style.setProperty(
+          "--background-color",
+          "black"
+        );
+        document.documentElement.style.setProperty("--color", "white");
+        setMode("white");
+        setLogo(logoWhite);
+      }
+    }
   }, []);
 
   return (
     <Router>
       <MainBackground />
       <StrictMode>
-        <Header />
+        <Header logo={logo} setLogo={setLogo} />
         <SvgBackground />
         <Routes>
           <Route path="" element={<Introduction />} />

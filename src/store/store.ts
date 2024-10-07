@@ -1,20 +1,24 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-const currentBackgroundColor = getComputedStyle(document.documentElement)
-  .getPropertyValue("--background-color")
-  .trim();
-
 /*--------------------------------DARK MODE STORE------------------------------------- */
 type DarkModeStore = {
   mode: string;
   setMode: (data: string) => void;
 };
 
-export const darkModeStore = create<DarkModeStore>()((set) => ({
-  mode: currentBackgroundColor !== "black" ? "white" : "black",
-  setMode: (currentMode: string) => set({ mode: currentMode }),
-}));
+export const darkModeStore = create<DarkModeStore>()(
+  persist(
+    (set) => ({
+      mode: "",
+      setMode: (currentMode: string) => set({ mode: currentMode }),
+    }),
+    {
+      name: "theme-storage",
+      getStorage: () => localStorage,
+    }
+  )
+);
 
 /*--------------------------------BLINKING STORE------------------------------------- */
 type BlinkingStore = {

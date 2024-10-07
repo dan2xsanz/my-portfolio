@@ -10,12 +10,16 @@ import moon from "../../assets/moon.png";
 import sun from "../../assets/sun.png";
 import "./header-style.css";
 
-export const Header = () => {
+interface HeaderProps {
+  logo: string;
+  setLogo: (data: string) => void;
+}
+
+export const Header = ({ logo, setLogo }: HeaderProps) => {
   const { setMode, mode } = darkModeStore();
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
   const navigate = useNavigate();
 
-  const [logo, setLogo] = useState<string>(logoWhite);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
