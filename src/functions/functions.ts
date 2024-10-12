@@ -86,3 +86,11 @@ export const getCardBackground = (
     setCardBackground("rgb(124 123 123 / 21%)");
   }
 };
+
+export const getCurrentBgColor = (mode: string): string => {
+  if (mode !== "white") {
+    return "black";
+  } else {
+    return "white";
+  }
+};

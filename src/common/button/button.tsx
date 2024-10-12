@@ -12,7 +12,7 @@ export const Button = (props: ButtonInterface) => {
       return (
         <button
           className={
-            mode === "white"
+            mode !== "white"
               ? "button-style white large"
               : "button-style dark large"
           }
@@ -25,7 +25,7 @@ export const Button = (props: ButtonInterface) => {
       return (
         <button
           className={
-            mode === "white"
+            mode !== "white"
               ? "button-style white medium"
               : "button-style dark medium"
           }
@@ -37,7 +37,7 @@ export const Button = (props: ButtonInterface) => {
       return (
         <button
           className={
-            mode === "white"
+            mode !== "white"
               ? "button-style white small"
               : "button-style dark small"
           }
@@ -60,7 +60,7 @@ export const SecondaryButton = (props: ButtonInterface) => {
       return (
         <button
           className={
-            mode === "white"
+            mode !== "white"
               ? "button-style secondary white large"
               : "button-style secondary dark large"
           }
