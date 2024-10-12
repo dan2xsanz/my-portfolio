@@ -19,6 +19,9 @@
 
 .stack-image-container-style {
   width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flip-image {
@@ -111,5 +114,8 @@
 @media (max-width: 400px) {
   .stack-details-container-style img {
     margin-left: -60px;
+  }
+  .stack-image-container-style{
+    margin-left: 50px;
   }
 }

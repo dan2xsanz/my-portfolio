@@ -7,11 +7,12 @@ import { Label, LabelSize } from "../label";
 import { Image } from "antd";
 
 import "./project-details.css";
+import { ProjectStatus } from "./project-details-constant";
 
 interface ProjectDetailsInterface {
   images: string[];
   projectType: string;
-  isPersonal?: boolean;
+  status: ProjectStatus;
   projectTitle: string;
   projectDescription: string;
   projectStacks?: React.ReactNode;
@@ -24,7 +25,7 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
   // PROJECT DETAILS PROPS
   const {
     images,
-    isPersonal,
+    status,
     projectType,
     projectTitle,
     projectStacks,
@@ -39,6 +40,48 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
 
   // RECOMMENDATIONS ACTIVE KEY
   const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  // GET PROJECT CONTAINER STYLE
+  const projectContainerStyle = (): string => {
+    switch (status) {
+      case ProjectStatus.ONGOING: {
+        return "project-title-container";
+      }
+      case ProjectStatus.PERSONAL: {
+        return "project-title-container";
+      }
+      case ProjectStatus.PROTECTED: {
+        return "project-title-container.disabled";
+      }
+    }
+  };
+
+  // GET PROJECT CONTAINER STYLE
+  const projectStatusStyle = (): JSX.Element => {
+    switch (status) {
+      case ProjectStatus.ONGOING: {
+        return (
+          <div className="protected-project-ongoing-style">
+            <Label labelSize={LabelSize.MEDIUM} labelText={"Ongoing"} />
+          </div>
+        );
+      }
+      case ProjectStatus.PERSONAL: {
+        return (
+          <div className="personal-project-pesonal-style">
+            <Label labelSize={LabelSize.MEDIUM} labelText={"Personal"} />
+          </div>
+        );
+      }
+      case ProjectStatus.PROTECTED: {
+        return (
+          <div className="protected-project-protected-style">
+            <Label labelSize={LabelSize.MEDIUM} labelText={"Protected"} />
+          </div>
+        );
+      }
+    }
+  };
 
   // GET CURRENT IMAGE DISPLAY
   useEffect(() => {
@@ -58,8 +101,8 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
       <div className="project-image-container">
         <Image
           width={280}
-          preview={isPersonal}
-          style={{ cursor: isPersonal ? "" : "not-allowed" }}
+          preview={status !== ProjectStatus.PROTECTED}
+          style={{ cursor: status !== ProjectStatus.PROTECTED ? "" : "not-allowed" }}
           src={currentImage}
         />
         <div className="project-slider-buttons-container-style">
@@ -80,25 +123,11 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
         </div>
       </div>
       <div>
-        <div
-          className={
-            isPersonal
-              ? "project-title-container"
-              : "project-title-container disabled"
-          }
-        >
+        <div className={projectContainerStyle()}>
           <Label labelSize={LabelSize.LARGE_BOLD} labelText={projectTitle} />
         </div>
         <div className="project-status-container-style">
-          {isPersonal ? (
-            <div className="personal-project-status-style">
-              <Label labelSize={LabelSize.MEDIUM} labelText={"Personal"} />
-            </div>
-          ) : (
-            <div className="protected-project-status-style">
-              <Label labelSize={LabelSize.MEDIUM} labelText={"Protected"} />
-            </div>
-          )}
+          {projectStatusStyle()}
           <Label labelSize={LabelSize.MEDIUM} labelText={`| ${projectType}`} />
         </div>
         <div className="project-details-stacks-container-style">

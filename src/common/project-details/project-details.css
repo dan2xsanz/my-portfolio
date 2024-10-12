@@ -62,12 +62,17 @@
   margin-top: -5px;
 }
 
-.personal-project-status-style {
+.personal-project-pesonal-style {
   color: green;
   font-weight: bolder;
 }
 
-.protected-project-status-style {
+.protected-project-ongoing-style {
+  color: rgb(143, 167, 13);
+  font-weight: bolder;
+}
+
+.protected-project-protected-style {
   color: red;
   font-weight: bolder;
 }

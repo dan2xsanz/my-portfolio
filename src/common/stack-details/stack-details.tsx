@@ -18,6 +18,15 @@ import css from "../../assets/css.png";
 
 import "./stack-details.css";
 import { Label, LabelSize } from "../label";
+import {
+  BOARDING_HOUSE_URL,
+  HERBAL_PLANT_MOBILE_URL,
+  HERBAL_PLANT_URL,
+  LAUNDRY_SHOP_URL,
+  PORTFOLIO_URL,
+  PORTFOLIO_V1_URL,
+  SNZ_URL,
+} from "../../config";
 
 interface StockPropertiesInterface {
   name: string;
@@ -27,6 +36,7 @@ interface StockPropertiesInterface {
   color?: string;
   percentage?: string;
   description?: JSX.Element;
+  style?: React.CSSProperties;
 }
 
 interface StackDetailsInterface {
@@ -68,11 +78,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
                     color: "rgb(110, 155, 240)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(LAUNDRY_SHOP_URL, "_blank")}
                 >{`Laundry Shop Application`}</span>
               }{" "}
               as my first project, using NetBeans as the Integrated Development
@@ -101,11 +112,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
                     color: "rgb(177, 71, 226)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(BOARDING_HOUSE_URL, "_blank")}
                 >{`Boarding House System `}</span>
               }
               created using Windows Forms. This project helped me gain practical
@@ -136,11 +148,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgba(179, 179, 54, 0.856)",
+                    color: "rgb(177, 153, 46)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(HERBAL_PLANT_URL, "_blank")}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Desktop)`}</span>
               }{" "}
               and it aimed to assist users in identifying local herbal plants
@@ -171,11 +184,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
                     color: "rgb(28, 153, 28)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(HERBAL_PLANT_MOBILE_URL, "_blank")}
                 >{`Southern Leyte Endemic Herbal Plant Identification (Mobile)`}</span>
               }{" "}
               and it aimed to assist users in identifying local herbal plants
@@ -209,11 +223,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
                     color: "rgb(28, 153, 28)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(SNZ_URL, "_blank")}
                 >{`SNZ Market Place`}</span>
               }{" "}
               an E-Commerse inpired application.
@@ -242,11 +257,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
                     color: "rgb(93, 203, 247)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(PORTFOLIO_URL, "_blank")}
                 >{`Portfolio`}</span>
               }{" "}
               is actually made using React.
@@ -324,11 +340,12 @@ export const StackDetails = (props: StackDetailsInterface) => {
               {
                 <span
                   style={{
+                    fontWeight: "bolder",
                     cursor: "pointer",
                     fontStyle: "italic",
-                    color: "rgb(247, 247, 89)",
+                    color: "rgb(177, 153, 46)",
                   }}
-                  onClick={() => {}}
+                  onClick={() => window.open(PORTFOLIO_V1_URL, "_blank")}
                 >{`Portfolio Version-1`}</span>
               }{" "}
               is actually made using React.
@@ -451,6 +468,7 @@ export const StackDetails = (props: StackDetailsInterface) => {
           <div className="stack-image-container-style">
             <img
               src={stackProperties?.image}
+              style={stackProperties.style}
               width={stackProperties?.width}
               height={stackProperties?.height}
               alt="Stack Logo"
@@ -471,7 +489,23 @@ export const StackDetails = (props: StackDetailsInterface) => {
                 borderColor: stackProperties.color,
               }}
             >
-              <Label labelSize={LabelSize.LARGE_BOLD} labelText={"Experties"} />
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Label
+                  labelSize={LabelSize.LARGE_BOLD}
+                  labelText={"Experties"}
+                />
+                <Label
+                  labelSize={LabelSize.LARGE_BOLD}
+                  labelText={`${stackProperties.percentage}`}
+                />
+              </div>
               <div className="stack-experties-container-style">
                 <div className="progress-bar-style">
                   <div
@@ -482,10 +516,6 @@ export const StackDetails = (props: StackDetailsInterface) => {
                     }}
                   />
                 </div>
-                <Label
-                  labelSize={LabelSize.MEDIUM}
-                  labelText={`${stackProperties.percentage}`}
-                />
               </div>
               <div>{stackProperties.description}</div>
             </div>

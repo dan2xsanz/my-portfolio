@@ -9,9 +9,9 @@ interface RecommendationDetailsInterface {
   name: string;
   profession: string;
   description: string;
-  currentIndex?: number;
-  numberOfRecommendations?: number | undefined;
-  setCurrentIndex?: (data: number | undefined) => void;
+  currentIndex: number;
+  numberOfRecommendations: number;
+  setCurrentIndex: (data: number | undefined) => void;
 }
 
 export const RecommendationDetails = (
@@ -48,35 +48,57 @@ export const RecommendationDetails = (
       style={{ backgroundColor: cardBackground }}
     >
       <div
-        className={`recommendation-details-content ${
-          showContent ? "show" : ""
-        }`}
-      >
-        <div className="recommendation-profile-name-style">
-          <div className="recommendation-name-position-style">
-            <Label labelSize={LabelSize.LARGE_BOLD} labelText={name} />
-            <div className="recommendation-position-style">
-              <Label labelSize={LabelSize.SMALL} labelText={profession} />
+        onClick={() => {
+          if (currentIndex === 0) {
+            setCurrentIndex(numberOfRecommendations - 1);
+          } else {
+            setCurrentIndex(currentIndex - 1);
+          }
+        }}
+        className="recommendation-arrow-left"
+      >{`${"<"}`}</div>
+      <div>
+        <div
+          className={`recommendation-details-content ${
+            showContent ? "show" : ""
+          }`}
+        >
+          <div className="recommendation-profile-name-style">
+            <div className="recommendation-name-position-style">
+              <Label labelSize={LabelSize.LARGE_BOLD} labelText={name} />
+              <div className="recommendation-position-style">
+                <Label labelSize={LabelSize.SMALL} labelText={profession} />
+              </div>
             </div>
           </div>
+          <div className="recommendation-description-style">
+            <Label labelSize={LabelSize.SMALL} labelText={description} />
+          </div>
         </div>
-        <div className="recommendation-description-style">
-          <Label labelSize={LabelSize.SMALL} labelText={description} />
+        <div className="slider-buttons-container-style">
+          {Array.from({ length: numberOfRecommendations ?? 0 }, (_, i) => (
+            <div
+              key={i}
+              className={
+                currentIndex === i
+                  ? "slider-button-style current"
+                  : "slider-button-style"
+              }
+              onClick={() => setCurrentIndex && setCurrentIndex(i)}
+            />
+          ))}
         </div>
       </div>
-      <div className="slider-buttons-container-style">
-        {Array.from({ length: numberOfRecommendations ?? 0 }, (_, i) => (
-          <div
-            key={i}
-            className={
-              currentIndex === i
-                ? "slider-button-style current"
-                : "slider-button-style"
-            }
-            onClick={() => setCurrentIndex && setCurrentIndex(i)}
-          />
-        ))}
-      </div>
+      <div
+        onClick={() => {
+          if (currentIndex < numberOfRecommendations - 1) {
+            setCurrentIndex(currentIndex + 1);
+          } else {
+            setCurrentIndex(0);
+          }
+        }}
+        className="recommendation-arrow-right"
+      >{`${">"}`}</div>
     </div>
   );
 };

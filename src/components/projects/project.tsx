@@ -58,6 +58,7 @@ import { Fragment, useEffect } from "react";
 import { Footer } from "../footer";
 
 import "./projects.css";
+import { ProjectStatus } from "../../common/project-details";
 
 export const Projects = () => {
   // SELECTED SCREEN STORE
@@ -79,7 +80,7 @@ export const Projects = () => {
 
       {/* <div className="div-details-style"> */}
       <ProjectDetails
-        isPersonal={false}
+        status={ProjectStatus.PROTECTED}
         images={[image17, image18, image19, image20]}
         projectTitle={"Sirius WebPOS - Headquarter"}
         projectType={"Web Application"}
@@ -199,7 +200,7 @@ export const Projects = () => {
       />
       {/* SNZ MARKET PLACE WEB APPLICATION */}
       <ProjectDetails
-        isPersonal
+        status={ProjectStatus.ONGOING}
         images={[image9, image10, image11, image12]}
         projectType={"Web Application"}
         projectTitle={"SNZ Marketplace"}
@@ -299,7 +300,7 @@ export const Projects = () => {
       />
       {/* PORTFOLIO APPLICATION */}
       <ProjectDetails
-        isPersonal
+        status={ProjectStatus.PERSONAL}
         images={[image13, image14, image15, image16]}
         projectTitle={"My Portfolio Version 1.0"}
         projectType={"Web Site"}
@@ -352,7 +353,7 @@ export const Projects = () => {
       />
       {/* HERBS DESKTOP APPLICATION */}
       <ProjectDetails
-        isPersonal
+        status={ProjectStatus.PERSONAL}
         images={[image5, image6, image7, image8]}
         projectType={"Desktop Application"}
         projectTitle={"Southern Leyte Endemic Herbal Plants Identification"}
@@ -428,7 +429,7 @@ export const Projects = () => {
       />
       {/* HERBS MOBILE APPLICATION */}
       <ProjectDetails
-        isPersonal
+        status={ProjectStatus.PERSONAL}
         images={[image1, image2, image3, image4]}
         projectType="Mobile Application"
         projectTitle="Southern Leyte Endemic Herbal Plants Identification"

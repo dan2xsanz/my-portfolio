@@ -16,6 +16,7 @@
 
 .contact-field-container {
   margin-top: 30px;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -96,9 +97,16 @@
 
 @media (max-width: 700px) {
   .input-name-style-dark {
-    width: 100%;
+    width: 97%;
   }
   .input-name-style-light {
-    width: 100%;
+    width: 97%;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-definition-container {
+    margin-top: 10px;
+    display: grid;
   }
 }

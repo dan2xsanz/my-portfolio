@@ -3,7 +3,40 @@
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  display: flex;
 }
+
+.recommendation-arrow-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: -5px;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.recommendation-arrow-left:hover {
+  background-color: rgba(128, 128, 128, 0.185);
+}
+
+.recommendation-arrow-right {
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: -5px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.recommendation-arrow-right:hover {
+  background-color: rgba(128, 128, 128, 0.185);
+}
+
 
 .recommendation-details-content {
   opacity: 0;

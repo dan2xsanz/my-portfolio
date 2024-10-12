@@ -115,28 +115,28 @@ export const EducationInfoDetails = [
 export const Recommendations = [
   {
     name: "Gene Paul Mar Javier",
-    profession: "Senior Software Engineer",
+    profession: "Software Engineer",
     description: `I had the pleasure of working with Dan Lester Sanz on several projects, where he consistently exceeded expectations. 
               Dan meets deadlines with high-quality work and demonstrates a strong ability to learn new technologies quickly. 
               His proactive approach and positive attitude make him a valuable asset to any team.`,
   },
   {
     name: "Celmar John Ortiz",
-    profession: "Senior Software Engineer",
+    profession: "Software Engineer",
     description: `Dan Lester Sanz has been an invaluable team member on our projects, consistently delivering exceptional results. 
               His ability to meet deadlines without compromising quality, combined with his enthusiasm for learning new technologies, 
               sets him apart. Dan’s proactive mindset and collaborative nature make him a strong asset to any team.`,
   },
   {
     name: "Mark Le John Casalta",
-    profession: "Senior Software Engineer",
+    profession: "Software Engineer",
     description: `I have had the pleasure of working with Dan Lester Sanz on multiple projects, and his performance has been 
               outstanding. Dan excels at meeting deadlines while producing high-quality work and is quick to adapt to new technologies. 
               His commitment to his craft and eagerness to contribute make him a highly valuable team member.`,
   },
   {
     name: "John Dennis  Burgos",
-    profession: "Senior Software Engineer",
+    profession: "Software Engineer",
     description: `It has been a privilege to work with Dan Lester Sanz on various projects. Dan consistently brings a strong technical skillset 
       and a proactive attitude to the table. His ability to tackle complex challenges with innovative solutions is impressive, 
       and he always strives for excellence in every task he undertakes.`,
