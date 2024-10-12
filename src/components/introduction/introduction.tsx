@@ -2,6 +2,7 @@ import { currentTimeGreetings, myRealtimeAge } from "../../functions";
 import { selectedScreenStore } from "../../store";
 import { useNavigate } from "react-router-dom";
 import { CALENDLY_URL } from "../../config";
+
 import {
   SocialMediaIcons,
   ButtonSize,
@@ -37,10 +38,39 @@ export const Introduction = () => {
   return (
     <div className="introduction-container-style">
       <div className="introduction-detail-style">
-        <div className="greetings-container-style">{`${currentTimeGreetings()}!`}</div>
-        <div className="greetings-name-container-style">
-          I'm <span className="name-container-style">Dan Lester Sanz</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+          <div className="greetings-container-style">{`${
+            currentTimeGreetings().greeting
+          }!`}</div>
+          <img src={currentTimeGreetings().icon} width={25} height={25} />
         </div>
+        <div className="greetings-name-container-style">
+          I'm{" "}
+          <span className="name-container-style">
+            {[
+              "D",
+              "a",
+              "n",
+              "\u00A0",
+              "L",
+              "e",
+              "s",
+              "t",
+              "e",
+              "r",
+              "\u00A0",
+              "S",
+              "a",
+              "n",
+              "z",
+            ].map((char, index) => (
+              <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                {char}
+              </span>
+            ))}
+          </span>
+        </div>
+
         <div className="self-description-style">
           A {`${myRealtimeAge()}`}-year-old
           <span className="software-engineer-style"> Software Engineer </span>

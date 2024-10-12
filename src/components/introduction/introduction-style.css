@@ -18,6 +18,7 @@
 
 .introduction-detail-style {
   width: 70%;
+  margin-top: 10px;
   text-align: justify;
 }
 
@@ -53,11 +54,26 @@
   }
 }
 
+/* Wave Animation */
 .greetings-name-container-style {
   font-size: 70px;
   gap: 10px;
+  display: inline-block;
 }
 
+.name-container-style span {
+  display: inline-block;
+  animation: wave 4s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 85% { transform: translateY(0); }
+  90% { transform: translateY(-10px); }
+  95% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive font size for greetings */
 @media (max-width: 1010px) {
   .greetings-name-container-style {
     font-size: 60px;
@@ -161,8 +177,7 @@
 
 /* Animations for arrow wobble effect */
 @keyframes wobble {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(0);
   }
   25% {

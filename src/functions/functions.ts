@@ -1,6 +1,9 @@
 import { frame, useMotionValue, useSpring } from "framer-motion";
 import { RefObject, useEffect } from "react";
 
+import night from "../assets/night.png";
+import sunrise from "../assets/sunrise.png";
+
 import moment from "moment";
 
 // Follow cursor pointer
@@ -60,20 +63,22 @@ export const myRealtimeAge = (): string => {
 };
 
 // Calculate greetings reatime based on the current time
-export const currentTimeGreetings = (): string => {
+interface TimeResponse {
+  greeting: string;
+  icon: string;
+}
+export const currentTimeGreetings = (): TimeResponse => {
+  let response: TimeResponse;
   const currentHour = moment().hour();
 
-  let greeting: string;
-
   if (currentHour >= 0 && currentHour < 12) {
-    greeting = "Good Morning";
+    response = { greeting: "Good Morning", icon: sunrise };
   } else if (currentHour >= 12 && currentHour <= 17) {
-    greeting = "Good Afternoon";
+    response = { greeting: "Good Morning", icon: sunrise };
   } else {
-    greeting = "Good Evening";
+    response = { greeting: "Good Evening", icon: night };
   }
-
-  return greeting;
+  return response;
 };
 
 export const getCardBackground = (
@@ -84,6 +89,14 @@ export const getCardBackground = (
     setCardBackground("rgb(124 123 123 / 6%)");
   } else {
     setCardBackground("rgb(124 123 123 / 21%)");
+  }
+};
+
+export const getCardBackgroundString = (mode: string): string => {
+  if (mode !== "white") {
+    return "rgb(124 123 123 / 6%)";
+  } else {
+    return "rgb(124 123 123 / 21%)";
   }
 };
 

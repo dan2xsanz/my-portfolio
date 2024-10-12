@@ -14,11 +14,13 @@
   font-size: 20px;
   margin-left: -5px;
   margin-right: 10px;
+  color: rgba(128, 128, 128, 0.199);
   justify-content: center;
 }
 
 .recommendation-arrow-left:hover {
   background-color: rgba(128, 128, 128, 0.185);
+  font-size: 30px;
 }
 
 .recommendation-arrow-right {
@@ -29,14 +31,14 @@
   margin-left: 10px;
   margin-right: -5px;
   align-items: center;
+  color: rgba(128, 128, 128, 0.199);
   justify-content: center;
-  
 }
 
 .recommendation-arrow-right:hover {
   background-color: rgba(128, 128, 128, 0.185);
+  font-size: 30px;
 }
-
 
 .recommendation-details-content {
   opacity: 0;
