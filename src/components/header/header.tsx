@@ -1,4 +1,3 @@
-import { HeaderButton, HeaderEnums, BarsIcon } from "../../common";
 import { darkModeStore, selectedScreenStore } from "../../store";
 import closeLight from "../../assets/closeLight.png";
 import logoBlack from "../../assets/logo-black.png";
@@ -6,9 +5,16 @@ import logoWhite from "../../assets/logo-white.png";
 import closeDark from "../../assets/closeDark.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import moon from "../../assets/moon.png";
-import sun from "../../assets/sun.png";
+
+import { FaMoon, FaSun } from "react-icons/fa";
 import "./header-style.css";
+
+import {
+  DarkModeIcon,
+  HeaderButton,
+  HeaderEnums,
+  BarsIcon,
+} from "../../common";
 
 interface HeaderProps {
   logo: string;
@@ -36,6 +42,7 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
       setMode("white");
       setLogo(logoWhite);
     }
+    setIsDarkMode(!isDarkMode);
     setMenuOpen(false);
   };
 
@@ -91,6 +98,17 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
     };
   }, [menuOpen]);
 
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  // Update the theme based on the state
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
   return (
     <div className={`header-container ${showHeader ? "visible" : "hidden"}`}>
       <div
@@ -125,13 +143,23 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
             onClick={() => onClickHeaderButton(HeaderEnums.CONTACTS)}
           />
         )}
-        <img
-          src={mode !== "black" ? sun : moon}
-          height={20}
-          width={20}
+        <button
           onClick={onChangeTheme}
-          className="icon-mode-display"
-        />
+          style={{
+            backgroundColor: isDarkMode ? "black" : "white",
+            color: isDarkMode ? "#fff" : "#000",
+            border: "none",
+            borderRadius: "30px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {isDarkMode ? <FaMoon /> : <FaSun />}
+          <span style={{ marginLeft: "10px" }}>
+            {isDarkMode ? "Dark Mode" : "Light Mode"}
+          </span>
+        </button>
       </div>
       <div className="menu-hamburger-container">
         <BarsIcon onClick={() => setMenuOpen(!menuOpen)} />
@@ -139,15 +167,6 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
       {menuOpen && (
         <div className={`full-page-menu ${menuOpen ? "active" : ""}`}>
           <div className="full-page-menu-header">
-            <div
-              className="logo-container"
-              onClick={() => {
-                setMenuOpen(false);
-                onClickHeaderButton(HeaderEnums.INTRODUCTION);
-              }}
-            >
-              <img src={logo} className="header-logo" alt="logo" />
-            </div>
             {mode !== "black" ? (
               <img
                 src={closeLight}
@@ -163,6 +182,15 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
                 onClick={() => setMenuOpen(!menuOpen)}
               />
             )}
+          </div>
+          <div
+            className="logo-container"
+            onClick={() => {
+              setMenuOpen(false);
+              onClickHeaderButton(HeaderEnums.INTRODUCTION);
+            }}
+          >
+            <img src={logo} className="header-logo" alt="logo" />
           </div>
           <HeaderButton
             isFullScreen
@@ -196,14 +224,13 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
               setMenuOpen(false);
             }}
           />
-          <img
-            src={mode !== "black" ? sun : moon}
-            height={23}
-            width={23}
-            onClick={onChangeTheme}
-            className="icon-mode-display"
-            alt="theme-icon"
-          />
+          <div style={{ marginTop: "10px" }}>
+            {isDarkMode ? (
+              <FaMoon size={30} onClick={onChangeTheme} />
+            ) : (
+              <FaSun size={30} onClick={onChangeTheme} />
+            )}
+          </div>
         </div>
       )}
     </div>

@@ -20,6 +20,8 @@
 
 .logo-container {
   cursor: pointer;
+  margin-bottom: -15px;
+  margin-left: 10px;
 }
 
 .menu-options-container {
@@ -131,7 +133,7 @@
   margin-top: 10px;
   top: 0; /* Keep this fixed at the top */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 3px 20px;
   z-index: 1001; /* Slightly higher z-index for the header */

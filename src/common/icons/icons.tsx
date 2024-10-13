@@ -90,7 +90,11 @@ export const DarkModeIcon = (props: IconProps) => {
   const { mode } = darkModeStore();
   const { onClick } = props;
   return (
-    <div className="dark-icons-style" onClick={onClick}>
+    <div
+      className="dark-icons-style"
+      style={{ height: "25px", width: "25px" }}
+      onClick={onClick}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 510 510"

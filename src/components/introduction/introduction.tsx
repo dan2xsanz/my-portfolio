@@ -38,12 +38,20 @@ export const Introduction = () => {
   return (
     <div className="introduction-container-style">
       <div className="introduction-detail-style">
-        <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+        <div
+          style={{
+            gap: "5px",
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "-5px",
+          }}
+        >
           <div className="greetings-container-style">{`${
             currentTimeGreetings().greeting
           }!`}</div>
           <img src={currentTimeGreetings().icon} width={25} height={25} />
         </div>
+        
         <div className="greetings-name-container-style">
           I'm{" "}
           <span className="name-container-style">

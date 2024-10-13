@@ -3,6 +3,7 @@ import { RefObject, useEffect } from "react";
 
 import night from "../assets/night.png";
 import sunrise from "../assets/sunrise.png";
+import afternoon from "../assets/afternoon.png";
 
 import moment from "moment";
 
@@ -74,7 +75,7 @@ export const currentTimeGreetings = (): TimeResponse => {
   if (currentHour >= 0 && currentHour < 12) {
     response = { greeting: "Good Morning", icon: sunrise };
   } else if (currentHour >= 12 && currentHour <= 17) {
-    response = { greeting: "Good Morning", icon: sunrise };
+    response = { greeting: "Good Afternoon", icon: afternoon };
   } else {
     response = { greeting: "Good Evening", icon: night };
   }
