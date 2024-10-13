@@ -10,7 +10,6 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import "./header-style.css";
 
 import {
-  DarkModeIcon,
   HeaderButton,
   HeaderEnums,
   BarsIcon,
