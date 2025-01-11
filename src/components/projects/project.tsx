@@ -1,4 +1,5 @@
 import { HeaderEnums, Label, LabelSize, ProjectDetails } from "../../common";
+import { notification } from "antd";
 
 import reactrouter from "../../assets/reactrouter.png";
 import image13 from "../../assets/portfolio-v1/1.png";
@@ -46,7 +47,7 @@ import html from "../../assets/html.png";
 import java from "../../assets/java.png";
 
 import aes from "../../assets/aes.png";
-import api from "../../assets/api.png";
+import apis from "../../assets/api.png";
 import ant from "../../assets/ant.png";
 import nxt from "../../assets/nxt.png";
 import css from "../../assets/css.png";
@@ -59,6 +60,7 @@ import { Footer } from "../footer";
 
 import "./projects.css";
 import { ProjectStatus } from "../../common/project-details";
+import { title } from "node:process";
 
 export const Projects = () => {
   // SELECTED SCREEN STORE
@@ -72,13 +74,26 @@ export const Projects = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [api, contextHolder] = notification.useNotification();
+
+  const openNotificationWithIcon = (
+    type: string,
+    title: string,
+    description: string
+  ) => {
+    api[type]({
+      description: description,
+      message: title,
+      placement: "bottomRight",
+    });
+  };
+
   return (
     <div className="projects-container-style">
       <div className="projects-text-container">
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"Projects."} />
       </div>
-
-      {/* <div className="div-details-style"> */}
+      {contextHolder}
       <ProjectDetails
         status={ProjectStatus.PROTECTED}
         images={[image17, image18, image19, image20]}
@@ -86,6 +101,13 @@ export const Projects = () => {
         projectType={"Web Application"}
         projectDescription={`Sirius WebPOS is a comprehensive full-stack Point of Sale (POS) system complete with headquarters management capabilities. This robust solution caters to businesses of all sizes, offering a seamless and efficient way to manage transactions, inventory, and customer data. With its headquarters functionality, users can oversee multiple locations or branches, streamlining operations and enhancing productivity.
             The system integrates features such as real-time inventory tracking, sales analytics, and user management, allowing businesses to monitor performance metrics from a centralized dashboard. It also supports various payment methods, making transactions smoother for customers. Additionally, Sirius WebPOS is designed to be highly scalable, ensuring that businesses can expand their operations without needing major overhauls of their POS infrastructure.`}
+        onClickDiscover={() =>
+          openNotificationWithIcon(
+            "warning",
+            "Access Restricted",
+            "You do not have permission to view this project (Sirius WebPOS - Headquarter)."
+          )
+        }
         projectStacks={
           <Fragment>
             <img
@@ -168,7 +190,7 @@ export const Projects = () => {
               }
             />
             <img
-              src={api}
+              src={apis}
               width={20}
               height={20}
               alt="Rest API Logo"
@@ -206,6 +228,12 @@ export const Projects = () => {
         projectTitle={"SNZ Marketplace"}
         projectDescription={`SNZ Market Place is a Nike-inspired marketplace application that brings the excitement of competitive shopping into a dynamic platform. Users can explore a wide range of products, much like they would in a traditional marketplace, but with a unique twist: a bidding feature. This allows users to place competing bids for specific products, creating a competitive environment where buyers can vie for the best deals.The bidding system introduces a new layer of interaction, where users actively engage in pricing battles to secure their desired items at the most favorable rates. 
           This feature not only encourages real-time competition but also enhances user engagement by offering an auction-like experience. The marketplace is designed to mimic the premium feel of Nike, ensuring an intuitive and modern user interface, while the bidding system makes it more dynamic and exciting for users to participate.`}
+        onClickDiscover={() =>
+          window.open(
+            "http://snzwebbucket.s3-website-ap-southeast-2.amazonaws.com/login.html",
+            "_blank"
+          )
+        }
         projectStacks={
           <Fragment>
             <img
@@ -265,7 +293,7 @@ export const Projects = () => {
               }
             />
             <img
-              src={api}
+              src={apis}
               width={20}
               height={20}
               alt="Rest API Logo"
@@ -305,6 +333,9 @@ export const Projects = () => {
         projectTitle={"My Portfolio Version 1.0"}
         projectType={"Web Site"}
         projectDescription={`My Portfolio Version 1.0 was a simple yet personal project, showcasing my skills, experience, and goals at the time. It included key sections such as an About Me, Educational Background, and a few sample projects I worked on during my early stages as a developer. The primary goal was to establish an online presence and create a space to document my journey as a software engineer. While basic, it served as an essential stepping stone in my web development path. The project was built using foundational technologies like HTML, CSS, and JavaScript, giving me hands-on experience with core web concepts. I focused heavily on responsive design, ensuring that the portfolio was accessible across various devices. This helped me understand how to structure content for both desktop and mobile views, improving the overall user experience.`}
+        onClickDiscover={() =>
+          window.open("https://dan2xsanz.github.io/Portfolio/", "_blank")
+        }
         projectStacks={
           <Fragment>
             <img
@@ -353,12 +384,19 @@ export const Projects = () => {
       />
       {/* HERBS DESKTOP APPLICATION */}
       <ProjectDetails
-        status={ProjectStatus.PERSONAL}
+        status={ProjectStatus.PROTECTED}
         images={[image5, image6, image7, image8]}
         projectType={"Desktop Application"}
         projectTitle={"Southern Leyte Endemic Herbal Plants Identification"}
         projectDescription={`Southern Leyte Endemic Herbal Plants Identification is developed also as a desktop application designed to classify endemic herbal plants native to Southern Leyte, Philippines. Utilizing Convolutional Neural Networks (CNNs), the application enables users to identify plant species from images uploaded through the desktop interface. After classification, the application provides comprehensive details about each plant, including medicinal properties, traditional uses, and health benefits, offering users valuable insights into the significance of these plants in local herbal medicine.
             One of the key features of the desktop application is its geolocation capability, which helps users discover areas within Southern Leyte where specific herbal plants are commonly found. By integrating GPS technology with a detailed regional plant database, the application displays an interactive map that allows users to explore and locate the habitats of these plants, supporting responsible collection and conservation. This feature also fosters greater awareness of local biodiversity, while promoting sustainable practices for preserving Southern Leyte’s rich plant heritage.`}
+        onClickDiscover={() =>
+          openNotificationWithIcon(
+            "warning",
+            "Access Restricted",
+            "You do not have permission to view this project (Southern Leyte Endemic Herbal Plants Identification)."
+          )
+        }
         projectStacks={
           <Fragment>
             <img
@@ -429,12 +467,19 @@ export const Projects = () => {
       />
       {/* HERBS MOBILE APPLICATION */}
       <ProjectDetails
-        status={ProjectStatus.PERSONAL}
+        status={ProjectStatus.PROTECTED}
         images={[image1, image2, image3, image4]}
         projectType="Mobile Application"
         projectTitle="Southern Leyte Endemic Herbal Plants Identification"
         projectDescription={`Southern Leyte Endemic Herbal Plants Identification is a mobile application designed to classify endemic herbal plants native to Southern Leyte, Philippines. By leveraging Convolutional Neural Networks (CNNs), the app can accurately identify plant species from images uploaded by users. After classification, it provides detailed information about each plant's medicinal properties, traditional uses, and health benefits, offering valuable insights into the role of these plants in local herbal medicine.
                   A unique feature of the app is its geolocation functionality, which helps users locate areas within Southern Leyte where specific herbal plants are most likely to be found. By integrating GPS technology with regional plant data, the app offers an interactive map, making it easier for users to discover and gather these plants responsibly. This feature also promotes awareness of local biodiversity and supports conservation efforts.`}
+        onClickDiscover={() =>
+          openNotificationWithIcon(
+            "warning",
+            "Access Restricted",
+            "You do not have permission to view this project (Southern Leyte Endemic Herbal Plants Identification)."
+          )
+        }
         projectStacks={
           <Fragment>
             <img

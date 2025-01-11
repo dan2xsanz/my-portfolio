@@ -16,6 +16,7 @@ interface ProjectDetailsInterface {
   projectTitle: string;
   projectDescription: string;
   projectStacks?: React.ReactNode;
+  onClickDiscover?: () => void;
 }
 
 export const ProjectDetails = (props: ProjectDetailsInterface) => {
@@ -29,6 +30,7 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
     projectType,
     projectTitle,
     projectStacks,
+    onClickDiscover,
     projectDescription,
   } = props;
 
@@ -97,12 +99,15 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
     <div
       className="project-details-container-style"
       style={{ backgroundColor: cardBackground }}
+      onClick={() => console.log("IM HERE")}
     >
       <div className="project-image-container">
         <Image
           width={280}
           preview={status !== ProjectStatus.PROTECTED}
-          style={{ cursor: status !== ProjectStatus.PROTECTED ? "" : "not-allowed" }}
+          style={{
+            cursor: status !== ProjectStatus.PROTECTED ? "" : "not-allowed",
+          }}
           src={currentImage}
         />
         <div className="project-slider-buttons-container-style">
@@ -134,7 +139,20 @@ export const ProjectDetails = (props: ProjectDetailsInterface) => {
           <div className="project-description-scrollable-style">
             <Label labelSize={LabelSize.SMALL} labelText={projectDescription} />
           </div>
-          <div className="project-stacks-images-container">{projectStacks}</div>
+          <div className="images-discover-container">
+            <div className="discover-application-container">
+              <label
+                className="discover-application-container"
+                onClick={onClickDiscover}
+              >
+                Discover application
+              </label>
+              <div className="footer-beating-arrow-style">{`${"➞"}`}</div>
+            </div>
+            <div className="project-stacks-images-container">
+              {projectStacks}
+            </div>
+          </div>
         </div>
       </div>
     </div>
