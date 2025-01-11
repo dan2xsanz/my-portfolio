@@ -29,6 +29,23 @@
   justify-content: center;
 }
 
+.cert-div-details-style {
+  display: grid;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
+}
+
+.cert-div-details-style::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome, Edge, and Safari */
+}
+
+.cert-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .tech-stack-main-container-style {
   width: 100%;
   display: flex;

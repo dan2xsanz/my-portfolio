@@ -17,10 +17,13 @@ import {
 } from "../../common";
 
 import {
+  Certifications,
   EducationInfoDetails,
   Recommendations,
   TechStacks,
 } from "./about-constants";
+
+import { Image } from "antd";
 
 import "./about-style.css";
 
@@ -156,6 +159,7 @@ export const About = () => {
           ))}
         </div>
       </div>
+
       {/* RECOMMENDATIONS AREA */}
       <div className="recommendations-main-container">
         <div className="title-header-style">
@@ -180,6 +184,33 @@ export const About = () => {
               );
             }
           })}
+        </div>
+      </div>
+      {/* CERTIFCATES AREA */}
+      <div className="recommendations-main-container">
+        <div className="title-header-style">
+          <Label
+            labelSize={LabelSize.DIV_TITLE_BOLD}
+            labelText={"Certificates"}
+          />
+        </div>
+        <div className="cert-div-details-style">
+          <div className="cert-container">
+            {Certifications.map((data, index) => {
+              return (
+                <Image
+                  key={index}
+                  width={280}
+                  height={150}
+                  preview
+                  src={data.image}
+                  style={{
+                    flexShrink: 0, // Prevent images from shrinking
+                  }}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <Footer

@@ -15,6 +15,12 @@ import java from "../../assets/java.png";
 import sql from "../../assets/sql.png";
 import css from "../../assets/css.png";
 
+import mos from "../../assets/certs/mos.jpg";
+import bacbone from "../../assets/certs/backbone.png";
+import cloudcomp from "../../assets/certs/cloudcomp.png";
+import dessert from "../../assets/certs/dessert.jpg";
+import datascience from "../../assets/certs/datascience.jpg";
+
 // TECH STACK DETAILS
 export const TechStacks = [
   { src: java, width: 75, height: 75, alt: "Java Logo", stackId: 1 },
@@ -140,5 +146,29 @@ export const Recommendations = [
     description: `It has been a privilege to work with Dan Lester Sanz on various projects. Dan consistently brings a strong technical skillset 
       and a proactive attitude to the table. His ability to tackle complex challenges with innovative solutions is impressive, 
       and he always strives for excellence in every task he undertakes.`,
+  },
+];
+
+// CERTIFICATES DETAILS
+export const Certifications = [
+  {
+    name: "Microsoft Office Specialist",
+    image: mos,
+  },
+  {
+    name: "Backbone Creatives",
+    image: bacbone,
+  },
+  {
+    name: "Dessert",
+    image: dessert,
+  },
+  {
+    name: "Data Science",
+    image: datascience,
+  },
+  {
+    name: "Cloud Computing",
+    image: cloudcomp,
   },
 ];

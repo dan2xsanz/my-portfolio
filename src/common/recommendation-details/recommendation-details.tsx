@@ -47,7 +47,7 @@ export const RecommendationDetails = (
       className="recommendation-details-container-style"
       style={{ backgroundColor: cardBackground }}
     >
-      <div
+      {/* <div
         onClick={() => {
           if (currentIndex === 0) {
             setCurrentIndex(numberOfRecommendations - 1);
@@ -56,7 +56,7 @@ export const RecommendationDetails = (
           }
         }}
         className="recommendation-arrow-left"
-      >{`${"<"}`}</div>
+      >{`${"<"}`}</div> */}
       <div>
         <div
           className={`recommendation-details-content ${
@@ -89,7 +89,7 @@ export const RecommendationDetails = (
           ))}
         </div>
       </div>
-      <div
+      {/* <div
         onClick={() => {
           if (currentIndex < numberOfRecommendations - 1) {
             setCurrentIndex(currentIndex + 1);
@@ -98,7 +98,7 @@ export const RecommendationDetails = (
           }
         }}
         className="recommendation-arrow-right"
-      >{`${">"}`}</div>
+      >{`${">"}`}</div> */}
     </div>
   );
 };
