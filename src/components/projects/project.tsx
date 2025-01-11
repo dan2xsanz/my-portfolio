@@ -60,7 +60,6 @@ import { Footer } from "../footer";
 
 import "./projects.css";
 import { ProjectStatus } from "../../common/project-details";
-import { title } from "node:process";
 
 export const Projects = () => {
   // SELECTED SCREEN STORE
@@ -76,8 +75,10 @@ export const Projects = () => {
 
   const [api, contextHolder] = notification.useNotification();
 
+  type NotificationType = "success" | "info" | "warning" | "error";
+
   const openNotificationWithIcon = (
-    type: string,
+    type: NotificationType,
     title: string,
     description: string
   ) => {
