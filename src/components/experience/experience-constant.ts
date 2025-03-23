@@ -78,5 +78,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
     Skills were honed in applying design principles such as color theory, typography, and composition to develop visually appealing and consistent 
     branding across various platforms. The importance of maintaining brand consistency to build recognition and trust with the audience became clear.
      Proficiency was also gained in using design software and collaborating with teams to deliver creative solutions that meet business objectives.`,
+    onClick: () =>
+      window.open("https://www.facebook.com/backbonecreatives/", "_blank"),
   },
 ];
