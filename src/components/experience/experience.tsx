@@ -31,18 +31,18 @@ export const Experience = () => {
     const elementClass = `.div-details-style`;
     gsap.fromTo(
       elementClass,
-      { opacity: 0, skewX: 15 },
+      { opacity: 0, filter: "blur(10px)" },
       {
         opacity: 1,
-        skewX: 0,
+        filter: "blur(0px)",
         duration: 1,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: elementClass,
           start: "top center",
           toggleActions: "play reverse play reverse",
         },
-        stagger: 0.2,
+        stagger: 0.3,
       }
     );
   }, []);

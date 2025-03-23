@@ -99,119 +99,19 @@ export const Projects = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const elementClass = `.project-1`;
+    const elementClass = `.div-container`;
     gsap.fromTo(
       elementClass,
-      { opacity: 0, x: -100 },
+      { opacity: 0, filter: "blur(10px)" },
       {
         opacity: 1,
-        x: 0,
+        filter: "blur(0px)",
         duration: 1,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: elementClass,
           start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.project-2`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.project-3`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.project-4`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.project-5`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.project-6`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play",
         },
         stagger: 0.3,
       }
@@ -224,7 +124,7 @@ export const Projects = () => {
         <Label labelSize={LabelSize.PAGE_TITLE_BOLD} labelText={"Projects."} />
       </div>
       {contextHolder}
-      <div className="project-1">
+      <div className="div-container">
         <ProjectDetails
           status={ProjectStatus.PROTECTED}
           images={[image17, image18, image19, image20]}
@@ -357,9 +257,7 @@ export const Projects = () => {
             </Fragment>
           }
         />
-      </div>
-      {/* SNZ MARKET PLACE WEB APPLICATION */}
-      <div className="project-2">
+        {/* SNZ MARKET PLACE WEB APPLICATION */}
         <ProjectDetails
           status={ProjectStatus.PERSONAL}
           images={[image9, image10, image11, image12]}
@@ -471,9 +369,7 @@ export const Projects = () => {
             </Fragment>
           }
         />
-      </div>
-      {/* PORTFOLIO APPLICATION */}
-      <div className="project-3">
+        {/* PORTFOLIO APPLICATION */}
         <ProjectDetails
           status={ProjectStatus.PERSONAL}
           images={[image13, image14, image15, image16]}
@@ -529,9 +425,7 @@ export const Projects = () => {
             </Fragment>
           }
         />
-      </div>
-      {/* HERBS DESKTOP APPLICATION */}
-      <div className="project-4">
+        {/* HERBS DESKTOP APPLICATION */}
         <ProjectDetails
           status={ProjectStatus.PROTECTED}
           images={[image5, image6, image7, image8]}
@@ -614,9 +508,7 @@ export const Projects = () => {
             </Fragment>
           }
         />
-      </div>
-      {/* HERBS MOBILE APPLICATION */}
-      <div className="project-5">
+        {/* HERBS MOBILE APPLICATION */}
         <ProjectDetails
           status={ProjectStatus.PROTECTED}
           images={[image1, image2, image3, image4]}
@@ -719,9 +611,7 @@ export const Projects = () => {
             </Fragment>
           }
         />
-      </div>
-      {/* BMO MOBILE APPLICATION */}
-      <div className="project-6">
+        {/* BMO MOBILE APPLICATION */}
         <ProjectDetails
           status={ProjectStatus.ONGOING}
           images={[image21, image22, image23, image24]}

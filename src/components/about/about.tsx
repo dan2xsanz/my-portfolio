@@ -67,12 +67,12 @@ export const About = () => {
     const elementClass = `.who-i-am-main-container`;
     gsap.fromTo(
       elementClass,
-      { opacity: 0, x: -100 },
+      { opacity: 0, filter: "blur(10px)" },
       {
         opacity: 1,
-        x: 0,
+        filter: "blur(0px)",
         duration: 1,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: elementClass,
           start: "top center",
@@ -113,26 +113,6 @@ export const About = () => {
         x: 0,
         duration: 2,
         ease: "power1.out",
-        scrollTrigger: {
-          trigger: elementClass,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-        stagger: 0.3,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const elementClass = `.recommendations-main-container`;
-    gsap.fromTo(
-      elementClass,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
         scrollTrigger: {
           trigger: elementClass,
           start: "top center",

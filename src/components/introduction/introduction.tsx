@@ -13,7 +13,6 @@ import {
 import { useEffect } from "react";
 import "./introduction-style.css";
 
-
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 
@@ -39,11 +38,10 @@ export const Introduction = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const elementClass = `.introduction-detail-style`;
+    const elementClass = `.self-description-style`;
     gsap.fromTo(
       elementClass,
       { opacity: 0, filter: "blur(10px)" },
@@ -80,7 +78,6 @@ export const Introduction = () => {
         </div>
 
         <div className="greetings-name-container-style">
-          {/* I'm{" "} */}
           <span className="name-container-style">
             {[
               "I",
