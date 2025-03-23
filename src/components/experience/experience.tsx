@@ -43,6 +43,7 @@ export const Experience = () => {
               role={experience.role}
               width={experience.width}
               height={experience.height}
+              onClick={experience.onClick}
               position={experience.position}
               companyLogo={experience.companyLogo}
               yearsMonths={experience.yearsMonths}

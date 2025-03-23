@@ -33,6 +33,10 @@ import image10 from "../../assets/snz/2.png";
 import image11 from "../../assets/snz/3.png";
 import image12 from "../../assets/snz/4.png";
 import python from "../../assets/python.png";
+import image21 from "../../assets/bmo/1.png";
+import image22 from "../../assets/bmo/2.png";
+import image23 from "../../assets/bmo/3.png";
+import image24 from "../../assets/bmo/4.png";
 import spring from "../../assets/spring.png";
 import image9 from "../../assets/snz/1.png";
 import nextui from "../../assets/nxtui.png";
@@ -223,7 +227,7 @@ export const Projects = () => {
       />
       {/* SNZ MARKET PLACE WEB APPLICATION */}
       <ProjectDetails
-        status={ProjectStatus.ONGOING}
+        status={ProjectStatus.PERSONAL}
         images={[image9, image10, image11, image12]}
         projectType={"Web Application"}
         projectTitle={"SNZ Marketplace"}
@@ -565,6 +569,111 @@ export const Projects = () => {
               alt="QGIS Logo"
               className="project-stack-style"
               onClick={() => window.open("https://www.sqlite.org/", "_blank")}
+            />
+          </Fragment>
+        }
+      />
+      {/* BMO MOBILE APPLICATION */}
+      <ProjectDetails
+        status={ProjectStatus.ONGOING}
+        images={[image21, image22, image23, image24]}
+        projectType="Mobile Application"
+        projectTitle="BMO Expence Tracker Chat Bot AI"
+        projectDescription={`BMO is a smart expense tracker inspired by the beloved character BMO from the Adventure Time movie, designed to make financial management more engaging and efficient. With an AI-powered chat tool, users can interact naturally, ask questions about their spending, and receive personalized insights and budgeting recommendations. BMO simplifies expense tracking by categorizing transactions, analyzing financial trends, and providing real-time summaries to help users stay on top of their finances. Whether setting savings goals, identifying spending patterns, or getting friendly financial advice, BMO transforms budgeting into a seamless and interactive experience. By combining AI-driven assistance with an intuitive interface, BMO empowers users to take control of their financial well-being while adding a touch of fun and intelligence to money management.`}
+        onClickDiscover={() =>
+          openNotificationWithIcon(
+            "warning",
+            "Access Restricted",
+            "Application is still ongoing. (BMO Expence Tracker Chat Bot AI)."
+          )
+        }
+        projectStacks={
+          <Fragment>
+            <img
+              src={react}
+              width={22}
+              height={22}
+              alt="React Native Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://reactnative.dev/", "_blank")
+              }
+            />
+            <img
+              src={android}
+              width={22}
+              height={22}
+              alt="Android Studio Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://developer.android.com/", "_blank")
+              }
+            />
+            <img
+              src={java}
+              width={19}
+              height={19}
+              alt="Java Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://mobx.js.org/README.html", "_blank")
+              }
+            />
+            <img
+              src={python}
+              width={18}
+              height={18}
+              alt="Python Logo"
+              className="project-stack-style"
+              onClick={() => window.open("https://www.python.org/", "_blank")}
+            />
+            <img
+              width={20}
+              height={20}
+              src={typeScript}
+              alt="TypeScript Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://www.typescriptlang.org/", "_blank")
+              }
+            />
+            <img
+              width={21}
+              height={21}
+              src={zustand}
+              alt="Stack Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://zustand-demo.pmnd.rs/", "_blank")
+              }
+            />
+            <img
+              src={mysql}
+              width={23}
+              height={20}
+              alt="My Sql Logo"
+              className="project-stack-style"
+              onClick={() => window.open("https://www.mysql.com/", "_blank")}
+            />
+            <img
+              width={18}
+              height={18}
+              src={spring}
+              alt="Spring Boot Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://spring.io/projects/spring-boot/", "_blank")
+              }
+            />
+            <img
+              src={apis}
+              width={20}
+              height={20}
+              alt="Rest API Logo"
+              className="project-stack-style"
+              onClick={() =>
+                window.open("https://spring.io/guides/tutorials/rest", "_blank")
+              }
             />
           </Fragment>
         }

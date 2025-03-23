@@ -47,7 +47,7 @@
   animation: beatingGlow 1.5s infinite ease-in-out;
 }
 
-@keyframes beatingGlow {
+/* @keyframes beatingGlow {
   0% {
     box-shadow: 0 0 5px 2px rgb(216, 211, 211);
     transform: scale(1);
@@ -60,7 +60,7 @@
     box-shadow: 0 0 5px 1px rgb(156, 151, 151);
     transform: scale(1);
   }
-}
+} */
 
 @media (max-width: 1600px) {
   .experience-container-style {

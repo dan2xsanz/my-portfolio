@@ -14,6 +14,7 @@ export interface ExperienceDetailsProps {
   position: string;
   height?: number;
   width?: number;
+  onClick?: () => void;
 }
 
 export const ExperienceDetails = (props: ExperienceDetailsProps) => {
@@ -21,6 +22,7 @@ export const ExperienceDetails = (props: ExperienceDetailsProps) => {
     role,
     width,
     height,
+    onClick,
     position,
     companyLogo,
     yearsMonths,
@@ -40,6 +42,7 @@ export const ExperienceDetails = (props: ExperienceDetailsProps) => {
 
   return (
     <div
+      onClick={onClick}
       className="experience-details-main-container-style"
       style={{ backgroundColor: cardBackground }}
     >

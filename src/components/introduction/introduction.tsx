@@ -51,11 +51,15 @@ export const Introduction = () => {
           }!`}</div>
           <img src={currentTimeGreetings().icon} width={25} height={25} />
         </div>
-        
+
         <div className="greetings-name-container-style">
-          I'm{" "}
+          {/* I'm{" "} */}
           <span className="name-container-style">
             {[
+              "I",
+              "'",
+              "m",
+              "\u00A0",
               "D",
               "a",
               "n",

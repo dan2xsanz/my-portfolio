@@ -5,6 +5,7 @@
   overflow: hidden;
   gap: 5px;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .experience-details-container-style {

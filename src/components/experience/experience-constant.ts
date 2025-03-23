@@ -6,6 +6,18 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
   {
     companyLogo: asi,
     companyName: "Alliance Software Incorporated",
+    yearsMonths: "January 2025",
+    position: "Software Engineer ",
+    role: "Associate Technical Specialist III (ATS III)",
+    description: `Responsible for developing base code, guiding newcomers, reviewing pull requests, and making critical system modifications. 
+    As part of the Team Leaders, collaborating closely with project leaders to ensure seamless development processes and efficient system improvements.
+    Beyond the corporate role, also serving as an instructor at the USJR (University of San Jose-Recoletos) Basak Campus, lecturing on Introduction to React every Saturday. 
+    Responsibilities extend to checking team reports, fixing bugs, managing server access, and implementing new and advanced features to enhance system performance and functionality.`,
+    onClick: () => window.open("https://alliance.com.ph/", "_blank"),
+  },
+  {
+    companyLogo: asi,
+    companyName: "Alliance Software Incorporated",
     yearsMonths: "July 2024",
     position: "Software Engineer ",
     role: "Associate Technical Specialist I (ATS I)",
@@ -14,6 +26,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
       robust security protocols, including authentication, authorization, and data encryption, to protect sensitive data. Actively contributed 
       to maintaining a high-quality codebase through participation in code reviews and deployed backend services and databases to production 
       environments, ensuring smooth and continuous operations.`,
+    onClick: () => window.open("https://alliance.com.ph/", "_blank"),
   },
   {
     companyLogo: asi,
@@ -28,6 +41,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
       effectively. Collaborated with cross-functional teams to design and deploy new features, ensuring alignment with business objectives 
       and delivering high-quality software solutions. Additionally, created automated testing pipelines to streamline the deployment process 
       and maintain robust system stability across environments.`,
+    onClick: () => window.open("https://alliance.com.ph/", "_blank"),
   },
   {
     companyLogo: asi,
@@ -40,6 +54,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
       the overall user experience. Created unit and integration tests to ensure code quality and maintainability, leading to a more reliable and 
       scalable codebase. Additionally, worked closely with UI/UX designers to ensure seamless user interactions and delivered responsive, 
       high-performance applications.`,
+    onClick: () => window.open("https://alliance.com.ph/", "_blank"),
   },
   {
     companyLogo: asi,
@@ -51,6 +66,7 @@ export const ExperienceDetailsInfo: ExperienceDetailsProps[] = [
      senior engineers in further development. My responsibilities included collaborating closely with cross-functional teams to ensure the software met 
      design specifications and delivered optimal performance. Additionally, I supported code reviews, identified areas for improvement, and participated
     in debugging and testing efforts to ensure software quality and reliability.`,
+    onClick: () => window.open("https://alliance.com.ph/", "_blank"),
   },
   {
     companyLogo: bckbone,

@@ -1,6 +1,6 @@
 .introduction-container-style {
   gap: 10px;
-  padding-top: 100px;
+  padding-top: 150px;
   padding-left: 200px;
   padding-right: 200px;
   display: flex;
@@ -11,6 +11,7 @@
 
 @media (max-width: 1747px) {
   .introduction-container-style {
+    padding-top: 120px;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -24,6 +25,7 @@
 
 @media (max-width: 1000px) {
   .introduction-container-style {
+    padding-top: 100px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -63,14 +65,12 @@
 
 .name-container-style span {
   display: inline-block;
-  animation: wave 4s ease-in-out infinite;
+  animation: scaleBounce 2s ease-in-out infinite;
 }
 
-@keyframes wave {
-  0%, 85% { transform: translateY(0); }
-  90% { transform: translateY(-10px); }
-  95% { transform: translateY(0); }
-  100% { transform: translateY(0); }
+@keyframes scaleBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 /* Responsive font size for greetings */

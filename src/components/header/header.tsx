@@ -9,18 +9,14 @@ import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import "./header-style.css";
 
-import {
-  HeaderButton,
-  HeaderEnums,
-  BarsIcon,
-} from "../../common";
+import { HeaderButton, HeaderEnums, BarsIcon } from "../../common";
 
 interface HeaderProps {
   logo: string;
   setLogo: (data: string) => void;
 }
 
-export const Header = ({ logo, setLogo }: HeaderProps) => {
+export const Header = ({ setLogo }: HeaderProps) => {
   const { setMode, mode } = darkModeStore();
   const { selectedScreenScreen, setSelectedScreen } = selectedScreenStore();
   const navigate = useNavigate();
@@ -114,7 +110,15 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
         className="logo-container"
         onClick={() => onClickHeaderButton(HeaderEnums.INTRODUCTION)}
       >
-        <img className="header-logo" src={logo} height={70} width={70} />
+        <span
+          style={{
+            fontFamily: "sans-serif",
+            fontSize: "25px",
+            fontWeight: 900,
+          }}
+        >
+          LES.
+        </span>
       </div>
 
       <div className="menu-options-container">
@@ -182,15 +186,14 @@ export const Header = ({ logo, setLogo }: HeaderProps) => {
               />
             )}
           </div>
-          <div
-            className="logo-container"
+          <HeaderButton
+            isFullScreen
+            label="Home"
             onClick={() => {
-              setMenuOpen(false);
               onClickHeaderButton(HeaderEnums.INTRODUCTION);
+              setMenuOpen(false);
             }}
-          >
-            <img src={logo} className="header-logo" alt="logo" />
-          </div>
+          />
           <HeaderButton
             isFullScreen
             label="About"
