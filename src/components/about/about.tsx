@@ -26,6 +26,8 @@ import {
 import { Image } from "antd";
 
 import "./about-style.css";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 
 export const About = () => {
   // RECOMMENDATIONS ACTIVE KEY
@@ -57,6 +59,88 @@ export const About = () => {
   // AUTO SCROLL ON TOP
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const elementClass = `.who-i-am-main-container`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const elementClass = `.tech-stack-main-container`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const elementClass = `.educations-main-container`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 2,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const elementClass = `.recommendations-main-container`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
   }, []);
 
   return (
@@ -159,7 +243,6 @@ export const About = () => {
           ))}
         </div>
       </div>
-
       {/* RECOMMENDATIONS AREA */}
       <div className="recommendations-main-container">
         <div className="title-header-style">

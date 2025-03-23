@@ -7,6 +7,10 @@ import "./experience-style.css";
 import { selectedScreenStore } from "../../store";
 import { useEffect } from "react";
 
+
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+
 export const Experience = () => {
   // SELECTED SCREEN STORE
   const { setSelectedScreen } = selectedScreenStore();
@@ -18,6 +22,31 @@ export const Experience = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const elementClass = `.div-details-style`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, skewX: 15 },
+      {
+        opacity: 1,
+        skewX: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.2,
+      }
+    );
+  }, []);
+
 
   return (
     <div className="experience-container-style">

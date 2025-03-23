@@ -13,6 +13,10 @@ import {
 import { useEffect } from "react";
 import "./introduction-style.css";
 
+
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+
 export const Introduction = () => {
   // NAVIGATION ROUTING
   const navigate = useNavigate();
@@ -33,6 +37,29 @@ export const Introduction = () => {
   // AUTO SCROLL ON TOP
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const elementClass = `.introduction-detail-style`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: elementClass,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+        stagger: 0.3,
+      }
+    );
   }, []);
 
   return (
