@@ -104,7 +104,7 @@ export const Contact = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const elementClass = `.details-style`;
+    const elementClass = [`.details-style`, `.field-submit-button-container`];
     gsap.fromTo(
       elementClass,
       { opacity: 0, filter: "blur(10px)" },

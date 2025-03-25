@@ -11,6 +11,9 @@ import "./header-style.css";
 
 import { HeaderButton, HeaderEnums, BarsIcon } from "../../common";
 
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+
 interface HeaderProps {
   logo: string;
   setLogo: (data: string) => void;
@@ -103,6 +106,22 @@ export const Header = ({ setLogo }: HeaderProps) => {
       document.body.classList.remove("dark-mode");
     }
   }, [isDarkMode]);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const elementClass = `.full-page-menu`;
+    gsap.fromTo(
+      elementClass,
+      { opacity: 0, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.8,
+        ease: "power2.out",
+      }
+    );
+  }, [menuOpen]);
 
   return (
     <div className={`header-container ${showHeader ? "visible" : "hidden"}`}>

@@ -41,7 +41,13 @@ export const Introduction = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const elementClass = `.self-description-style`;
+    const elementClass = [
+      `.greetings-container-style`,
+      `.name-container-style`,
+      `.self-description-style`,
+      `.see-more-about-me-style`,
+      `.book-download-container`,
+    ];
     gsap.fromTo(
       elementClass,
       { opacity: 0, filter: "blur(10px)" },
