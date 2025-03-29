@@ -277,10 +277,10 @@ export const About = () => {
         </div>
       </div>
       <Footer
-        navigationMessage={"Let's Continue to Projects"}
+        navigationMessage={"Let's Continue to Gallery"}
         onClickNavigation={() => {
-          setSelectedScreen(HeaderEnums.PROJECTS);
-          navigate("/projects");
+          setSelectedScreen(HeaderEnums.GALLERY);
+          navigate("/gallery");
         }}
       />
     </div>

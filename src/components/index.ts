@@ -6,3 +6,4 @@ export * from "./about/about";
 export * from "./footer/footer";
 export * from "./experience/experience";
 export * from "./contact/contact";
+export * from "./gallery";

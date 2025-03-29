@@ -56,14 +56,18 @@ export const Header = ({ setLogo }: HeaderProps) => {
         break;
       case 3:
         setSelectedScreen(3);
-        navigate("/projects");
+        navigate("/gallery");
         break;
       case 4:
         setSelectedScreen(4);
-        navigate("/experience");
+        navigate("/projects");
         break;
       case 5:
         setSelectedScreen(5);
+        navigate("/experience");
+        break;
+      case 6:
+        setSelectedScreen(6);
         navigate("/contact");
         break;
     }
@@ -147,6 +151,12 @@ export const Header = ({ setLogo }: HeaderProps) => {
             onClick={() => onClickHeaderButton(HeaderEnums.ABOUT_ME)}
           />
         )}
+        {selectedScreenScreen !== HeaderEnums.GALLERY && (
+          <HeaderButton
+            label="Gallery"
+            onClick={() => onClickHeaderButton(HeaderEnums.GALLERY)}
+          />
+        )}
         {selectedScreenScreen !== HeaderEnums.PROJECTS && (
           <HeaderButton
             label="Projects"
@@ -218,6 +228,14 @@ export const Header = ({ setLogo }: HeaderProps) => {
             label="About"
             onClick={() => {
               onClickHeaderButton(HeaderEnums.ABOUT_ME);
+              setMenuOpen(false);
+            }}
+          />
+          <HeaderButton
+            isFullScreen
+            label="Gallery"
+            onClick={() => {
+              onClickHeaderButton(HeaderEnums.GALLERY);
               setMenuOpen(false);
             }}
           />

@@ -9,6 +9,7 @@ import {
   About,
   Experience,
   Contact,
+  Gallery,
 } from "./components";
 
 import { createRoot } from "react-dom/client";
@@ -58,6 +59,7 @@ const App = () => {
         <Routes>
           <Route path="" element={<Introduction />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
